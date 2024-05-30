@@ -1,0 +1,72 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Update Card Renders
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push: 
+    paths:
+      - 'card-data/**'
+      - 'templates/**' # You can add more paths as needed
+      #- 'artworks/**' # Matches any file within the 'stats/' folder
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Add SSH key to checkout the Workflow repo
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_REPO_KEY }}
+          
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout current repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install necessary fonts
+        run: |
+          wget -O Palatino_Linotype.ttf "https://github.com/dolbydu/font/raw/master/Serif/Palatino/Palatino%20Linotype.ttf"
+          mv Palatino_Linotype.ttf /usr/share/fonts/
+          fc-cache -fv
+
+      - name: Initialize npm project
+        run: npm init -y
+        
+      - name: Create export folders
+        run: |
+          mkdir -p export
+          mkdir -p tabletop
+
+      # Runs a single command using the runners shell
+      - name: Install dependency for the Workflow
+        run: npm install git+ssh://git@github.com:jonaspmeise/cardcreator-workflow.git#master --loglevel verbose
+
+      - name: List all installed node_modules
+        run: find node_modules
+
+      - name: Render cards
+        run: node scripts/create-cards.mjs
+
+      # Runs a set of commands using the runners shell
+      - name: Commit Changes and Push
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add ./export/*
+          git add ./tabletop/*
+          git commit -m "Updated the cards render. [skip ci]"
+          git push

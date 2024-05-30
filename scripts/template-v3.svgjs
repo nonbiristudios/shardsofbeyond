@@ -1,0 +1,649 @@
+ <svg xmlns="http://www.w3.org/2000/svg" width="750" height="1050" style="background-color:black">
+    <!-- Filters -->
+    <filter id="shadow" x="-150%" y="-150%" width="300%" height="300%">
+        <feFlood flood-color="black" result="color" />
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+        <feComposite in2="SourceGraphic" operator="over" />
+    </filter>
+    <filter id="blur" x="-150%" y="-150%" width="300%" height="300%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+    </filter>
+    
+    <!-- Definitions -->
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="30%" style="stop-color: {{(card) => {
+                if(card.Realms.length == 0) return;
+                
+                if(card.Realms.includes('Divine')) {
+                    return '#FCE79C';
+                } else if(card.Realms.includes('Elemental')) {
+                    return '#FF7344';
+                } else if(card.Realms.includes('Mortal')) {
+                    return '#287CC4';
+                } else if(card.Realms.includes('Nature')) {
+                    return '#408C2F';
+                } else if(card.Realms.includes('Void')) {
+                    return '#3B2055';
+                }
+            }}}" />
+            <stop offset="70%" style="stop-color: {{(card) => {
+                if(card.Realms.length == 0) return;
+                
+                if(card.Realms.includes('Void')) {
+                    return '#3B2055';
+                } else if(card.Realms.includes('Nature')) {
+                    return '#408C2F';
+                } else if(card.Realms.includes('Mortal')) {
+                    return '#287CC4';
+                } else if(card.Realms.includes('Elemental')) {
+                    return '#FF7344';
+                } else if(card.Realms.includes('Divine')) {
+                    return '#FCE79C';
+                }
+            }}}" />
+        </linearGradient>
+        
+        <!-- Gradient Filter-->
+        <rect id="complete-gradient" x="-150" y="0" width="1050" height="1050" fill="url(#gradient)" />
+        <filter id="overlayFilter">
+          <feImage xlink:href="#complete-gradient" result="gradient" />
+
+          <feBlend mode="hue" in="gradient" in2="SourceGraphic" result="blended-gradient"/>
+          <feColorMatrix type="saturate" in="blended-gradient" values="0.6"/>
+        </filter>
+        
+        <linearGradient id="fadeGrad" y2="1" x1="0" x2="0" y1="0">
+          <stop offset="0" stop-color="black"/>
+          <stop offset="0.25" stop-color="white"/>
+        </linearGradient>
+        
+        <mask id="fade" maskContentUnits="objectBoundingBox">
+          <rect width="1" height="1" fill="url(#fadeGrad)"/>
+        </mask>
+        
+        <!-- Shapes -->        
+        <clipPath id="bottomtriangle">
+            <polygon points="0,1050 0,500 35,500 35,970 715,970 715,500 750,500 750,1050" />
+        </clipPath>
+        
+        <clipPath id="inborderLeft">
+            <polygon points="0,0 0,1050 35,1050 35,45 715,45 715,1050 750,1050 750,0" />
+        </clipPath>
+    </defs>
+    
+    <!-- Artwork -->
+    <image
+        x="-150"
+        y="0"
+        width="1050"
+        height="1050"
+        preserveAspectRatio="xMidYMin slice"
+        href="{{(card) => card.Artwork}}"
+    />
+    
+    <!-- In-Border-Texture -->
+    <image
+        x="0"
+        y="0"
+        width="750"
+        height="1050"
+        preserveAspectRatio="xMidYMin slice"
+        href="{{(templates, card, explanations) => {
+            let textureToRender = undefined;
+            Object.keys(explanations)
+                .filter((key) => card.Text.includes(key.replaceAll('_', ' ')))
+                .find((key) => {
+                    const possibleTemplates = [...templates.keys()]
+                        .filter((template) => template.includes(key));
+                        
+                    if(possibleTemplates.length === 0) return false;
+                    
+                    textureToRender = possibleTemplates[card.RandomValue % possibleTemplates.length];
+                    return true;
+                    
+                });       
+                
+            const defaultTexture = `Ruin (${(card.RandomValue % 8) + 1}).png`;
+            
+            return templates.get((textureToRender ?? defaultTexture));
+        }}}"
+        clip-path="url(#inborderLeft)"
+        filter="url(#overlayFilter)"
+    />
+      
+    <!-- Triangles bottom border -->
+    <image
+        x="0"
+        y="600"
+        width="750"
+        height="750"
+        href="{{(templates, card) => templates.get(`Galaxy (${(card.RandomValue % 4) + 1}).png`)}}"
+        clip-path="url(#bottomtriangle)"
+        mask="url(#fade)"
+    />
+    
+    <!-- Subtle Inner Card Layout border -->
+    <rect
+        x="37"
+        y="135"
+        width="676"
+        height="834"
+        fill="none"
+        stroke="black"
+        stroke-width="4"
+    />
+    
+    <!-- Textbox w/ Name of the Card -->
+    <image
+        x="35"
+        y="40"
+        width="680"
+        height="90"
+        opacity = "0.50"
+        preserveAspectRatio="xMaxYMid slice"
+        href="{{(templates, card) => templates.get(`Galaxy (${(card.RandomValue % 4) + 1}).png`)}}"
+    />
+    <rect
+        x="35"
+        y="40"
+        width="680"
+        height="90"
+        fill="none"
+        stroke="black"
+        stroke-width="16"
+    />
+    <rect
+        x="35"
+        y="40"
+        width="680"
+        height="90"
+        fill="none"
+        stroke="url(#gradient)"
+        stroke-width="10"
+    />
+    
+    <!-- Card Name -->    
+    <!-- Black name + smooth filter -->
+    <foreignObject 
+        x="-400" 
+        y="34" 
+        width="1550" 
+        height="100"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <div style="
+                text-shadow: 4px 4px 6px black;
+                color: transparent;
+                font-family: 'EUR42';
+                font-size:84px;
+                transform:scale({{(card) => {
+                    const length = card.Name.length;
+                    
+                    if(length < 17) return 1;
+                    
+                    return 1 - (0.06 * ((length - 17) * 0.7));
+                }}},1)
+            ">
+                <center>{{(card) => card.Name}}</center>
+            </div>
+        </div>
+    </foreignObject>
+    
+    <!--    super wide so that we can render even _huge_ Names -->
+    <foreignObject 
+        x="-400" 
+        y="34" 
+        width="1550" 
+        height="100"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <div style="
+                color:white;
+                font-family: 'EUR42';
+                font-size:84px;
+                transform:scale({{(card) => {
+                    const length = card.Name.length;
+                    
+                    if(length < 17) return 1;
+                    
+                    return 1 - (0.06 * ((length - 17) * 0.7));
+                }}},1)
+            ">
+                <center>{{(card) => card.Name}}</center>
+            </div>
+        </div>
+    </foreignObject>
+    
+    <rect x="-15" y="675" opacity="0.52" width="800" height="400" fill="black"/>
+    
+    <!-- Center Banner -->
+    <image
+        x="35"
+        y="580"
+        width="680"
+        height="100"
+        opacity="0.7"
+        preserveAspectRatio="xMaxYMid slice"
+        href="{{(templates, card) => templates.get(`Galaxy (${(card.RandomValue % 4) + 1}).png`)}}"
+    />
+    <rect
+        x="35"
+        y="580"
+        width="680"
+        height="100"
+        fill="none"
+        stroke="black"
+        stroke-width="16"
+    />
+    <rect
+        x="35"
+        y="580"
+        width="680"
+        height="100"
+        fill="none"
+        stroke="url(#gradient)"
+        stroke-width="10"
+    />
+
+    <!-- Type -->
+    <!-- Shadow -->
+    <foreignObject 
+        x="50" 
+        y="588" 
+        width="655" 
+        height="255"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml" x="50">
+            <div style="
+                color: black;
+                text-shadow: 2px 2px 4px black;
+                font-family:'Palatino Linotype', serif;
+                font-weight: bold;
+                font-size:38px;
+                line-height:40px;
+            ">
+                {{(card) => {
+                    // Split all Types into the best combination of Line 1 and 2 (space-wise)
+                    const types = card.Types.map((typ) => typ.trim());
+                    
+                    const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
+                    
+                    let line1 = [];
+                    let line2 = [];
+                    
+                    sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
+                    
+                    return line1.join(' - ') + '</br>' + line2.join(' - ');
+                }}}
+            </div>
+        </div>
+    </foreignObject>
+    <!-- real Type -->
+    <foreignObject 
+        x="50" 
+        y="588" 
+        width="655" 
+        height="255"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml" x="50">
+            <div style="
+                color:white;
+                font-family:'Palatino Linotype', serif;
+                font-weight: bold;
+                font-size:38px;
+                line-height:40px;
+            ">
+                {{(card) => {
+                    // Split all Types into the best combination of Line 1 and 2 (space-wise)
+                    const types = card.Types.map((typ) => typ.trim());
+                    
+                    const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
+                    
+                    let line1 = [];
+                    let line2 = [];
+                    
+                    sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
+                    
+                    return line1.join(' - ') + '</br>' + line2.join(' - ');
+                }}}
+            </div>
+        </div>
+    </foreignObject>
+	
+	<!-- Realm Text -->
+    <!-- Realm Shadow -->
+    <foreignObject 
+        x="500" 
+        y="588" 
+        width="200" 
+        height="255"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml" x="60">
+            <div style="
+                font-family:'Palatino Linotype', serif;
+                font-weight: bold;
+                font-size:38px;
+                line-height:40px;
+                text-align:right;
+                color: transparent;
+            ">
+                {{(card) => {
+                    return card.Realms
+                        .map((realm) => `<span style="text-shadow: 2px 2px 4px ${(realm === 'Void') ? 'white' : 'black'}">${realm}</span>`)
+                        .join('<br/>');
+                }}}
+            </div>
+        </div>
+    </foreignObject>
+    <!-- Real Realm -->
+    <foreignObject 
+        x="500" 
+        y="588" 
+        width="200" 
+        height="255"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml" x="60">
+            <div style="
+                font-family:'Palatino Linotype', serif;
+                font-weight: bold;
+                font-size:38px;
+                line-height:40px;
+                text-align:right
+            ">
+                {{(card) => {
+                    const colors = {
+                        'Divine': '#FCE79C',
+                        'Elemental': '#FF7344',
+                        'Mortal': '#287CC4',
+                        'Nature': '#408C2F',
+                        'Void': '#3B2055'
+                    };
+                    
+                    return card.Realms
+                        .map((realm) => `<span style="color: ${colors[realm]}">${realm}</span>`)
+                        .join('<br/>');
+                }}}
+            </div>
+        </div>
+    </foreignObject>
+    
+    <!-- Text of Textbox -->
+    <foreignObject 
+            x="49" 
+            y="687" 
+            width="656" 
+            height="253"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml" style="
+            color:white;
+            font-family:'Palatino Linotype', serif;
+            font-size:32px;
+            display:inline;
+            line-height:36px
+        ">
+            <p>
+                {{(card, explanations, templates) => {
+                    if(card.Text.length == 0) {
+                        return '';
+                    }
+                    
+                    let effect = card.Text;
+                    
+                    // Insert linebreaks.
+                    effect = effect.replaceAll(/(?:Whenever|When|[^\s\n.][^\n.]+:)/gm, (part) => {
+                        if(effect.startsWith(part)) return part; // No Linebreak in the first line.
+                        
+                        return `</br>${part}`;
+                    });
+                    
+                    // Choose-One-Effects need a linebreak:
+                    effect = effect.replaceAll(/\s-\s/gm, (part) => `</br>${part}`);
+                    
+                    // Replace all Crystals.
+                    const crystalFilters = {
+                        "D": "saturate(70%) brightness(0.95) hue-rotate(-60deg)",
+                        "E": "hue-rotate(260deg) brightness(1.1) saturate(90%)",
+                        "M": "saturate(70%) brightness(90%) hue-rotate(100deg)",
+                        "N": "hue-rotate(20deg) saturate(90%)",
+                        "V": "saturate(70%) brightness(80%) hue-rotate(172deg)"
+                    };
+                    
+                    Object.entries(crystalFilters).forEach(([key, value]) => {
+                        // TODO: Maybe need "padding-bottom:4px;" here.
+                        effect = effect.replaceAll(`<${key}>`, `<img
+                            width="40"
+                            height="40"
+                            style="vertical-align:middle;
+                                filter: ${value};"
+                            src="${templates.get('Crystal_gruen.png')}"
+                        />`);
+                    });       
+                    
+                    //Highlight Mechanics
+                    Object.entries(explanations).forEach(([key, value]) => {
+                        key = key.replaceAll('_', ' ');
+                        if(key.length == 0) return;
+                        
+                        if(effect.length > 0 && effect.includes(key)) {
+                            let keyword = effect.match(new RegExp(`${key}\\S*`, 'i'));
+                            effect = effect.replaceAll(keyword, `<b>${keyword}</b>`);
+                        }
+                    });
+                    return effect;
+                }}}
+                {{(card, explanations) => {
+                    //inject keyword highlights and add flavor text on commons
+                    let explanation = '';
+                    
+                    // Only Commons have explanation texts.
+                    if(card.Rarity !== 'Common') return '';
+                
+                    Object.entries(explanations).forEach(([key, value]) => {
+                        key = key.replaceAll('_', ' ');
+                        if(key.length == 0 || value == null) return;
+                        
+                        if((card.Text.length > 0 && card.Text.includes(key)) 
+                        || (card.Keyword.length > 0 && card.Keyword.includes(key))) {
+                            if(typeof value === 'function') {
+                                let parameter = card.Text.match(new RegExp(`(?<=${key}) [^:]+`, 'i'));
+                                let parameterv2 = card.Text.match(new RegExp(`(?<=${key}: )[^\\.]+`, 'i'));          
+                                
+                                explanation = value(parameter || parameterv2);
+                            } else {
+                                explanation = value;
+                            }
+                            
+                            explanation = `${key}: ${explanation}`
+                        }
+                    });
+                    
+                    if(explanation.length > 0) explanation = `<i style="font-size:28px;opacity:0.6;margin-top:-6px">(${explanation})</i>`;
+                    
+                    return explanation;
+                }}}
+            </p>
+        </div>
+    </foreignObject>
+    
+    <!-- Flavortext -->
+    <foreignObject 
+            x="46" 
+            y="820" 
+            width="656" 
+            height="140"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml" style="
+            text-align:center;
+            width:100%;
+            opacity:0.65;
+            position:absolute;
+            bottom:10px;
+            color:white;
+            font-family:'Palatino Linotype', serif;
+            font-size:26px;
+            line-height:32px
+        ">
+            {{(card) => {
+                if(card.Flavortext.length == 0) {
+                    return '';
+                } else {
+                    return `<i>&#8222;${card.Flavortext.trim()}&#8220;</i>`;
+                }
+            }}}
+        </div>
+    </foreignObject>
+                
+    <!-- Rarity Gem Power -->
+    <!-- Shadow -->
+    <image
+        x="266"
+        y="455"
+        width="244"
+        height="244"
+        preserveAspectRatio="xMidYMid"
+        href="{{(card, templates) => templates.get(`Rarity_${card.Rarity}.png`)}}"
+        filter="url(#shadow)"
+    />
+    <!-- Real Render -->
+    <image
+        x="266"
+        y="455"
+        width="244"
+        height="244"
+        preserveAspectRatio="xMidYMid"
+        href="{{(card, templates) => templates.get(`Rarity_${card.Rarity}.png`)}}"
+    />
+
+
+    <!-- Power -->
+    <!-- Power Shadow -->
+    <text
+        x="52%"
+        y="650"
+        font-size="215"
+        text-anchor="middle"
+    >
+        <tspan
+            style="font-family: EUR42;
+                font-weight: bold;
+                fill: black;
+                text-shadow: 0px 0px 15px black;"
+        >
+            {{(card) => card.Power}}
+        </tspan>
+    </text>
+    <!-- Power Real -->
+    <text
+        x="52%"
+        y="650"
+        font-size="215"
+        text-anchor="middle"
+    >
+        <tspan
+            stroke="black"
+            stroke-width="6"
+            font-family="EUR42"
+            font-weight="bold"
+            fill="white"
+        >
+            {{(card) => card.Power}}
+        </tspan>
+    </text>
+    
+    <!-- Crystals -->        
+    {{(card, templates) => {
+    
+        if(card.Costs.length == 0) return '';
+        
+        const numberQuestionMarks = card.Costs.filter((cost) => cost === '?').length;
+        const arrangedCosts = card.Costs.filter((cost) => cost !== '?').reverse();
+        for(let i=0;i < numberQuestionMarks; i++) arrangedCosts.push('?');
+        
+        return arrangedCosts.map((crystal, index) => {
+            let filter = '';
+            
+            switch(crystal.trim().toLowerCase()) {
+                case 'd':
+                    filter = 'saturate(70%) brightness(0.95) hue-rotate(-60deg)';
+                    break;
+                case 'e':
+                    filter = 'hue-rotate(260deg) brightness(1.1) saturate(90%)';
+                    break;
+                case 'm':
+                    filter = 'saturate(70%) brightness(90%) hue-rotate(100deg)';
+                    break;
+                case 'n':
+                    filter = 'hue-rotate(20deg) saturate(90%)';
+                    break;
+                case 'v':   
+                    filter = 'saturate(70%) brightness(80%) hue-rotate(172deg)';
+                    break;
+                default:
+                    filter = 'grayscale(1)';
+                    break;
+            }
+            
+            return `
+            <image 
+                x="${715-(index+1)*60}"
+                y="972"
+                width="60"
+                height="60"
+                filter="url(#shadow)"
+                preserveAspectRatio="xMidYMid"
+                href="${templates.get('Crystal_gruen.png')}"
+            />
+            <image
+                x="${715-(index+1)*60}"
+                y="972"
+                width="60"
+                height="60"
+                style="filter: ${filter};"
+                preserveAspectRatio="xMidYMid"
+                href="${templates.get('Crystal_gruen.png')}"
+            />
+            `;
+        })
+        .join('');
+    }
+    }}
+    
+    <!-- Copyright + Set Name-->
+    <foreignObject 
+        x="45" 
+        y="975" 
+        width="655" 
+        height="255"
+    >
+        <div xmlns="http://www.w3.org/1999/xhtml" x="50">
+            <div style="
+                color:white;
+                font-size:20px;
+                font-weight:lighter;
+                opacity:0.5"
+            >
+                <b>Beyond</b> Set {{(card) => {
+                        if(card.CardID === 0) return '';
+                        
+                        return `${card.Set}, ${card.Rarity} #${card.CardID}`;
+                    }
+                    }}<br/>
+                &#169; Nonbiri Studios {{() => {return new Date().getFullYear();}}}
+            </div>
+        </div>
+    </foreignObject>
+    
+    <!-- Black Border + Bleed -->
+    <rect
+        x="0"
+        y="0"
+        width="750"
+        height="1050"
+        fill="none"
+        stroke="black"
+        stroke-width="35"
+        rx="35"
+    />
+</svg>
