@@ -520,7 +520,7 @@
     <!-- Power -->
     <!-- Power Shadow -->
     <text
-        x="52%"
+        x="{{(card) => card.Power === 4 ? '48%' : '52%'}}"
         y="650"
         font-size="215"
         text-anchor="middle"
@@ -536,7 +536,7 @@
     </text>
     <!-- Power Real -->
     <text
-        x="52%"
+        x="{{(card) => card.Power === 4 ? '48%' : '52%'}}"
         y="650"
         font-size="215"
         text-anchor="middle"
