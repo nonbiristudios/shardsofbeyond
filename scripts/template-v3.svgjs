@@ -14,7 +14,7 @@
         <!-- Gradients -->
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="30%" style="stop-color: {{(card) => {
-                if(card.Realms.length == 0) return;
+                if(card.Realms.length == 0) return '#666666';
                 
                 if(card.Realms.includes('Divine')) {
                     return '#FCE79C';
@@ -29,7 +29,7 @@
                 }
             }}}" />
             <stop offset="70%" style="stop-color: {{(card) => {
-                if(card.Realms.length == 0) return;
+                if(card.Realms.length == 0) return '#666666';
                 
                 if(card.Realms.includes('Void')) {
                     return '#3B2055';
@@ -105,7 +105,7 @@
                     
                 });       
                 
-            const defaultTexture = `Ruin (${(card.RandomValue % 8) + 1}).png`;
+            const defaultTexture = `Background.png`;
             
             return templates.get((textureToRender ?? defaultTexture));
         }}}"
@@ -174,9 +174,12 @@
     >
         <div xmlns="http://www.w3.org/1999/xhtml">
             <div style="
-                text-shadow: 4px 4px 6px black;
+                text-shadow: 4px 4px 4px black;
                 color: transparent;
-                font-family: 'EUR42';
+                font-family: {{(card) => {
+                    const fonts = ['GodOfWar', 'GRECOromanLubedWrestling', 'Caslon Antique', 'EUR42', 'Modern Antiqua'];
+                    return fonts[card.RandomValue % fonts.length];
+                }}};
                 font-size:84px;
                 transform:scale({{(card) => {
                     const length = card.Name.length;
@@ -200,8 +203,11 @@
     >
         <div xmlns="http://www.w3.org/1999/xhtml">
             <div style="
-                color:white;
-                font-family: 'EUR42';
+                color: white;
+                font-family: {{(card) => {
+                    const fonts = ['GodOfWar', 'GRECOromanLubedWrestling', 'Caslon Antique', 'EUR42', 'Modern Antiqua'];
+                    return fonts[card.RandomValue % fonts.length];
+                }}};
                 font-size:84px;
                 transform:scale({{(card) => {
                     const length = card.Name.length;
@@ -331,7 +337,7 @@
             ">
                 {{(card) => {
                     return card.Realms
-                        .map((realm) => `<span style="text-shadow: 2px 2px 4px ${(realm === 'Void') ? 'white' : 'black'}">${realm}</span>`)
+                        .map((realm) => `<span style="text-shadow: 2px 2px 4px black">${realm}</span>`)
                         .join('<br/>');
                 }}}
             </div>
@@ -470,7 +476,7 @@
     <!-- Flavortext -->
     <foreignObject 
             x="46" 
-            y="820" 
+            y="824" 
             width="656" 
             height="140"
     >
@@ -529,7 +535,7 @@
             style="font-family: EUR42;
                 font-weight: bold;
                 fill: black;
-                text-shadow: 0px 0px 15px black;"
+                text-shadow: 4px 4px 15px black;"
         >
             {{(card) => card.Power}}
         </tspan>
@@ -630,7 +636,7 @@
                         return `${card.Set}, ${card.Rarity} #${card.CardID}`;
                     }
                     }}<br/>
-                &#169; Nonbiri Studios {{() => {return new Date().getFullYear();}}}
+                &#169; Nonbiri Studios {{() => new Date().getFullYear()}}
             </div>
         </div>
     </foreignObject>
