@@ -13,7 +13,7 @@
     <defs>
         <!-- Gradients -->
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="30%" style="stop-color: {{(card) => {
+            <stop offset="40%" style="stop-color: {{(card) => {
                 if(card.Realms.length == 0) return '#666666';
                 
                 if(card.Realms.includes('Divine')) {
@@ -28,7 +28,7 @@
                     return '#300D51';
                 }
             }}}" />
-            <stop offset="70%" style="stop-color: {{(card) => {
+            <stop offset="60%" style="stop-color: {{(card) => {
                 if(card.Realms.length == 0) return '#666666';
                 
                 if(card.Realms.includes('Void')) {
@@ -46,7 +46,7 @@
         </linearGradient>
         
         <!-- Gradient Filter-->
-        <rect id="complete-gradient" x="0" y="0" width="1500" height="1050" fill="url(#gradient)" />
+        <rect id="complete-gradient" x="0" y="0" width="1200" height="1200" fill="url(#gradient)" />
         <filter id="overlayFilter">
           <feImage href="#complete-gradient" result="gradient" />          
           <feBlend in2="SourceGraphic" in="gradient" mode="hue" result="blend"/>
@@ -157,7 +157,7 @@
         width="1028"
         height="145"
         href="{{(templates, card) => templates.get(`Banner_Top_Border.png`)}}"
-        filter="url(#overlayFilter) drop-shadow(0px 0px 8px black)"
+        filter="url(#overlayFilter) drop-shadow(0px 0px 8px black) drop-shadow(0px 0px 4px black)"
     />
     
     <!-- Card Name -->    
@@ -428,7 +428,7 @@
                         key = key.replaceAll('_', ' ');
                         if(key.length == 0) return;
                         
-                        if(effect.length > 0 && effect.includes(key)) {
+                        if(effect.length > 0 && effect.toLowerCase().includes(key.toLowerCase())) {
                             let keyword = effect.match(new RegExp(`${key}\\S*`, 'i'));
                             effect = effect.replaceAll(keyword, `<b>${keyword}</b>`);
                         }
@@ -472,7 +472,7 @@
     <!-- Flavortext -->
     <foreignObject 
             x="46" 
-            y="824" 
+            y="830" 
             width="656" 
             height="140"
     >
