@@ -46,15 +46,15 @@ jobs:
       run: ./scripts/update-sheet.sh
       env:
         GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
-        CURRENT_SHEET_PATH: $ {{ github.CURRENT_SHEET_PATH }}
+        CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
         
     - name: Update Artwork-References
       run: ./scripts/extract-artwork-data.sh
       env:
-        CURRENT_SHEET_PATH: $ {{ github.CURRENT_SHEET_PATH }}
+        CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
         
     - name: Commit and push changes
       run: |
-        git add *.xlsx
+        git add card-data/*
         git commit -m "Updated the workspace. [skip ci]"
         git push
