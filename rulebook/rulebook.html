@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Rulebook</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="rulebook.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./rulebook.js"></script>
+</head>
+<body>
+    <!--
+        title: Beyond
+        full-title: Shards of Beyond
+
+        Components
+            - 1 board
+            - 9 coins
+            - 10 dice
+            - 360 cards
+
+        Setup
+            - 
+    -->
+    <header class="mb-4">
+        <h1 class="text-center">UNO Rulebook</h1>
+    </header>
+    
+    <game-title></game-title>
+
+    <div class="container">
+        <section id="introduction" class="mb-5">
+            <h2>Introduction</h2>
+            <p>UNO is a classic card game that is easy to learn and fun for players of all ages. The goal is to be the first player to score 500 points. Points are scored by being the first to play all of your cards and earning points based on the cards left in your opponents' hands.</p>
+        </section>
+
+        <section id="components" class="mb-5">
+            <h2>Components</h2>
+            <ul>
+                <li>108 cards: 25 each of four colors (red, green, blue, and yellow), each color having two of each number except 0. Special cards: 8 Draw Two, 8 Reverse, 8 Skip, 4 Wild, and 4 Wild Draw Four cards.</li>
+            </ul>
+        </section>
+
+        <section id="setup" class="mb-5">
+            <h2>Setup</h2>
+            <ol>
+                <li>Each player draws a card; the player with the highest number deals. Special cards count as 0.</li>
+                <li>The dealer shuffles and deals each player 7 cards.</li>
+                <li>Place the remaining cards face down to form a draw pile. Turn over the top card to start the discard pile.</li>
+                <li>If the first card is a special card, follow the instructions for that card (see Game Play section).</li>
+            </ol>
+        </section>
+
+        <div class="page-break"></div>
+
+        <section id="gameplay" class="mb-5">
+            <h2>Game Play</h2>
+            <p>Players take turns in a clockwise direction. On a player’s turn, they must do one of the following:</p>
+            <ul>
+                <li>Play one card matching the discard pile's top card in number, color, or symbol.</li>
+                <li>Play a Wild card or a Wild Draw Four card.</li>
+                <li>Draw a card from the draw pile if they cannot play a card.</li>
+            </ul>
+            <p>If the drawn card can be played, the player may do so immediately. Otherwise, play moves to the next player.</p>
+            <h3>Special Cards</h3>
+            <ul>
+                <li><strong>Draw Two:</strong> The next player draws two cards and loses their turn.</li>
+                <li><strong>Reverse:</strong> Reverses the direction of play.</li>
+                <li><strong>Skip:</strong> The next player loses their turn.</li>
+                <li><strong>Wild:</strong> The player declares the next color to be matched.</li>
+                <li><strong>Wild Draw Four:</strong> The player declares the next color to be matched; the next player draws four cards and loses their turn.</li>
+            </ul>
+            <p><strong>Note:</strong> If a player has only one card left, they must say "UNO!" If they forget and are caught before the next player takes their turn, they must draw two cards.</p>
+        </section>
+
+        <section id="winning" class="mb-5">
+            <h2>Winning the Game</h2>
+            <p>The first player to reach 500 points wins the game. Points are scored as follows:</p>
+            <ul>
+                <li>All number cards (0-9): Face value</li>
+                <li>Draw Two, Reverse, Skip: 20 points each</li>
+                <li>Wild, Wild Draw Four: 50 points each</li>
+            </ul>
+        </section>
+
+        <footer class="text-center mt-5">
+            <p>© 2024 UNO Game Co. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

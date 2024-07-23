@@ -97,6 +97,7 @@ cards = new CustomNode((card) => {
     card.Types = card.Types
         .trim()
         .replaceAll(',', '')
+        .replaceAll('?', '')
         .split(' ')
         .filter((type) => type != '');
     card.Keyword = card.Keyword
@@ -119,10 +120,13 @@ let iterator = new IteratorNode(collector);
 
 // Load the Image File for each given Card.
 let cardImage = new CustomNode((card) => {
-    const cardartFileName = card.Name.replaceAll(new RegExp('[\\s\\-\']', 'gm'), '');
+    const cardartFileName = card.Name.replaceAll(/[\s\-\']/gm, '');
     const artworks = fs.readdirSync(artworkFolder, {withFileTypes: true})
-        .map((dirent) => `${dirent.name}`)
-        .filter((path) => path.startsWith(cardartFileName))
+        .map((path) => path.name)
+        .filter((path) => {
+            const regex = new RegExp(`${cardartFileName}(?:\\-\\w+)?\\.`);
+            return regex.test(path);
+        })
         .map((path) => {
             return {
                 name: (/(?<=-)[^.]+/g.exec(path) ?? ['default'])[0],
@@ -132,6 +136,7 @@ let cardImage = new CustomNode((card) => {
 
     return { ...card, Artwork: artworks};
 }, iterator);
+cardImage = new FreezeNode(cardImage);
 
 // We don't have all artfiles for prototypes necessarily...
 let imageInfo = new CustomNode((card) => card.Artwork, cardImage);
@@ -249,12 +254,16 @@ let exportSingleCard = new CustomNode((card) => {
 let groupedCards = new ArrayzerNode(exportSingleCard);
 
 groupedCards = new CustomNode((cards) => cards.reduce((prev, curr) => {
-    prev[curr.Version] = (prev[curr.Version] ?? []).push(curr);
+    if(prev[curr.Version] === undefined) prev[curr.Version] = [];
+    prev[curr.Version].push(curr);
+
     return prev;
 }, {}), groupedCards);
 
 // Make each variation an array.
 groupedCards = new CustomNode((cards) => Object.values(cards), groupedCards);
+
+groupedCards = new IteratorNode(groupedCards);
 
 let commonCards = new CustomNode((cards) => cards.filter((card) => card.Rarity === 'Common'), groupedCards);
 let uncommonCards = new CustomNode((cards) => cards.filter((card) => card.Rarity === 'Uncommon'), groupedCards);
@@ -313,6 +322,7 @@ let renderCommons = new CustomNode((buffers, commonCards) => {
     // TODO: Export set-specific
     const dir = `${tabletopFolder}`;
     createFolderIfNotExists(dir);
+    createFolderIfNotExists(`${dir}/${version}`);
 
     buffers.forEach((buffer, i) => fs.writeFileSync(`${dir}/${version}/commons_${i}.png`, buffer));
 
@@ -323,12 +333,13 @@ let renderCommons = new CustomNode((buffers, commonCards) => {
 let renderUncommons = new CustomNode((buffers, uncommonCards) => {
     if(uncommonCards.length == 0) return;
     const setName = uncommonCards[0].Set;
-    const version = commonCards[0].Version;
+    const version = uncommonCards[0].Version;
 
     createFolderIfNotExists(tabletopFolder);
     // TODO: Export set-specific
     const dir = `${tabletopFolder}`;
     createFolderIfNotExists(dir);
+    createFolderIfNotExists(`${dir}/${version}`);
 
     buffers.forEach((buffer, i) => fs.writeFileSync(`${dir}/${version}/uncommons_${i}.png`, buffer));
 
@@ -339,12 +350,13 @@ let renderUncommons = new CustomNode((buffers, uncommonCards) => {
 let renderRares = new CustomNode((buffers, rareCards) => {
     if(rareCards.length == 0) return;
     const setName = rareCards[0].Set;
-    const version = commonCards[0].Version;
+    const version = rareCards[0].Version;
 
     createFolderIfNotExists(tabletopFolder);
     // TODO: Export set-specific
     const dir = `${tabletopFolder}`;
     createFolderIfNotExists(dir);
+    createFolderIfNotExists(`${dir}/${version}`);
 
     buffers.forEach((buffer, i) => fs.writeFileSync(`${dir}/${version}/rares_${i}.png`, buffer));
 
