@@ -42,13 +42,13 @@ jobs:
         git pull
 
     - name: Update workspace sheet
-      run: /scripts/update-sheet.sh
+      run: ./scripts/update-sheet.sh
       env:
         GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
         CURRENT_SHEET_PATH: $ {{ github.CURRENT_SHEET_PATH }}
         
     - name: Update Artwork-References
-      run: /scripts/update-sheet.sh
+      run: ./scripts/update-sheet.sh
       env:
         CURRENT_SHEET_PATH: $ {{ github.CURRENT_SHEET_PATH }}
         
