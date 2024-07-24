@@ -5,3 +5,4 @@ export/
 tabletop/
 tabletop/*
 *.svg
+coverage/

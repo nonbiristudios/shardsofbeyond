@@ -1,0 +1,70 @@
+.imageRow img {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+.border {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.imageEntry img {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  outline: 10px solid black;
+}
+
+.medal {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.prevent-drag {
+	user-drag: none;
+	-webkit-user-drag: none;
+	-moz-user-select: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.code-input {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  white-space: pre;
+  text-wrap: wrap;
+  resize: none;
+}
+
+.code-input:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.done {
+  color: lightgreen;
+}
+
+.wrong {
+  color: red;
+}

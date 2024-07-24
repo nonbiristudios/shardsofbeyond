@@ -27,8 +27,12 @@ awk -F, '
     }
     NR > 1 {
         $0 = substr($0, 2, length($0) - 2)
-        
         if ($name_idx != "") {
+        
+            # Comma Separation only on the 2nd element forwards
+            if (NR > 2) {
+                printf ","
+            }
         
             # Print the name and artwork array as JSON
             printf "\t\"%s\": [\n", $name_idx
@@ -48,7 +52,7 @@ awk -F, '
                     printf "{\"id\": \"%s\", \"index\":\"%s\"}\n", id, indix
                 }
             }
-            printf "\t],\n"
+            printf "\t]\n"
         }
     }
     END {
