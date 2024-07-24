@@ -12,6 +12,7 @@ on:
       #- 'artworks/**' # Matches any file within the 'stats/' folder
 
   workflow_dispatch:
+  workflow_call:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

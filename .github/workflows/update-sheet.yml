@@ -12,35 +12,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      
-    - name: Set up cache
-      id: cache-gnumeric
-      uses: actions/cache@v3
-      with:
-        path: /usr/local
-        key: gnumeric-${{ runner.os }}-apt-${{ hashFiles('apt-get-list.txt') }}
-        restore-keys: |
-          gnumeric-${{ runner.os }}-apt-
-
-    - name: Cache hit?
-      if: steps.cache-gnumeric.outputs.cache-hit != 'true'
-      run: echo "Cache not found. Installing Gnumeric..."
-
-    - name: Install dependencies
-      if: steps.cache-gnumeric.outputs.cache-hit != 'true'
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y gnumeric
-        # Create a list of installed packages and their versions to use as a cache key
-        apt list --installed > apt-get-list.txt
-      
-    - name: Set up Git
-      run: |
-        git config --local --get remote.origin.url
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git pull
-        ls
 
     - name: Update workspace sheet
       run: ./scripts/update-sheet.sh
@@ -52,9 +23,15 @@ jobs:
       run: ./scripts/extract-artwork-data.sh
       env:
         CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
-        
+       
+    - name: Extract Artwork Data
+      run: ./scripts/extract-artwork-data.sh
+
     - name: Commit and push changes
       run: |
         git add ./card-data/*
         git commit -m "Updated the workspace. [skip ci]"
         git push
+        
+  deploy-voting-tool:
+    uses: ./.github/workflows/deploy-artwork-voting-tool.yml
