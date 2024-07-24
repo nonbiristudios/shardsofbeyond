@@ -10,7 +10,7 @@ curl -sL "$GOOGLE_SHEET_URL" -o "$TEMP_PATH"
 REMOTE_HASH="sha256sum '$TEMP_PATH' | awk '{print $1}'"
 
 if [[ -f "$CURRENT_SHEET_PATH" ]]; then
-    LOCAL_HASH=sha256sum "$CURRENT_SHEET_PATH" | awk '{print $1}'
+    LOCAL_HASH="sha256sum '$CURRENT_SHEET_PATH' | awk '{print $1}'"
 else
     LOCAL_HASH=""
 fi
