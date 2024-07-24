@@ -19,6 +19,19 @@ jobs:
         GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
         CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
         
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gnumeric
+            
+    - name: Set up Git
+      run: |
+        git config --local --get remote.origin.url
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git pull
+        ls
+        
     - name: Update Artwork-References
       run: ./scripts/extract-artwork-data.sh
       env:

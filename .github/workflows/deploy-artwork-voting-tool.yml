@@ -3,6 +3,10 @@ name: Deploy Artwork Voting Tool
 on:
   workflow_dispatch:
   workflow_call:
+  workflow_run:
+    workflows: [Update XLSX File]
+    types:
+      - completed
 
 permissions:
   contents: write
