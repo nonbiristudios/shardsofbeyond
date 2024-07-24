@@ -71,13 +71,20 @@ const update = () => {
 
 const toggleImageRow = (e) => {
   const imageRow = e.srcElement.parentElement.querySelector(".imageRow");
+  const allImageRows = document.querySelectorAll('.imageRow');
+
+  allImageRows.forEach((row) => {
+    if(row === allImageRows) return;
+
+    row.classList.add('collapsing');
+  });
 
   if(imageRow.classList.contains('collapsing')) {
     imageRow.classList.remove('collapsing');
   } else {
     imageRow.classList.add('collapsing');
   }
-}
+};
 
 const updateSelection = (name, selection) => {
   selection = JSON.parse(atob(selection));
