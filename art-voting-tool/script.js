@@ -55,7 +55,7 @@ const update = () => {
 
     table.insertAdjacentHTML('beforeend', 
       `<li class="list-group-item">
-        <div class="entry" id="entry-${name}">
+        <div class="entry wrong" id="entry-${name}">
           <div class="name" onclick="toggleImageRow(event)">
             ${name}
           </div>
@@ -166,7 +166,7 @@ const updateCorrectness = (name) => {
       entry.classList.remove('gold-medal');
       entry.classList.remove('silver-medal');
       entry.classList.remove('bronze-medal');
-      
+
       // Any medal given?
       const medal = Object.entries(votes[name]).filter((a) => {
         console.log(a[1], id);
