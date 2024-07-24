@@ -1,5 +1,6 @@
 let artworks;
 const medals = ['🏅','🥈','🥉'];
+const medalValues = ['gold', 'silver', 'bronze'];
 let table;
 
 const createURL = (id, index) => `https://cdn.midjourney.com/${id}/0_${index}.png`;
@@ -154,5 +155,29 @@ const updateCorrectness = (name) => {
       el.classList.remove('done');
       el.classList.add('wrong');
     }
+
+    // Remove colors.
+    artworks[name].forEach((image) => {
+      const id = `${image.id}_${image.index}`;
+      const entry = document.getElementById(`entry-${id}`);
+      
+      if(!entry) return;
+
+      entry.classList.remove('gold-medal');
+      entry.classList.remove('silver-medal');
+      entry.classList.remove('bronze-medal');
+      
+      // Any medal given?
+      const medal = Object.entries(votes[name]).filter((a) => {
+        console.log(a[1], id);
+        return a[1] == id;
+      });
+
+      if(medal.length == 0) return;
+
+      console.log('!!!', medal);
+      
+      entry.classList.add(`${medalValues[medal[0][0]]}-medal`);
+    })
   }
 };

@@ -68,3 +68,15 @@
 .wrong {
   color: red;
 }
+
+.gold-medal {
+  background-color: gold;
+}
+
+.silver-medal {
+  background-color: silver;
+}
+
+.bronze-medal {
+  background-color: #CD7F32;
+}
