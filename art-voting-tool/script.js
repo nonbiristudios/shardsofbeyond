@@ -107,8 +107,6 @@ const updateSelection = (name, selection) => {
   votes[name][selection.medal] = `${selection.id}_${selection.index}`;
   votes[name].c = Object.keys(artworks[name]).length;
 
-  console.log(votes);
-
   updateCorrectness(name);
 };
 
@@ -140,6 +138,7 @@ const codeChanged = () => {
       if(medal === 'c') return;
 
       const box = document.getElementById(`${image}_${medal}`);
+      if(box === null) return;
       box.checked = true;
     });
     updateCorrectness(name);
@@ -175,15 +174,10 @@ const updateCorrectness = (name) => {
       entry.classList.remove('bronze-medal');
 
       // Any medal given?
-      const medal = Object.entries(votes[name]).filter((a) => {
-        console.log(a[1], id);
-        return a[1] == id;
-      });
+      const medal = Object.entries(votes[name]).filter((a) => a[1] == id);
 
       if(medal.length == 0) return;
 
-      console.log('!!!', medal);
-      
       entry.classList.add(`${medalValues[medal[0][0]]}-medal`);
     })
   }

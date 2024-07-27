@@ -23,6 +23,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y gnumeric
+        sudo apt-get install -y jq
             
     - name: Set up Git
       run: |
@@ -36,7 +37,11 @@ jobs:
       run: ./scripts/extract-artwork-data.sh
       env:
         CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
-
+        
+    - name: Update voted for Artworks
+      run: ./scripts/assign-artwork-based-on-votes.sh
+      env:
+        CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
         
     - name: Prepare Art Voting Tool
       run: ./scripts/create-art-vote-tool.sh
