@@ -6,4 +6,4 @@ if [[ -z "$CURRENT_ARTWORKS_JSON" ]]; then
     exit 1
 fi
 
-mv "$CURRENT_ARTWORKS_JSON" "$WEBSITE_FOLDER/artworks.json"
+cp "$CURRENT_ARTWORKS_JSON" "$WEBSITE_FOLDER/artworks.json"
