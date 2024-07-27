@@ -43,8 +43,6 @@ jobs:
     - name: Commit and push changes
       run: |
         git add ./card-data/*
+        git add ./card-data/votes/*
         git commit -m "Updated the workspace. [skip ci]"
         git push
-        
-  deploy-voting-tool:
-    uses: ./.github/workflows/deploy-artwork-voting-tool.yml
