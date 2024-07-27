@@ -299,18 +299,54 @@
 ,	"Sand Witch": [
 	]
 ,	"Amberlock Dragonling": [
+		{"id": "31869c2e-79e0-44a2-bcb2-ef2489f226ad", "index":"3"}
+		,{"id": "86e09484-75c2-4d9e-b33e-31faa3d4e251", "index":"2"}
+		,{"id": "68e2c61d-f9ac-435e-8eb9-44ef82724758", "index":"1"}
+		,{"id": "02a937b0-dc30-4b61-a80a-775950a47d1e", "index":"0"}
+		,{"id": "f8926069-73ab-4045-b918-9cb77758a03b", "index":"3"}
+		,{"id": "a02f660a-1dce-436f-acb5-465e63f5bbc5", "index":"1"}
+		,{"id": "0e687280-8a8e-4bab-ba7e-71eecfd6f625", "index":"2"}
+		,{"id": "5e110d2e-a7e4-436b-bb11-4fb86e1580e9", "index":"3"}
+		,{"id": "5e110d2e-a7e4-436b-bb11-4fb86e1580e9", "index":"2"}
+		,{"id": "750ed738-29ba-42b6-8f6f-d878ddac70d4", "index":"1"}
 	]
 ,	"Cavern Lindwurm": [
+		{"id": "4cc82fb7-ff66-4625-86b9-bd6b6019e512", "index":"2"}
+		,{"id": "172ae98b-46c0-4825-b85b-219a47dfecc0", "index":"2"}
+		,{"id": "ab137782-70f1-4ba3-840a-49cf4fda7bbe", "index":"3"}
+		,{"id": "2780038d-6258-4c7a-a5e0-700cdfe423f9", "index":"0"}
+		,{"id": "20fb2d42-8fe0-4690-82e2-b7936769540e", "index":"1"}
+		,{"id": "bb160c1d-6202-4543-88a9-152dadcce248", "index":"2"}
+		,{"id": "42ab612c-d4a4-4640-b0eb-a0098355068a", "index":"2"}
+		,{"id": "42ab612c-d4a4-4640-b0eb-a0098355068a", "index":"1"}
+		,{"id": "da9010de-44c1-42bf-8bbc-f7eb026c1882", "index":"2"}
+		,{"id": "bdfca501-4b58-4f97-83e7-bcf89c7e7f5e", "index":"0"}
 	]
 ,	"Shardhorde Galewhelp": [
 	]
 ,	"Sparkwielder": [
 	]
 ,	"Dragon Egg": [
+		{"id": "a4c0044f-a986-4aa9-87bf-000b67966a4b", "index":"0"}
+		,{"id": "1368b59f-6a3a-4f37-b704-dc0023c5a39b", "index":"0"}
+		,{"id": "1368b59f-6a3a-4f37-b704-dc0023c5a39b", "index":"3"}
+		,{"id": "3e4015d3-c57e-4d12-9ddb-df5fcfb9d19d", "index":"0"}
 	]
 ,	"Glinteye Hoarder": [
+		{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"0"}
+		,{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"2"}
+		,{"id": "47e93cbb-0e71-491a-a49b-5685172b96b1", "index":"2"}
+		,{"id": "c0bbf41e-da40-447a-8817-ba761c755907", "index":"1"}
+		,{"id": "e27864a6-cc07-4984-b181-922b584c0d96", "index":"3"}
+		,{"id": "0a1168a7-16a3-4022-b822-fd13a508a624", "index":"0"}
+		,{"id": "e30e77bd-955e-4e8e-afe4-eae7161982c4", "index":"3"}
+		,{"id": "eaad0536-abea-4999-883c-e3e793929cf4", "index":"3"}
+		,{"id": "a3874385-0194-4c0f-ba14-08b4d7628a67", "index":"1"}
+		,{"id": "8c585bc8-5180-439e-8adb-c3a47c0150fe", "index":"2"}
 	]
 ,	"Shardhorde Leviathan": [
+		{"id": "f04b4fbf-83ad-4f50-9c3a-68843e69ef11", "index":"2"}
+		,{"id": "23732ab2-74d0-4739-baaf-5e6c23e8873a", "index":"0"}
 	]
 ,	"Stormbringer": [
 	]
