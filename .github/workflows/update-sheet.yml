@@ -36,13 +36,14 @@ jobs:
       run: ./scripts/extract-artwork-data.sh
       env:
         CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
-       
-    - name: Extract Artwork Data
-      run: ./scripts/extract-artwork-data.sh
 
+        
+    - name: Prepare Art Voting Tool
+      run: ./scripts/create-art-vote-tool.sh
+      
     - name: Commit and push changes
       run: |
         git add ./card-data/*
         git add ./card-data/votes/*
-        git commit -m "Updated the workspace. [skip ci]"
+        git commit -m "Updated the sheet. [skip ci]"
         git push
