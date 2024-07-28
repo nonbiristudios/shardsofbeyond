@@ -2,7 +2,7 @@ CURRENT_ARTWORKS_JSON="${CURRENT_ARTWORKS_JSON:=./card-data/card-artworks.genera
 WEBSITE_FOLDER="${WEBSITE_FOLDER:=./art-voting-tool}"
 
 if [[ -z "$CURRENT_ARTWORKS_JSON" ]]; then
-    echo "Error: JSON file with votes does not exist!"
+    echo "Error: JSON file with generated artworks does not exist!"
     exit 1
 fi
 

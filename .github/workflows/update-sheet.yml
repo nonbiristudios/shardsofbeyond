@@ -13,18 +13,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Update workspace sheet
-      run: ./scripts/update-sheet.sh
-      env:
-        GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
-        CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
-        
     - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y gnumeric
         sudo apt-get install -y jq
             
+    - name: Update workspace sheet
+      run: ./scripts/update-sheet.sh
+      env:
+        GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
+        CURRENT_SHEET_PATH: ${{ github.CURRENT_SHEET_PATH }}
+        
     - name: Set up Git
       run: |
         git config --local --get remote.origin.url
