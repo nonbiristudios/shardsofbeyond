@@ -59,6 +59,11 @@
           <feColorMatrix type="saturate" in="SourceGraphic" values="0.1"/>
         </filter>
         
+        <filter id="distort">
+          <feTurbulence baseFrequency="0.01 0.01" numOctaves="20" result="noise" seed="{{(card) => card.RandomValue}}"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="B"/>
+        </filter>
+        
         <linearGradient id="fadeGrad" y2="1" x1="0" x2="0" y1="0">
           <stop offset="0" stop-color="black"/>
           <stop offset="0.25" stop-color="white"/>
@@ -162,94 +167,50 @@
     
     <!-- Card Name -->    
     <!-- Black name + smooth filter -->
-    <foreignObject 
-        x="-400" 
-        y="-12" 
-        width="1550" 
-        height="200"
+    <text 
+        x="70" 
+        y="110"
+        {{(card) => card.Name.length > 15 ? 'textLength="610px"' : ''}}
+        lengthAdjust="spacingAndGlyphs"
+        fill="white"
+        style="letter-spacing: -4px;
+            font-family: 'GRECOromanLubedJudo Medium';
+            font-size:84px;
+            text-shadow: 4px 4px 4px black;
+            text-align: center"
     >
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <div style="
-                text-shadow: 4px 4px 4px black;
-                color: transparent;
-                letter-spacing: -4px;
-                font-family: 'GRECOromanLubedJudo Medium';
-                font-size:84px;
-                transform:scale({{(card) => {
-                    const length = card.Name.length;
-                    
-                    if(length < 17) return 1;
-                    
-                    return 1 - (0.09 * (length - 17));
-                }}},1)
-            ">
-                <center>{{(card) => card.Name}}</center>
-            </div>
-        </div>
-    </foreignObject>
-    
-    <!--    super wide so that we can render even _huge_ Names -->
-    <foreignObject 
-        x="-400" 
-        y="-12" 
-        width="1550" 
-        height="200"
-    >
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <div style="
-                color: white;
-                font-family: 'GRECOromanLubedJudo Medium';
-                letter-spacing: -4px;
-                font-size:84px;
-                transform:scale({{(card) => {
-                    const length = card.Name.length;
-                    
-                    if(length < 17) return 1;
-                    
-                    return 1 - (0.09 * (length - 17));
-                }}},1)
-            ">
-                <center>{{(card) => card.Name}}</center>
-            </div>
-        </div>
-    </foreignObject>
+        {{(card) => card.Name}}
+    </text>
     
     <rect x="-15" y="675" opacity="0.52" width="800" height="400" fill="black"/>
     
     <!-- Center Banner -->
+    <!-- Base Box -->
     <image
-        x="35"
-        y="580"
-        width="680"
-        height="100"
-        opacity="0.7"
-        preserveAspectRatio="xMaxYMid slice"
-        href="{{(templates, card) => templates.get(`Galaxy (${(card.RandomValue % 4) + 1}).png`)}}"
+        x="11"
+        y="565"
+        width="727"
+        height="134"
+        preserveAspectRatio="none"
+        href="{{(templates, card) => templates.get(`Banner_Middle.png`)}}"
+        filter="url(#desaturate) drop-shadow(2px 2px 0px black) drop-shadow(-2px 2px 0px black) drop-shadow(2px -2px 0px black) drop-shadow(-2px -2px 0px black)"
     />
-    <rect
-        x="35"
-        y="580"
-        width="680"
-        height="100"
-        fill="none"
-        stroke="black"
-        stroke-width="16"
-    />
-    <rect
-        x="35"
-        y="580"
-        width="680"
-        height="100"
-        fill="none"
-        stroke="url(#gradient)"
-        stroke-width="10"
+    <!-- Border -->
+    <image
+        x="11"
+        y="565"
+        width="727"
+        height="134"
+        preserveAspectRatio="none"
+        href="{{(templates, card) => templates.get(`Banner_Middle_Border.png`)}}"
+        filter="url(#overlayFilter) drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 4px black)"
     />
 
     <!-- Type -->
     <!-- Shadow -->
     <foreignObject 
-        x="50" 
-        y="588" 
+        x="70" 
+        y="598" 
         width="655" 
         height="255"
     >
@@ -278,10 +239,11 @@
             </div>
         </div>
     </foreignObject>
+    
     <!-- real Type -->
     <foreignObject 
-        x="50" 
-        y="588" 
+        x="70" 
+        y="598" 
         width="655" 
         height="255"
     >
@@ -311,61 +273,31 @@
     </foreignObject>
 	
 	<!-- Realm Text -->
-    <!-- Realm Shadow -->
-    <foreignObject 
-        x="500" 
-        y="588" 
-        width="200" 
-        height="255"
+    <text 
+        x="650" 
+        y="630"
+        fill="white"
+        text-anchor="end"
+        style="font-family:'Palatino Linotype', serif;
+            font-weight: bold;
+            font-size: 38px;
+            line-height: 40px;
+            text-shadow: 2px 2px 4px black;"
     >
-        <div xmlns="http://www.w3.org/1999/xhtml" x="60">
-            <div style="
-                font-family:'Palatino Linotype', serif;
-                font-weight: bold;
-                font-size:38px;
-                line-height:40px;
-                text-align:right;
-                color: transparent;
-            ">
-                {{(card) => {
-                    return card.Realms
-                        .map((realm) => `<span style="text-shadow: 2px 2px 4px black">${realm}</span>`)
-                        .join('<br/>');
-                }}}
-            </div>
-        </div>
-    </foreignObject>
-    <!-- Real Realm -->
-    <foreignObject 
-        x="500" 
-        y="588" 
-        width="200" 
-        height="255"
-    >
-        <div xmlns="http://www.w3.org/1999/xhtml" x="60">
-            <div style="
-                font-family:'Palatino Linotype', serif;
-                font-weight: bold;
-                font-size:38px;
-                line-height:40px;
-                text-align:right
-            ">
-                {{(card) => {
-                    const colors = {
-                        'Divine': '#FCE79C',
-                        'Elemental': '#FF7344',
-                        'Mortal': '#287CC4',
-                        'Nature': '#408C2F',
-                        'Void': '#3B2055'
-                    };
-                    
-                    return card.Realms
-                        .map((realm) => `<span style="color: ${colors[realm]}">${realm}</span>`)
-                        .join('<br/>');
-                }}}
-            </div>
-        </div>
-    </foreignObject>
+        {{(card) => {
+            const colors = {
+                'Divine': '#FCE79C',
+                'Elemental': '#FF7344',
+                'Mortal': '#287CC4',
+                'Nature': '#408C2F',
+                'Void': '#3B2055'
+            };
+            
+            return card.Realms
+                .map((realm) => `<tspan style="dy:1em; fill: ${colors[realm]}">${realm}</tspan>`)
+                .join('');
+        }}}
+    </text>
     
     <!-- Text of Textbox -->
     <foreignObject 
@@ -513,49 +445,50 @@
         preserveAspectRatio="xMidYMid"
         href="{{(card, templates) => templates.get(`Rarity_${card.Rarity}.png`)}}"
     />
-
-
+    
     <!-- Power -->
-    <!-- Power Shadow -->
     <text
-        x="{{(card) => card.Power === 4 ? '50%' : '52%'}}"
+        x="{{(card) => card.Power === 4 ? '51%' : '52%'}}"
         y="685"
         font-size="185"
         text-anchor="middle"
+        filter="drop-shadow(0px 0px 4px black) drop-shadow(0px 0px 4px black)"
+        font-family="GRECOromanLubedJudo Medium"
+        stroke="black"
+        stroke-width="10"
+        paint-order="stroke"
+        font-weight="bold"
+        fill="white"
     >
-        <tspan
-            style="font-family: 'GRECOromanLubedJudo Medium';
-                font-weight: bold;
-                fill: black;
-                text-shadow: 4px 4px 15px black;"
-        >
-            <!--{{(card) => card.Power}}-->
+        <tspan>
+            {{(card) => card.Power}}
         </tspan>
     </text>
     
-    <!-- Power Real -->
-    <foreignObject
-        x="0"
-        y="685"
-        width="750"
-        height="500"
-    >
-        <div xmlns="http://www.w3.org/1999/xhtml" x="0">
-            <div style="
-                border-style: solid;
-                border-color: red;
-                font-size: 185px;
-                color: transparent;
-                background: url({{(templates) => templates.get('Background.png')}}), black;
-                background-clip: text;
-                -webkit-background-clip: text;
-                font-family: GRECOromanLubedJudo Medium;
-                font-weight: bold;"
-            >
-                {{(card) => card.Power}}
+    <!-- Textured Power?
+        <foreignObject
+            x="0"
+            y="685"
+            width="750"
+            height="500"
+        >
+            <div xmlns="http://www.w3.org/1999/xhtml" x="0">
+                <div style="
+                    border-style: solid;
+                    border-color: red;
+                    font-size: 185px;
+                    color: transparent;
+                    background: url({{(templates) => templates.get('Background.png')}}), black;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    font-family: GRECOromanLubedJudo Medium;
+                    font-weight: bold;"
+                >
+                    {{(card) => card.Power}}
+                </div>
             </div>
-        </div>
-    </foreignObject>
+        </foreignObject>
+    -->
     
     <!-- Crystals -->        
     {{(card, templates) => {
@@ -650,5 +583,6 @@
         stroke="black"
         stroke-width="35"
         rx="35"
+        filter="url(#distort)"
     />
 </svg>

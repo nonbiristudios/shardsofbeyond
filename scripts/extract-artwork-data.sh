@@ -95,5 +95,6 @@ awk -F, '
 ' $TEMP_FILE_NAME.$VOTE_SHEET_INDEX > $TEMP_FILE_NAME.trash
 
 mv *.vote.json "$VOTE_TARGET_FOLDER"
+mv $TEMP_FILE_NAME.0 "$TARGET_FOLDER/cards.csv"
 
 rm $TEMP_FILE_NAME.*

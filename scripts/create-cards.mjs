@@ -20,7 +20,7 @@ const dataFolder = './card-data'
 const artworkFolder = './artworks';
 const templateFolder = './templates';
 const exportFolder = './export';
-const cardLayout = './scripts/template-v3.svgjs';
+const cardLayout = './templates/template-v3.svgjs';
 const tabletopFolder = './tabletop';
 
 const createFolderIfNotExists = (dir) => {
