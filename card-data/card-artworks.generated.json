@@ -1,88 +1,131 @@
 {
-	"Alabaster Exarch": [
+	"Aethergolem": [
+	]
+,	"Alabaster Exarch": [
 		{"id": "7c7b4c53-2f2b-49df-a6bf-37f29b9e5746", "index":"3"}
 		,{"id": "db52578b-cf61-4cc6-b730-21e3bd1752ce", "index":"3"}
 	]
-,	"Aethergolem": [
-	]
 ,	"Ascendant Faithweaver": [
-	]
-,	"Dream Traveler": [
-		{"id": "1ae58892-c0c7-4cd2-b4f2-61e436a76acb", "index":"0"}
-	]
-,	"Thunderswarm Pegasus": [
-		{"id": "2892cac4-ecfc-4b4f-a4e9-1eb61a4971a8", "index":"3"}
-	]
-,	"Baby Lamassu": [
-		{"id": "b1e88fda-7d3b-4302-b0b0-4eee0012e193", "index":"1"}
-	]
-,	"Chronosand Sphinx": [
-		{"id": "8c6c5803-34bd-4238-bf4b-5436f269949d", "index":"3"}
-	]
-,	"Thunderswarm Skirmisher": [
-		{"id": "1352ae1c-e93b-4eeb-9c2b-8d45efc47f38", "index":"0"}
-		,{"id": "e58d0ede-21d0-4b9c-87b3-4745b329f97d", "index":"0"}
-	]
-,	"Crusader of the Desert Winds": [
-	]
-,	"Oasis Sprite": [
-		{"id": "16fb7678-58aa-43f4-976c-6411d373341c", "index":"1"}
-	]
-,	"Guardian Angel": [
-	]
-,	"Ivoryscar Cursewing": [
-	]
-,	"Ivoryscar Magistrate": [
-	]
-,	"Harmonic Echo": [
-		{"id": "2fb88f6b-7b37-40f3-9ddf-e46da64b9024", "index":"2"}
-	]
-,	"Kylix of Excess": [
-	]
-,	"Monolith of Meditation": [
 	]
 ,	"Avenging Force": [
 		{"id": "22993c97-4c0e-4b20-b61e-0765854b1d0c", "index":"2"}
 	]
-,	"Doma Angel": [
-		{"id": "e10bf9b3-3d4a-458c-b4e9-595c4cddd9bf", "index":"0"}
-		,{"id": "bf2b9797-ca47-418b-8b51-f73b166d794e", "index":"0"}
+,	"Baby Lamassu": [
+		{"id": "b1e88fda-7d3b-4302-b0b0-4eee0012e193", "index":"1"}
 	]
-,	"Pyramidion": [
+,	"Blackmarble Gargoyle": [
+		{"id": "a408d92c-6e6e-4d30-93ad-e526a5c9555f", "index":"3"}
 	]
-,	"Solarsteel Prodigy": [
+,	"Chronosand Sphinx": [
+		{"id": "8c6c5803-34bd-4238-bf4b-5436f269949d", "index":"3"}
+	]
+,	"Crusader of the Desert Winds": [
+	]
+,	"Cryptosphinx": [
+		{"id": "250e747b-c7e8-4a5b-a483-65446cd307aa", "index":"2"}
+	]
+,	"Cryptroach": [
+		{"id": "b6b028b1-6920-4dde-9694-73d589c7969e", "index":"1"}
+	]
+,	"Damaged Automaton": [
+		{"id": "3644d9f4-a154-4538-96ea-489d6da10cda", "index":"2"}
 	]
 ,	"Diviner of Fates": [
 		{"id": "9b1cd3ba-f0fb-43df-a5df-aa0555f184e0", "index":"0"}
 		,{"id": "7e6524d5-fc47-4a64-ac87-5ec5a5ddad4c", "index":"1"}
 		,{"id": "7e6524d5-fc47-4a64-ac87-5ec5a5ddad4c", "index":"3"}
 	]
+,	"Doma Angel": [
+		{"id": "e10bf9b3-3d4a-458c-b4e9-595c4cddd9bf", "index":"0"}
+		,{"id": "bf2b9797-ca47-418b-8b51-f73b166d794e", "index":"0"}
+	]
 ,	"Dove of Serenity": [
 		{"id": "bd138556-f391-44ec-ab68-5aa4b5a9f606", "index":"1"}
 	]
-,	"Starforger": [
+,	"Dream Traveler": [
+		{"id": "1ae58892-c0c7-4cd2-b4f2-61e436a76acb", "index":"0"}
 	]
-,	"Scripture Monkey": [
-		{"id": "3321903a-a303-44ee-8b5d-3487bd693fa9", "index":"3"}
-	]
-,	"The Kitty of Thamiel": [
+,	"Embalmed Apophis": [
+		{"id": "13499ec2-9a5a-4595-9ccd-fbcfe0fffeaf", "index":"0"}
 	]
 ,	"Feline Ushabti": [
 		{"id": "7b73514c-612c-4f7a-b7b0-8d03ff687646", "index":"1"}
 	]
+,	"Guardian Angel": [
+	]
+,	"Guardian of the Gates": [
+		{"id": "13533eea-4c56-4787-a8d1-5b5de4d2fe40", "index":"0"}
+	]
+,	"Hallowed Exorcist": [
+		{"id": "fb9ad282-f768-4726-b79b-f40c11d0277b", "index":"3"}
+	]
+,	"Harmonic Echo": [
+		{"id": "2fb88f6b-7b37-40f3-9ddf-e46da64b9024", "index":"2"}
+	]
+,	"Herald of Eternal Grace": [
+	]
 ,	"Ibis Ushabti": [
 		{"id": "10569df3-af61-474e-9997-08b1211eac4b", "index":"3"}
+	]
+,	"Ivoryscar Cursewing": [
+	]
+,	"Ivoryscar Magistrate": [
+	]
+,	"Kylix of Excess": [
+	]
+,	"Maze Master Sphinx": [
+		{"id": "9ccceaff-97a6-4625-9bea-6567b85c04ef", "index":"0"}
+	]
+,	"Monolith of Meditation": [
+	]
+,	"Mystic Puzzle Box": [
+		{"id": "0cf0be47-c57f-4feb-84e6-1790219ba54b", "index":"0"}
+	]
+,	"Oasis Sprite": [
+		{"id": "16fb7678-58aa-43f4-976c-6411d373341c", "index":"1"}
+	]
+,	"Pharaoh's Bodyguard": [
+		{"id": "4e1424fd-a4dd-430d-b5db-da68488eb78a", "index":"0"}
+	]
+,	"Pyramidion": [
+	]
+,	"Scripture Monkey": [
+		{"id": "3321903a-a303-44ee-8b5d-3487bd693fa9", "index":"3"}
 	]
 ,	"Sekhem Chariot": [
 		{"id": "a6b9796b-edf3-4af3-9ed5-c8182508947e", "index":"1"}
 	]
+,	"Solarsteel Prodigy": [
+	]
+,	"Starforger": [
+	]
+,	"Swiftblade Revenger": [
+	]
+,	"The Kitty of Thamiel": [
+	]
+,	"Thunderswarm Pegasus": [
+		{"id": "2892cac4-ecfc-4b4f-a4e9-1eb61a4971a8", "index":"3"}
+	]
+,	"Thunderswarm Skirmisher": [
+		{"id": "1352ae1c-e93b-4eeb-9c2b-8d45efc47f38", "index":"0"}
+		,{"id": "e58d0ede-21d0-4b9c-87b3-4745b329f97d", "index":"0"}
+	]
 ,	"Towering Obelisk of Xi": [
 	]
+,	"Tranquil Herd Gem Titan": [
+		{"id": "ed7547f6-59f6-4674-8e51-448f70e1a062", "index":"1"}
+	]
 ,	"Winged Ushabti": [
+	]
+,	"Wrath of the Pharaoh": [
+		{"id": "557ea44c-dc30-4519-93c0-96caf2f97815", "index":"3"}
 	]
 ,	"Yellow Crusader": [
 	]
 ,	"Young Monk": [
+	]
+,	"Crimson Flamechick": [
+		{"id": "0867635b-b993-4e89-adc9-840fac5e98ae", "index":"2"}
 	]
 ,	"Golden Phoenix": [
 	]
@@ -90,93 +133,17 @@
 	]
 ,	"Scittering Scorpion": [
 	]
-,	"Thunderswarm Lightning Rider": [
-	]
-,	"Embalmed Apophis": [
-		{"id": "13499ec2-9a5a-4595-9ccd-fbcfe0fffeaf", "index":"0"}
-	]
-,	"Cryptosphinx": [
-		{"id": "250e747b-c7e8-4a5b-a483-65446cd307aa", "index":"2"}
-	]
-,	"Guardian of the Gates": [
-		{"id": "13533eea-4c56-4787-a8d1-5b5de4d2fe40", "index":"0"}
-	]
-,	"Desertwind Relic Hunter": [
-	]
-,	"Maze Master Sphinx": [
-		{"id": "9ccceaff-97a6-4625-9bea-6567b85c04ef", "index":"0"}
-	]
-,	"Exemplar of Lunar Gleam": [
-	]
-,	"Shattercrown Luminary": [
-	]
-,	"Herald of Eternal Grace": [
-	]
-,	"Shepard of the Morning Dew": [
-	]
-,	"Mystic Puzzle Box": [
-		{"id": "0cf0be47-c57f-4feb-84e6-1790219ba54b", "index":"0"}
-	]
-,	"Blackmarble Gargoyle": [
-		{"id": "a408d92c-6e6e-4d30-93ad-e526a5c9555f", "index":"3"}
-	]
-,	"Wrath of the Pharaoh": [
-		{"id": "557ea44c-dc30-4519-93c0-96caf2f97815", "index":"3"}
-	]
-,	"Damaged Automaton": [
-		{"id": "3644d9f4-a154-4538-96ea-489d6da10cda", "index":"2"}
-	]
-,	"Swiftblade Revenger": [
-	]
-,	"Tranquil Herd Gem Titan": [
-		{"id": "ed7547f6-59f6-4674-8e51-448f70e1a062", "index":"1"}
-	]
-,	"Arboreal Messenger": [
-	]
-,	"Auric Ant Regent": [
-	]
-,	"Obelisk Waypost": [
-	]
-,	"Hallowed Exorcist": [
-		{"id": "fb9ad282-f768-4726-b79b-f40c11d0277b", "index":"3"}
-	]
-,	"The Ascended One": [
-	]
-,	"Tranquil Herd Rubyskull": [
-	]
-,	"Cryptroach": [
-		{"id": "b6b028b1-6920-4dde-9694-73d589c7969e", "index":"1"}
-	]
-,	"Blackwing Usurper": [
-	]
-,	"Ivoryscar Fatebreaker": [
-	]
-,	"Pharaoh's Bodyguard": [
-		{"id": "4e1424fd-a4dd-430d-b5db-da68488eb78a", "index":"0"}
+,	"The Second Wing": [
+		{"id": "f92d2267-2cb6-459f-b8f4-07c280426a32", "index":"2"}
 	]
 ,	"Thunderswarm Celestial": [
 		{"id": "496903ec-9e29-4e96-baed-fbc1c72e67a2", "index":"3"}
 	]
-,	"Airstep Sifu": [
+,	"Thunderswarm Lightning Rider": [
 	]
-,	"The Second Wing": [
-		{"id": "f92d2267-2cb6-459f-b8f4-07c280426a32", "index":"2"}
+,	"Desertwind Relic Hunter": [
 	]
-,	"Arcanum Grandmaster": [
-	]
-,	"Auraborne Wyvern": [
-	]
-,	"Blazecharm Kitsune": [
-	]
-,	"Crimson Flamechick": [
-		{"id": "0867635b-b993-4e89-adc9-840fac5e98ae", "index":"2"}
-	]
-,	"Boiling Blood Berserker": [
-	]
-,	"Diamond Phantom": [
-	]
-,	"Moonspear Paladin": [
-		{"id": "4b963210-17ec-4cc9-9a83-f38a7692af0e", "index":"3"}
+,	"Exemplar of Lunar Gleam": [
 	]
 ,	"Glowing Gearhulk": [
 		{"id": "4efd2e1b-a113-49a0-8b09-a71768bc7f0a", "index":"1"}
@@ -184,20 +151,35 @@
 ,	"Moon Priestess": [
 		{"id": "fe304cba-fe68-4bea-a089-694d2e71a394", "index":"2"}
 	]
-,	"Draconic Highpriest": [
+,	"Moonspear Paladin": [
+		{"id": "4b963210-17ec-4cc9-9a83-f38a7692af0e", "index":"3"}
+	]
+,	"Shattercrown Luminary": [
+	]
+,	"Shepard of the Morning Dew": [
+	]
+,	"Arboreal Messenger": [
+	]
+,	"Auric Ant Regent": [
+	]
+,	"Goat Oracle": [
+		{"id": "96dd861b-6cf4-403c-b701-35339b8bf72c", "index":"0"}
+	]
+,	"Obelisk Waypost": [
 	]
 ,	"Sunblessed Crocodile": [
 		{"id": "85566897-5ef8-42df-8c72-36628a9dd9fc", "index":"1"}
 	]
-,	"Echo Beetle": [
+,	"The Ascended One": [
 	]
-,	"Goat Oracle": [
-		{"id": "96dd861b-6cf4-403c-b701-35339b8bf72c", "index":"0"}
+,	"Tranquil Herd Rubyskull": [
 	]
 ,	"Tranquil Herd Sagehorn": [
 		{"id": "eb74e363-ce23-4333-bf1a-9e45b5410528", "index":"3"}
 		,{"id": "ae7c802d-5bb3-4e5c-935f-0989f835981b", "index":"3"}
 		,{"id": "d2520d33-6384-48e1-a0ac-2b40bcba9c67", "index":"2"}
+	]
+,	"Blackwing Usurper": [
 	]
 ,	"Fallen Angel": [
 		{"id": "65856a62-0cc5-4789-aeaa-4499b714d3e5", "index":"0"}
@@ -223,9 +205,7 @@
 		,{"id": "c2526578-9eb7-4bfc-b6cd-0f981333543c", "index":"1"}
 		,{"id": "12474128-0863-4da2-aff8-997b73fe9878", "index":"3"}
 	]
-,	"Ember Whelp": [
-	]
-,	"Floating Djinn": [
+,	"Ivoryscar Fatebreaker": [
 	]
 ,	"Kois of Duality": [
 		{"id": "e799950f-85b6-4223-b8ea-bc9ef93d3c23", "index":"1"}
@@ -236,67 +216,7 @@
 		,{"id": "34302934-0ce2-4d12-9b6b-bcbfb2dd2748", "index":"0"}
 		,{"id": "7515835a-18c0-492f-95bd-2b1b2539a4df", "index":"1"}
 	]
-,	"Hermit of the Horizon": [
-	]
-,	"Mirrorworld Bloodseeker": [
-	]
-,	"Mountain Sage": [
-	]
-,	"Vermillion Firebird": [
-		{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"2"}
-		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"3"}
-		,{"id": "8267de13-464b-4475-8b89-635cac0d70bd", "index":"0"}
-		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"0"}
-		,{"id": "ce13cd47-a205-4d28-96b0-bdf906fae89f", "index":"0"}
-		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"3"}
-		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"1"}
-	]
-,	"Nimbus Claw": [
-	]
-,	"Spell Cat": [
-		{"id": "23c28003-cb9d-4252-b47e-eb31b79c4746", "index":"3"}
-		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"3"}
-		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"0"}
-		,{"id": "ea69db27-0094-46a2-957d-df9c6587cd8f", "index":"1"}
-		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"3"}
-		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"0"}
-	]
-,	"Torii Spirit": [
-		{"id": "855d9ad2-60fa-4317-90d5-dde695aa3863", "index":"2"}
-		,{"id": "ef31c8de-f61e-4972-86e9-aa9f1831afd5", "index":"0"}
-		,{"id": "8785718a-3cef-4d6b-adf4-3f611a3b965e", "index":"2"}
-		,{"id": "f0a7e593-e8a3-49a4-9357-69927b40e0a8", "index":"1"}
-		,{"id": "f0a7e593-e8a3-49a4-9357-69927b40e0a8", "index":"0"}
-		,{"id": "677914ad-f8cb-4855-b453-f47da8640844", "index":"0"}
-		,{"id": "0c2fcc58-1cd5-4e2c-9953-06ae99527acc", "index":"3"}
-		,{"id": "cb83f03b-5441-4ab6-acd4-d6c23cfbf1b0", "index":"3"}
-		,{"id": "cb83f03b-5441-4ab6-acd4-d6c23cfbf1b0", "index":"1"}
-		,{"id": "11cea0b5-15f6-46ea-9c98-85147c5d0c1d", "index":"2"}
-	]
-,	"Omen Firefly": [
-	]
-,	"Runecursed Wyvern": [
-		{"id": "304afcfd-7894-408f-9075-b9665b0da9bb", "index":"1"}
-		,{"id": "3f700745-93e9-491e-b302-0f3b8129cd3a", "index":"3"}
-		,{"id": "efc96ed0-d87b-4d29-bb86-f29795728bf8", "index":"2"}
-		,{"id": "b6935539-efed-401f-850a-d485cb53a209", "index":"2"}
-		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"3"}
-		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"1"}
-	]
-,	"Pixie Summoner": [
-	]
-,	"Pyretic Pet": [
-	]
-,	"Red Crusader": [
-	]
-,	"Tectonic Shifter": [
-		{"id": "04e07353-17ab-4846-84bc-818bc402f09d", "index":"1"}
-		,{"id": "e8e96f76-94bd-41ae-b1bd-4ca96aebdd1e", "index":"3"}
-		,{"id": "ee08debf-6dfa-4c1a-b68d-af2815e27ecd", "index":"0"}
-		,{"id": "a5b23374-c9e0-4cc3-ac9e-7cc693ab07b6", "index":"1"}
-		,{"id": "da48772a-b4d4-44f8-8d55-428c4b7750df", "index":"1"}
-	]
-,	"Sand Witch": [
+,	"Airstep Sifu": [
 	]
 ,	"Amberlock Dragonling": [
 		{"id": "31869c2e-79e0-44a2-bcb2-ef2489f226ad", "index":"3"}
@@ -310,6 +230,26 @@
 		,{"id": "5e110d2e-a7e4-436b-bb11-4fb86e1580e9", "index":"2"}
 		,{"id": "750ed738-29ba-42b6-8f6f-d878ddac70d4", "index":"1"}
 	]
+,	"Arcanum Grandmaster": [
+	]
+,	"Auraborne Wyvern": [
+	]
+,	"Blazecharm Kitsune": [
+	]
+,	"Blood Moon Scarab": [
+		{"id": "f076bedf-28b1-43a4-bdf8-5e57ad378122", "index":"3"}
+		,{"id": "2245d2f9-6faa-4d4c-9ddb-94e018ca54af", "index":"0"}
+		,{"id": "2245d2f9-6faa-4d4c-9ddb-94e018ca54af", "index":"2"}
+		,{"id": "8c7e4ea8-e35f-4309-86b6-e6a9f1efaecb", "index":"1"}
+		,{"id": "8c7e4ea8-e35f-4309-86b6-e6a9f1efaecb", "index":"2"}
+		,{"id": "ae00d456-a481-4034-a8c2-fdb97fffe7f6", "index":"1"}
+		,{"id": "ae00d456-a481-4034-a8c2-fdb97fffe7f6", "index":"2"}
+		,{"id": "78ae5a97-8656-4c23-992f-61f8947a1950", "index":"3"}
+		,{"id": "78ae5a97-8656-4c23-992f-61f8947a1950", "index":"2"}
+		,{"id": "237ccf0b-0f9d-4e23-b6d4-df327207e61c", "index":"1"}
+	]
+,	"Boiling Blood Berserker": [
+	]
 ,	"Cavern Lindwurm": [
 		{"id": "4cc82fb7-ff66-4625-86b9-bd6b6019e512", "index":"2"}
 		,{"id": "172ae98b-46c0-4825-b85b-219a47dfecc0", "index":"2"}
@@ -322,15 +262,58 @@
 		,{"id": "da9010de-44c1-42bf-8bbc-f7eb026c1882", "index":"2"}
 		,{"id": "bdfca501-4b58-4f97-83e7-bcf89c7e7f5e", "index":"0"}
 	]
-,	"Shardhorde Galewhelp": [
+,	"Cheerful Pixies": [
+		{"id": "d0e9441d-31d5-4477-baf7-ebbdc94058cd", "index":"0"}
+		,{"id": "e6e0a2be-8317-493d-9a2a-cb227f34a270", "index":"0"}
+		,{"id": "9bbdc04c-bca7-40be-8e54-c28c3574bdaa", "index":"3"}
+		,{"id": "15fa440e-c679-43c5-bb8b-b9b455c08a9e", "index":"0"}
+		,{"id": "e4ba3e94-f628-4294-80aa-b0e88b42ce7b", "index":"3"}
+		,{"id": "36d433e2-f591-4ea5-b62a-5cb266b18ca8", "index":"2"}
+		,{"id": "36d433e2-f591-4ea5-b62a-5cb266b18ca8", "index":"3"}
 	]
-,	"Sparkwielder": [
+,	"Cinderguard Irregulars": [
+	]
+,	"Cinderguard Scribe": [
+	]
+,	"Daredevil Duo": [
+		{"id": "7e117333-a3b5-48ce-84fb-ea1d5889f52c", "index":"3"}
+		,{"id": "97f8b1ac-677e-491b-803f-a08321d0a5b3", "index":"0"}
+		,{"id": "9b9f1932-7b85-4dc2-b89b-c5db313881fe", "index":"1"}
+		,{"id": "97d76fab-e567-498a-9cd5-fce2669c45a7", "index":"1"}
+		,{"id": "e476fa49-0867-4ba0-b9df-543b391f48db", "index":"0"}
+		,{"id": "c55ff963-8780-49f5-820d-fdb412bd03ab", "index":"3"}
+		,{"id": "ecf46218-d382-4bbc-897b-729a460f33de", "index":"0"}
+		,{"id": "02663ec4-f725-4dc6-b3bf-a41c24089531", "index":"2"}
+		,{"id": "960b0142-dad3-4a5e-9497-c50337bfa517", "index":"0"}
+		,{"id": "41adfac4-fb2e-4621-a9ff-3a8e7c83e591", "index":"3"}
+	]
+,	"Dewdrop Sprite": [
+	]
+,	"Diamond Phantom": [
+	]
+,	"Draconic Highpriest": [
 	]
 ,	"Dragon Egg": [
 		{"id": "a4c0044f-a986-4aa9-87bf-000b67966a4b", "index":"0"}
 		,{"id": "1368b59f-6a3a-4f37-b704-dc0023c5a39b", "index":"0"}
 		,{"id": "1368b59f-6a3a-4f37-b704-dc0023c5a39b", "index":"3"}
 		,{"id": "3e4015d3-c57e-4d12-9ddb-df5fcfb9d19d", "index":"0"}
+	]
+,	"Dragonfire Warlock": [
+	]
+,	"Dragonwind Harbinger": [
+	]
+,	"Dustdance Efreet": [
+	]
+,	"Echo Beetle": [
+	]
+,	"Ember Whelp": [
+	]
+,	"Floating Djinn": [
+	]
+,	"Galeweaver": [
+	]
+,	"Gashopper": [
 	]
 ,	"Glinteye Hoarder": [
 		{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"0"}
@@ -344,109 +327,201 @@
 		,{"id": "a3874385-0194-4c0f-ba14-08b4d7628a67", "index":"1"}
 		,{"id": "8c585bc8-5180-439e-8adb-c3a47c0150fe", "index":"2"}
 	]
+,	"Hermit of the Horizon": [
+	]
+,	"Infernoblight": [
+		{"id": "33f7cc2c-e93d-4e2c-9b65-000f7fec5b4d", "index":"3"}
+		,{"id": "d85c9fc4-fcbf-4427-9461-c7d69924fd22", "index":"3"}
+		,{"id": "ded1343a-822d-4000-b96d-307220437a47", "index":"3"}
+		,{"id": "7b986382-842d-4894-bfa5-8f3a13c28048", "index":"2"}
+		,{"id": "7b986382-842d-4894-bfa5-8f3a13c28048", "index":"1"}
+		,{"id": "3ece9766-fbca-4a9f-b43c-ceacdfd34356", "index":"0"}
+		,{"id": "23146584-f12d-4df7-9044-bc3fddd5aed1", "index":"2"}
+		,{"id": "e7c5e4fe-638b-4178-857e-6623f117ac1e", "index":"3"}
+		,{"id": "d1d4e43a-6294-4cca-b9e9-a8a9b7c14773", "index":"2"}
+		,{"id": "1b37b6ab-c626-42c3-a564-3b3f1a292370", "index":"3"}
+	]
+,	"Mirrorworld Bloodseeker": [
+	]
+,	"Mountain Sage": [
+	]
+,	"Nimbus Claw": [
+	]
+,	"Omen Firefly": [
+	]
+,	"Pixie Summoner": [
+	]
+,	"Pyretic Pet": [
+	]
+,	"Raijin": [
+	]
+,	"Raijin's Familiar": [
+	]
+,	"Red Crusader": [
+	]
+,	"Roughlands Scourge": [
+	]
+,	"Runecursed Wyvern": [
+		{"id": "304afcfd-7894-408f-9075-b9665b0da9bb", "index":"1"}
+		,{"id": "3f700745-93e9-491e-b302-0f3b8129cd3a", "index":"3"}
+		,{"id": "efc96ed0-d87b-4d29-bb86-f29795728bf8", "index":"2"}
+		,{"id": "b6935539-efed-401f-850a-d485cb53a209", "index":"2"}
+		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"3"}
+		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"1"}
+	]
+,	"Sand Witch": [
+	]
+,	"Shardhorde Galewhelp": [
+	]
 ,	"Shardhorde Leviathan": [
 		{"id": "f04b4fbf-83ad-4f50-9c3a-68843e69ef11", "index":"2"}
 		,{"id": "23732ab2-74d0-4739-baaf-5e6c23e8873a", "index":"0"}
+		,{"id": "cb44e85d-870b-4bc6-8948-450c772daf5c", "index":"0"}
+		,{"id": "258f8be4-8fc8-47e9-9423-4d7e9f7e209b", "index":"0"}
+		,{"id": "97987280-b216-408a-9bcb-dd348cfcb803", "index":"1"}
+		,{"id": "736a8fe4-c031-4266-a180-8d5fa8d7a20c", "index":"3"}
+		,{"id": "f4364281-c341-4325-823b-cc159f62e3fa", "index":"3"}
+		,{"id": "f4364281-c341-4325-823b-cc159f62e3fa", "index":"1"}
+		,{"id": "3ffc8199-7676-44a0-b357-0e6a826b2531", "index":"1"}
+		,{"id": "c0768680-bd4c-4545-846f-002afd6a854b", "index":"0"}
+	]
+,	"Shifting Sands": [
+	]
+,	"Skulloath Lootclaimer": [
+	]
+,	"Sparkwielder": [
+	]
+,	"Spell Cat": [
+		{"id": "23c28003-cb9d-4252-b47e-eb31b79c4746", "index":"3"}
+		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"3"}
+		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"0"}
+		,{"id": "ea69db27-0094-46a2-957d-df9c6587cd8f", "index":"1"}
+		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"3"}
+		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"0"}
 	]
 ,	"Stormbringer": [
-	]
-,	"Daredevil Duo": [
-	]
-,	"Infernoblight": [
-	]
-,	"Roughlands Scourge": [
 	]
 ,	"Stormlash": [
 	]
 ,	"Stormworn Horn": [
 	]
+,	"Tectonic Shifter": [
+		{"id": "04e07353-17ab-4846-84bc-818bc402f09d", "index":"1"}
+		,{"id": "e8e96f76-94bd-41ae-b1bd-4ca96aebdd1e", "index":"3"}
+		,{"id": "ee08debf-6dfa-4c1a-b68d-af2815e27ecd", "index":"0"}
+		,{"id": "a5b23374-c9e0-4cc3-ac9e-7cc693ab07b6", "index":"1"}
+		,{"id": "da48772a-b4d4-44f8-8d55-428c4b7750df", "index":"1"}
+	]
 ,	"The Culling Claw": [
-	]
-,	"Cinderguard Scribe": [
-	]
-,	"Skulloath Lootclaimer": [
-	]
-,	"Cinderguard Irregulars": [
 	]
 ,	"Thunderfox": [
 	]
-,	"Dragonfire Warlock": [
+,	"Torii Spirit": [
+		{"id": "855d9ad2-60fa-4317-90d5-dde695aa3863", "index":"2"}
+		,{"id": "ef31c8de-f61e-4972-86e9-aa9f1831afd5", "index":"0"}
+		,{"id": "8785718a-3cef-4d6b-adf4-3f611a3b965e", "index":"2"}
+		,{"id": "f0a7e593-e8a3-49a4-9357-69927b40e0a8", "index":"1"}
+		,{"id": "f0a7e593-e8a3-49a4-9357-69927b40e0a8", "index":"0"}
+		,{"id": "677914ad-f8cb-4855-b453-f47da8640844", "index":"0"}
+		,{"id": "0c2fcc58-1cd5-4e2c-9953-06ae99527acc", "index":"3"}
+		,{"id": "cb83f03b-5441-4ab6-acd4-d6c23cfbf1b0", "index":"3"}
+		,{"id": "cb83f03b-5441-4ab6-acd4-d6c23cfbf1b0", "index":"1"}
+		,{"id": "11cea0b5-15f6-46ea-9c98-85147c5d0c1d", "index":"2"}
 	]
 ,	"Twin Thundertail": [
 	]
-,	"Windkite Acolyte": [
-	]
-,	"Blood Moon Scarab": [
-	]
 ,	"Vengeful Gust": [
 	]
-,	"Portalrunner": [
-	]
-,	"Steelclaw Veterans": [
-	]
-,	"Crazed Hermit": [
-	]
-,	"The Skyshrieker": [
-	]
-,	"Gashopper": [
-	]
-,	"Lurking Canopystomper": [
-	]
-,	"Resourceful Poacher": [
-	]
-,	"Dewdrop Sprite": [
-	]
-,	"Bringer of Bad Omens": [
-	]
-,	"Gaunt Visitation": [
-	]
-,	"Dustdance Efreet": [
-	]
-,	"Raging Minotaur": [
-	]
-,	"Galeweaver": [
-	]
-,	"Raijin's Familiar": [
-	]
-,	"Shifting Sands": [
+,	"Vermillion Firebird": [
+		{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"2"}
+		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"3"}
+		,{"id": "8267de13-464b-4475-8b89-635cac0d70bd", "index":"0"}
+		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"0"}
+		,{"id": "ce13cd47-a205-4d28-96b0-bdf906fae89f", "index":"0"}
+		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"3"}
+		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"1"}
 	]
 ,	"Volcano Embodiment": [
 	]
-,	"Lightning Manticore": [
-	]
-,	"Venomshade Lamia": [
-	]
-,	"Raijin": [
-	]
-,	"Cheerful Pixies": [
-	]
-,	"Bastion Architect": [
-	]
-,	"Dragonwind Harbinger": [
+,	"Windkite Acolyte": [
 	]
 ,	"Cinderguard Emberblade": [
 	]
 ,	"Dragon Rider": [
 	]
-,	"Blue Crusader": [
-	]
-,	"Eagle of the Legion": [
+,	"Portalrunner": [
 	]
 ,	"Starfall Shaman": [
 	]
+,	"Steelclaw Veterans": [
+	]
+,	"Crazed Hermit": [
+	]
+,	"Eons-old Dragon": [
+	]
+,	"Lurking Canopystomper": [
+	]
+,	"Resourceful Poacher": [
+	]
 ,	"Shardhorde Crystalfang": [
+	]
+,	"The Skyshrieker": [
+	]
+,	"Tidecrasher": [
+	]
+,	"Bringer of Bad Omens": [
+	]
+,	"Gaunt Visitation": [
+	]
+,	"Lightning Manticore": [
+	]
+,	"Pyroclastic Zombie": [
+	]
+,	"Raging Minotaur": [
+	]
+,	"Skulloath Marauder": [
+	]
+,	"Venomshade Lamia": [
+	]
+,	"Wasteland Overlord": [
+	]
+,	"Alchemist's Incense": [
+	]
+,	"Ambrosia Bee": [
+	]
+,	"Bastion Architect": [
+	]
+,	"Bloodfleet Harpooneer": [
+	]
+,	"Bloodfleet Raider": [
+	]
+,	"Blue Crusader": [
+	]
+,	"Caring Mother": [
+	]
+,	"Cinderguard Saboteur": [
+	]
+,	"Dojo Drill Instructor": [
+	]
+,	"Eagle of the Legion": [
+	]
+,	"Filthy Peasant": [
+	]
+,	"Frontier Centurion": [
 	]
 ,	"Gem Merchant": [
 	]
 ,	"Gladehost Shotmaster": [
 	]
-,	"Eons-old Dragon": [
+,	"Gold Colibri": [
 	]
-,	"Tidecrasher": [
+,	"Greedy Senator": [
 	]
 ,	"Imperial Tyrant": [
 	]
-,	"Skulloath Marauder": [
+,	"Ironclad Jailwalker": [
+	]
+,	"Ironstride Courser": [
 	]
 ,	"Legion of the Moonspear": [
 	]
@@ -458,99 +533,97 @@
 	]
 ,	"Mountblade Squire": [
 	]
-,	"Wasteland Overlord": [
+,	"Old Bessy": [
 	]
 ,	"Old Fisherman": [
 	]
+,	"Paragon of Conquest": [
+	]
 ,	"Pinwheel Illusionist": [
+	]
+,	"Pocket Dragon": [
+	]
+,	"Prime Golem": [
 	]
 ,	"Quadriga of Triumph": [
 	]
-,	"Pyroclastic Zombie": [
+,	"Rampart Shellback": [
 	]
 ,	"Recruiting Officer": [
-	]
-,	"Old Bessy": [
 	]
 ,	"Remnant of the Quiet Springs": [
 	]
 ,	"Sandring Pridemane": [
 	]
+,	"Scalehide Trapper": [
+	]
 ,	"Scapegoat": [
+	]
+,	"Siegebreaker": [
 	]
 ,	"Snow Crane": [
 	]
-,	"Trusty Companion": [
+,	"Stormforged Recruit": [
+	]
+,	"Supply Camel": [
 	]
 ,	"Surly Donkey": [
 	]
 ,	"The Grand Ruiner": [
 	]
+,	"Tilling Yoke Beast": [
+	]
 ,	"Trading Post Camel": [
 	]
-,	"Gold Colibri": [
+,	"Trapmaster": [
 	]
-,	"Ironstride Courser": [
-	]
-,	"Siegebreaker": [
-	]
-,	"Supply Camel": [
-	]
-,	"Ironclad Jailwalker": [
+,	"Trusty Companion": [
 	]
 ,	"Wayward Automaton": [
 	]
 ,	"Battle Ant Dreadnought": [
 	]
-,	"Prime Golem": [
-	]
-,	"Dojo Drill Instructor": [
-	]
-,	"Tilling Yoke Beast": [
-	]
-,	"Rampart Shellback": [
-	]
-,	"Zodiac Samurai": [
-	]
-,	"Pocket Dragon": [
-	]
-,	"Caring Mother": [
+,	"Gladehost Kyudo Master": [
 	]
 ,	"Rune Whisperer": [
+	]
+,	"Starborne Basilisk": [
 	]
 ,	"The Holy Chicken": [
 	]
 ,	"The Life Tree": [
 	]
-,	"Filthy Peasant": [
+,	"Trained War Elephant": [
 	]
-,	"Greedy Senator": [
+,	"Zodiac Samurai": [
 	]
-,	"Bloodfleet Harpooneer": [
+,	"Chalice Bloodbrewer": [
 	]
 ,	"Crescent Oracle": [
 	]
-,	"Bloodfleet Raider": [
+,	"Forsaken Aristocrat": [
 	]
 ,	"Gemcrazed Clown": [
+	]
+,	"Necromancer": [
 	]
 ,	"Sanguine Student": [
 	]
 ,	"Shade in the Alley": [
 	]
-,	"Cinderguard Saboteur": [
-	]
-,	"Scalehide Trapper": [
-	]
 ,	"Vindictive Forsaken": [
-	]
-,	"Trapmaster": [
 	]
 ,	"Willing Sacrifice": [
 	]
-,	"Frontier Centurion": [
+,	"Alpha of the Stampede": [
+	]
+,	"Amethyst Argosaurus": [
+	]
+,	"Arcane Gorgosaur": [
 	]
 ,	"Armordillo": [
+	]
+,	"Astral Unicorn": [
 	]
 ,	"Bloodclaw": [
 	]
@@ -558,21 +631,19 @@
 	]
 ,	"Bug Curator": [
 	]
-,	"Paragon of Conquest": [
-	]
 ,	"Buzzing Hivetitan": [
-	]
-,	"Stormforged Recruit": [
 	]
 ,	"Caleidoscope Spider": [
 	]
-,	"Ambrosia Bee": [
+,	"Calming Apparition": [
 	]
-,	"Alchemist's Incense": [
+,	"Caring Matriarch": [
 	]
-,	"Starborne Basilisk": [
+,	"Darkwood Tracker": [
 	]
-,	"Trained War Elephant": [
+,	"Duke of the Grove": [
+	]
+,	"Emerald Fang Cobra": [
 	]
 ,	"Entwining Creeper": [
 	]
@@ -580,25 +651,43 @@
 	]
 ,	"Fairy Fountain": [
 	]
+,	"Gigantic Terrormaw": [
+	]
 ,	"Goliath Beetle": [
 	]
 ,	"Green Crusader": [
 	]
 ,	"Grizzly Trap": [
 	]
+,	"Jeweled Triceratops": [
+	]
+,	"Jolly Tamarin": [
+	]
+,	"Leech Dragonfly": [
+	]
 ,	"Little Lamb": [
+	]
+,	"Living Thicket": [
 	]
 ,	"Mantis Queen": [
 	]
-,	"Packhunting Crystalbeast": [
+,	"Nurseplant": [
 	]
-,	"Gladehost Kyudo Master": [
+,	"Nurturing Rootsaurus": [
+	]
+,	"Nutrient Nexus": [
+	]
+,	"One Eyed Dread": [
+	]
+,	"Packhunting Crystalbeast": [
 	]
 ,	"Pebble Gekko": [
 	]
-,	"Chalice Bloodbrewer": [
-	]
 ,	"Platinum Ladybug": [
+	]
+,	"Plunderpillar": [
+	]
+,	"Pollen Buzz": [
 	]
 ,	"Primal Horde": [
 	]
@@ -606,113 +695,89 @@
 	]
 ,	"Raider of the Crystal Catacombs": [
 	]
+,	"Raptor Pack": [
+	]
 ,	"Roar from the Past": [
-	]
-,	"Forsaken Aristocrat": [
-	]
-,	"Necromancer": [
 	]
 ,	"Rootseed Snapscale": [
 	]
-,	"Spectra Stick Bug": [
-	]
-,	"Duke of the Grove": [
-	]
-,	"Astral Unicorn": [
-	]
-,	"Sylvan Gamekeeper": [
-	]
-,	"Jolly Tamarin": [
-	]
-,	"Emerald Fang Cobra": [
+,	"Saurian Wraith": [
 	]
 ,	"Shadowpounce Panther": [
 	]
-,	"Tiger Matriarch": [
+,	"Shardtooth": [
+	]
+,	"Spectra Stick Bug": [
+	]
+,	"Sunflower Sprite": [
+	]
+,	"Sylvan Gamekeeper": [
+	]
+,	"Tainted Jade Monstrosity": [
 	]
 ,	"Tainted Jade Mycomancer": [
 	]
-,	"Calming Apparition": [
-	]
-,	"Amethyst Argosaurus": [
+,	"Tiger Matriarch": [
 	]
 ,	"Trickster Sprite": [
 	]
 ,	"Venomleaf Croaker": [
 	]
-,	"Jeweled Triceratops": [
-	]
-,	"Alpha of the Stampede": [
-	]
-,	"Caring Matriarch": [
+,	"Venus Flytrap": [
 	]
 ,	"Verdant Sakura Tree": [
 	]
-,	"Gigantic Terrormaw": [
-	]
-,	"Shardtooth": [
-	]
-,	"One Eyed Dread": [
-	]
-,	"Raptor Pack": [
-	]
 ,	"Forgotten Ancient": [
-	]
-,	"Nurturing Rootsaurus": [
 	]
 ,	"Locust Swarm": [
 	]
+,	"Necroconut Crab": [
+	]
+,	"Rotting Alicorn": [
+	]
+,	"Tainted Jade Initiate": [
+	]
+,	"Abyssal Silencer": [
+	]
+,	"Blightcoven Puppeteer": [
+	]
+,	"Bloodthrone Ambassador": [
+	]
 ,	"Bloodthrone Familiar": [
+	]
+,	"Bloodthrone Sovereign": [
 	]
 ,	"Carnage Hornet": [
 	]
-,	"Tainted Jade Monstrosity": [
-	]
-,	"Saurian Wraith": [
-	]
-,	"Arcane Gorgosaur": [
-	]
 ,	"Champion from Hell": [
-	]
-,	"Venus Flytrap": [
 	]
 ,	"Colorgorger": [
 	]
 ,	"Dark Spoon": [
 	]
-,	"Leech Dragonfly": [
-	]
 ,	"Dawnbreak Wendigo": [
 	]
 ,	"Depthdragger": [
 	]
-,	"Plunderpillar": [
-	]
-,	"Pollen Buzz": [
-	]
-,	"Nurseplant": [
-	]
 ,	"Discarded Abomination": [
-	]
-,	"Nutrient Nexus": [
 	]
 ,	"Doomgaze Overlord": [
 	]
-,	"Darkwood Tracker": [
-	]
-,	"Living Thicket": [
-	]
-,	"Sunflower Sprite": [
-	]
 ,	"Dread Cryptlord": [
 	]
-,	"Rotting Alicorn": [
+,	"Emissary of Darkness": [
 	]
 ,	"Fatepeek Imp": [
 	]
-,	"Gravebound Ghoul": [
+,	"Forsaken Chronicler": [
 	]
-,	"Tainted Jade Initiate": [
+,	"Forsaken Serenader": [
+	]
+,	"Foul Corruptor": [
+	]
+,	"Ghoulflesh Devourer": [
+	]
+,	"Gravebound Ghoul": [
 	]
 ,	"Graverobber": [
 	]
@@ -720,107 +785,87 @@
 	]
 ,	"Grim Titan": [
 	]
+,	"Grinning Amphora": [
+	]
+,	"Hellblade": [
+	]
 ,	"Hungry Shambler": [
 	]
-,	"Necroconut Crab": [
+,	"Ill-Tempered Imp": [
 	]
-,	"The Forsaken King": [
+,	"Intrusive Advisor": [
 	]
 ,	"Meekbone Soldier": [
 	]
 ,	"Monarch of Shadows": [
 	]
+,	"Nethersilk Moth": [
+	]
 ,	"Nightmare Penguin": [
+	]
+,	"Nightreaper": [
+	]
+,	"Obsidian Scarab": [
 	]
 ,	"Omenshadow": [
 	]
 ,	"Possessed Vermin Brood": [
 	]
-,	"Skull Crow": [
-	]
-,	"Grinning Amphora": [
-	]
-,	"Obsidian Scarab": [
-	]
 ,	"Purple Crusader": [
-	]
-,	"Foul Corruptor": [
 	]
 ,	"Reborn Stargazer": [
 	]
 ,	"Relentless Guardian": [
 	]
-,	"Intrusive Advisor": [
-	]
-,	"Abyssal Silencer": [
-	]
 ,	"Runic Arachnid": [
-	]
-,	"Nethersilk Moth": [
-	]
-,	"Symbiotic Crawler": [
 	]
 ,	"Sanguine Teapot": [
 	]
-,	"Nightreaper": [
+,	"Shadowsting Scorpion": [
+	]
+,	"Shiverskull": [
+	]
+,	"Shroom Behemoth": [
 	]
 ,	"Shrouded Trickster": [
 	]
+,	"Skull Crow": [
+	]
 ,	"Slumbering Fiend": [
+	]
+,	"Symbiotic Crawler": [
+	]
+,	"The Forsaken King": [
 	]
 ,	"Thoughtfeaster": [
 	]
 ,	"Tombstone Carver": [
 	]
-,	"Hellblade": [
-	]
-,	"Ill-Tempered Imp": [
-	]
 ,	"Umbral Nexus": [
-	]
-,	"Ghoulflesh Devourer": [
 	]
 ,	"Voidkiss Siren": [
 	]
+,	"Voidsinger": [
+	]
 ,	"Voodoo Doctor": [
-	]
-,	"Emissary of Darkness": [
-	]
-,	"Shadowsting Scorpion": [
 	]
 ,	"Whispering Tome": [
 	]
-,	"Bloodthrone Sovereign": [
-	]
 ,	"Choking Vines": [
+	]
+,	"Clocktower Drake": [
 	]
 ,	"Crusader of the Wastelands": [
 	]
 ,	"Crystalbane Glutton": [
 	]
-,	"Shroom Behemoth": [
-	]
 ,	"Crystalline Parasite": [
-	]
-,	"Bloodthrone Ambassador": [
 	]
 ,	"Fortune's Favorite": [
 	]
-,	"Forsaken Chronicler": [
-	]
-,	"Null Ghost": [
-	]
-,	"Forsaken Serenader": [
-	]
-,	"Shiverskull": [
-	]
-,	"Blightcoven Puppeteer": [
-	]
-,	"Voidsinger": [
-	]
 ,	"Mini Golem": [
 	]
-,	"Clocktower Drake": [
+,	"Null Ghost": [
 	]
 ,	"Realmshifter": [
 	]
