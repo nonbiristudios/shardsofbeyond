@@ -88,6 +88,7 @@ cards = new CustomNode((card) => {
     return card;
 }, cards);
 
+let j = 0;
 cards = new CustomNode((card) => {
     card.Realms = card.Realms
         .trim()
@@ -111,7 +112,9 @@ cards = new CustomNode((card) => {
         .split(',')
         .filter((cost) => cost != '');
     card.RandomValue = Math.floor(Math.random() * 100000);
-    
+
+    console.log('card customize', j++);
+
     return card;
 }, cards);
 
@@ -133,10 +136,9 @@ let cardImage = new CustomNode((card) => {
                 path: path
             };
         });
-
+        
     return { ...card, Artwork: artworks};
 }, iterator);
-cardImage = new FreezeNode(cardImage);
 
 // We don't have all artfiles for prototypes necessarily...
 let imageInfo = new CustomNode((card) => card.Artwork, cardImage);
@@ -145,6 +147,7 @@ imageInfo = new IteratorNode(imageInfo);
 let imagePath = new CustomNode((info) => `${artworkFolder}\\${info.path}`, imageInfo);
 // A black image is the default case in that scenario.
 let base64image = new FileLoaderNode(imagePath, 'base64', 'R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
+
 cardImage = new CustomNode((card, base64image, image) => {
     return {
         ...card,
@@ -228,7 +231,7 @@ cardImage = new CustomNode((card, svgCode, templates) => {
 let svgBuffer = new CustomNode(async (card) => {
     console.log(`Rendering ${card.Name}...`);
 
-    const image = await convert(card.Svg, { allowDeprecatedAttributes: true });
+    await convert(card.Svg, { allowDeprecatedAttributes: true })
     delete card.Svg; // Free some memory space by deleting the SVG.
 
     return {
@@ -237,7 +240,9 @@ let svgBuffer = new CustomNode(async (card) => {
     };
 }, cardImage);
 
+let i = 0;
 let exportSingleCard = new CustomNode((card) => {
+    console.log('exportsinglecard', i++);
     //create folder if necessary
     const imageDir = `${exportFolder}/images/`;
 
@@ -246,7 +251,6 @@ let exportSingleCard = new CustomNode((card) => {
     createFolderIfNotExists(`${imageDir}${card.Version}`);
 
     fs.writeFileSync(`${imageDir}${card.Version}/${card.Name}.png`, card.image);
-
     return card;
 }, svgBuffer);
 
@@ -254,6 +258,7 @@ let exportSingleCard = new CustomNode((card) => {
 let groupedCards = new ArrayzerNode(exportSingleCard);
 
 groupedCards = new CustomNode((cards) => cards.reduce((prev, curr) => {
+    console.log('REDUCE)', cards.length);
     if(prev[curr.Version] === undefined) prev[curr.Version] = [];
     prev[curr.Version].push(curr);
 
@@ -261,7 +266,10 @@ groupedCards = new CustomNode((cards) => cards.reduce((prev, curr) => {
 }, {}), groupedCards);
 
 // Make each variation an array.
-groupedCards = new CustomNode((cards) => Object.values(cards), groupedCards);
+groupedCards = new CustomNode((cards) => {
+    console.log('GROUPED CARDS)', cards.length);
+    return Object.values(cards);
+}, groupedCards);
 
 groupedCards = new IteratorNode(groupedCards);
 
@@ -271,6 +279,7 @@ let rareCards = new CustomNode((cards) => cards.filter((card) => card.Rarity ===
 
 // Render "Deck sheets" for Tabletop Simulator.
 let svgMassRenderFunction = async (cards, imageWidth = 750, imageHeight = 1050, numberRows = 7, numberColumns = 10, backgroundFill = 'black') => {
+    console.log('RENDER', cards.length);
     const canvasWidth = imageWidth * numberColumns;
     const canvasHeight = imageHeight * numberRows;
     const entries = numberRows * numberColumns - 1; //the last entry of the sheet must be black (no card)
@@ -315,7 +324,6 @@ let renderedRares = new CustomNode(async (cards) => await svgMassRenderFunction(
 // Export all Sheets to its respective files in the Tabletop Folder.
 let renderCommons = new CustomNode((buffers, commonCards) => {
     if(commonCards.length == 0) return;
-    const setName = commonCards[0].Set;
     const version = commonCards[0].Version;
     
     createFolderIfNotExists(tabletopFolder);
@@ -326,13 +334,12 @@ let renderCommons = new CustomNode((buffers, commonCards) => {
 
     buffers.forEach((buffer, i) => fs.writeFileSync(`${dir}/${version}/commons_${i}.png`, buffer));
 
-    console.log(`Rendered "${version}" Common Cards of Set ${setName}!`);
+    console.log(`Rendered "${version}" Common Cards!`);
     return 'done';
 }, renderedCommons, commonCards);
 
 let renderUncommons = new CustomNode((buffers, uncommonCards) => {
     if(uncommonCards.length == 0) return;
-    const setName = uncommonCards[0].Set;
     const version = uncommonCards[0].Version;
 
     createFolderIfNotExists(tabletopFolder);
@@ -343,13 +350,12 @@ let renderUncommons = new CustomNode((buffers, uncommonCards) => {
 
     buffers.forEach((buffer, i) => fs.writeFileSync(`${dir}/${version}/uncommons_${i}.png`, buffer));
 
-    console.log(`Rendered "${version}" Uncommon Cards of Set ${setName}!`);
+    console.log(`Rendered "${version}" Uncommon Cards!`);
     return 'done';
 }, renderedUncommons, uncommonCards);
 
 let renderRares = new CustomNode((buffers, rareCards) => {
     if(rareCards.length == 0) return;
-    const setName = rareCards[0].Set;
     const version = rareCards[0].Version;
 
     createFolderIfNotExists(tabletopFolder);
@@ -360,7 +366,7 @@ let renderRares = new CustomNode((buffers, rareCards) => {
 
     buffers.forEach((buffer, i) => fs.writeFileSync(`${dir}/${version}/rares_${i}.png`, buffer));
 
-    console.log(`Rendered "${version}" Rare Cards of Set ${setName}!`);
+    console.log(`Rendered "${version}" Rare Cards!`);
     return 'done';
 }, renderedRares, rareCards);
 

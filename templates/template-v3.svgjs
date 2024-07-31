@@ -1,4 +1,30 @@
  <svg xmlns="http://www.w3.org/2000/svg" width="750" height="1050" style="background-color:black">
+    <!-- Preprocessing -->
+    {{(card) => {
+        card.Realms = (card.Realms ?? '')
+            .trim()
+            .replaceAll('Realm_', '')
+            .split(' ')
+            .filter((realm) => realm != '');
+        card.Types = (card.Types ?? '')
+            .trim()
+            .replaceAll(',', '')
+            .replaceAll('?', '')
+            .split(' ')
+            .filter((type) => type != '');
+        card.Keyword = (card.Keyword ?? '')
+            .trim()
+            .replaceAll('\.', '')
+            .split(' ')
+            .filter((keyword) => keyword != '');
+        card.Costs = (card.Costs ?? '')
+            .trim()
+            .replaceAll(' ', '')
+            .split(',')
+            .filter((cost) => cost != '');
+        card.RandomValue = Math.floor(Math.random() * 100000);
+    }}};
+ 
     <!-- Filters -->
     <filter id="shadow" x="-150%" y="-150%" width="300%" height="300%">
         <feFlood flood-color="black" result="color" />
@@ -60,7 +86,7 @@
         </filter>
         
         <filter id="distort">
-          <feTurbulence baseFrequency="0.01 0.01" numOctaves="20" result="noise" seed="{{(card) => card.RandomValue}}"/>
+          <feTurbulence baseFrequency="0.0071 0.007" numOctaves="20" result="noise" seed="{{(card) => card.RandomValue}}"/>
           <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="B"/>
         </filter>
         
@@ -168,16 +194,16 @@
     <!-- Card Name -->    
     <!-- Black name + smooth filter -->
     <text 
-        x="70" 
+        x="50%" 
         y="110"
-        {{(card) => card.Name.length > 15 ? 'textLength="610px"' : ''}}
+        {{(card) => card.Name.length > 15 ? 'textLength="598px"' : ''}}
         lengthAdjust="spacingAndGlyphs"
         fill="white"
+        text-anchor="middle"
         style="letter-spacing: -4px;
             font-family: 'GRECOromanLubedJudo Medium';
             font-size:84px;
-            text-shadow: 4px 4px 4px black;
-            text-align: center"
+            text-shadow: 4px 4px 4px black;"
     >
         {{(card) => card.Name}}
     </text>
@@ -275,7 +301,7 @@
 	<!-- Realm Text -->
     <text 
         x="650" 
-        y="630"
+        y="587"
         fill="white"
         text-anchor="end"
         style="font-family:'Palatino Linotype', serif;
@@ -294,7 +320,7 @@
             };
             
             return card.Realms
-                .map((realm) => `<tspan style="dy:1em; fill: ${colors[realm]}">${realm}</tspan>`)
+                .map((realm) => `<tspan x="650" dy="42" style="fill: ${colors[realm]}">${realm}</tspan>`)
                 .join('');
         }}}
     </text>
@@ -302,7 +328,7 @@
     <!-- Text of Textbox -->
     <foreignObject 
             x="49" 
-            y="700" 
+            y="690" 
             width="656" 
             height="253"
     >

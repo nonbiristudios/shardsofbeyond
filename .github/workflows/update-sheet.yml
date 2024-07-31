@@ -46,6 +46,9 @@ jobs:
     - name: Prepare Art Voting Tool
       run: ./scripts/create-art-vote-tool.sh
       
+    - name: Update Artworks that need to be downloaded
+      run: ./scripts/prompt-not-downloaded-artworks.sh
+      
     - name: Commit and push changes
       run: |
         git add ./card-data/*
