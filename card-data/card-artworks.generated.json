@@ -266,16 +266,37 @@
 		{"id": "5af4932e-1176-4e5d-a15a-6e1142f73928", "index":"2"}
 		,{"id": "e6e0a2be-8317-493d-9a2a-cb227f34a270", "index":"0"}
 		,{"id": "a530c54d-e253-4627-adf2-00999c92b877", "index":"1"}
-		,{"id": "15fa440e-c679-43c5-bb8b-b9b455c08a9e", "index":"0"}
-		,{"id": "e4ba3e94-f628-4294-80aa-b0e88b42ce7b", "index":"3"}
-		,{"id": "36d433e2-f591-4ea5-b62a-5cb266b18ca8", "index":"2"}
+		,{"id": "05e7dc87-7c7f-400d-b1d6-3bce616d0bfb", "index":"0"}
+		,{"id": "a0c2bdad-9975-4339-8646-d109edd1ea08", "index":"0"}
+		,{"id": "e7a204c6-76d5-4cd7-9a02-e06393503315", "index":"2"}
 		,{"id": "36d433e2-f591-4ea5-b62a-5cb266b18ca8", "index":"3"}
-		,{"id": "244ff135-4110-4b25-a42e-9196adf41571", "index":"3"}
-		,{"id": "244ff135-4110-4b25-a42e-9196adf41571", "index":"1"}
+		,{"id": "e7a204c6-76d5-4cd7-9a02-e06393503315", "index":"0"}
+		,{"id": "05e7dc87-7c7f-400d-b1d6-3bce616d0bfb", "index":"2"}
+		,{"id": "b96d47c1-e03b-4dad-bc97-123945866ebe", "index":"3"}
 	]
 ,	"Cinderguard Irregulars": [
+		{"id": "b7bb5d22-b78d-4859-ab62-b8e907414ebf", "index":"1"}
+		,{"id": "f605d05d-eca6-4ad3-8b9d-de3c34ab78f5", "index":"1"}
+		,{"id": "021e9046-af64-4322-8e14-9b735bb77e33", "index":"3"}
+		,{"id": "6a07ff77-26e4-4409-95e3-13b470abd6f9", "index":"1"}
+		,{"id": "7dd032d6-0ed5-4d3f-926c-322526d5acea", "index":"3"}
+		,{"id": "78be4041-6983-4fec-ac2f-158748bc0f07", "index":"1"}
+		,{"id": "081fdde2-8231-41d5-aa5c-be3ff2f37b5d", "index":"2"}
+		,{"id": "e641b986-4bf2-46ee-bff1-f15abfe257b6", "index":"0"}
+		,{"id": "7f7e7244-f70d-4340-bc00-db8ba5869d51", "index":"0"}
+		,{"id": "fe6e9b6c-1cca-4a3d-b1ff-7bb7fd6ebc36", "index":"0"}
 	]
 ,	"Cinderguard Scribe": [
+		{"id": "d013a66e-19b4-4dec-ad91-83482b06319e", "index":"1"}
+		,{"id": "f6b88e68-28ee-4a1b-9280-939e7e23c7ec", "index":"1"}
+		,{"id": "f597e2fa-e022-4cff-be04-37c4d1d52ecb", "index":"3"}
+		,{"id": "1ddd3864-3f10-431d-9dbe-3e4a143074c6", "index":"2"}
+		,{"id": "65e663c8-cf04-4c54-9eb8-9755a000000b", "index":"2"}
+		,{"id": "1af2a498-3786-4ad5-aef0-a5378f2dfbf2", "index":"3"}
+		,{"id": "f9350fe6-d4bf-4a09-be2d-6d486b1be787", "index":"3"}
+		,{"id": "6364f253-c9ef-441f-a5a5-5cd35f3f48b4", "index":"2"}
+		,{"id": "6364f253-c9ef-441f-a5a5-5cd35f3f48b4", "index":"1"}
+		,{"id": "7438c9cc-d782-4fee-9713-d3f301d7df3e", "index":"1"}
 	]
 ,	"Daredevil Duo": [
 		{"id": "7e117333-a3b5-48ce-84fb-ea1d5889f52c", "index":"3"}
@@ -290,6 +311,16 @@
 		,{"id": "41adfac4-fb2e-4621-a9ff-3a8e7c83e591", "index":"3"}
 	]
 ,	"Dewdrop Sprite": [
+		{"id": "f82cb067-a26e-43e4-a7b7-872ad83abf92", "index":"1"}
+		,{"id": "8fbe44e4-705c-4ee4-adbc-6e435546facc", "index":"3"}
+		,{"id": "bce87206-d1bc-4ae5-b2a8-99df10be783b", "index":"3"}
+		,{"id": "bce87206-d1bc-4ae5-b2a8-99df10be783b", "index":"2"}
+		,{"id": "a9cd8a18-681f-4ef7-927f-65a2d9169d26", "index":"0"}
+		,{"id": "9f273a40-8ff4-4686-8521-a3d630b0eaf9", "index":"1"}
+		,{"id": "7c0c6fe5-3d11-46e9-9fb2-27a3e4ad98d5", "index":"3"}
+		,{"id": "7c0c6fe5-3d11-46e9-9fb2-27a3e4ad98d5", "index":"0"}
+		,{"id": "e3dc4ec9-31d3-451f-b89d-f3942b80c042", "index":"2"}
+		,{"id": "7a2e29fb-bd98-4d30-88b2-8bfee70c4a47", "index":"0"}
 	]
 ,	"Diamond Phantom": [
 	]
