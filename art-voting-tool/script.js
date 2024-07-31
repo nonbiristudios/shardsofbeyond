@@ -30,8 +30,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 const update = () => {
   // Populate names
   Object.entries(artworks).forEach(async ([name, images]) => {
-    if(images.length <= 1) return;
-
     if(name === 'Alabaster Exarch') console.log('SHA1', images);
     const sha = await sha256(JSON.stringify(images));
 
