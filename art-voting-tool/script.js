@@ -3,6 +3,17 @@ const medals = ['🏅','🥈','🥉'];
 const medalValues = ['gold', 'silver', 'bronze'];
 let table;
 
+async function sha256(message) {
+  const msgBuffer = new TextEncoder('utf-8').encode(message);                    
+
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+             
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 6);
+  return hashHex;
+}
+
 const createURL = (id, index) => `https://cdn.midjourney.com/${id}/0_${index}.png`;
 let votes = {};
 let codeField;
@@ -18,8 +29,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 const update = () => {
   // Populate names
-  Object.entries(artworks).forEach(([name, images]) => {
+  Object.entries(artworks).forEach(async ([name, images]) => {
     if(images.length <= 1) return;
+
+    if(name === 'Alabaster Exarch') console.log('SHA1', images);
+    const sha = await sha256(JSON.stringify(images));
 
     images = images.map((image) => 
       `<div class="imageEntry" id="entry-${image.id}_${image.index}">
@@ -54,7 +68,7 @@ const update = () => {
     `);
 
     table.insertAdjacentHTML('beforeend', 
-      `<li class="list-group-item">
+      `<li class="list-group-item" id="${sha}">
         <div class="entry wrong" id="entry-${name}">
           <div class="name" onclick="toggleImageRow(event)">
             ${name}
@@ -86,7 +100,7 @@ const toggleImageRow = (e) => {
   }
 };
 
-const updateSelection = (name, selection) => {
+const updateSelection = async (name, selection) => {
   selection = JSON.parse(atob(selection));
 
   // Disable all other selections on that image.
@@ -105,7 +119,9 @@ const updateSelection = (name, selection) => {
   // Save information about selection.
   votes[name] = votes[name] ?? {};
   votes[name][selection.medal] = `${selection.id}_${selection.index}`;
-  votes[name].c = Object.keys(artworks[name]).length;
+  //votes[name].c = Object.keys(artworks[name]).length;
+
+  votes[name].c = await sha256(JSON.stringify(artworks[name]));
 
   updateCorrectness(name);
 };
@@ -150,8 +166,15 @@ const updateCorrectness = (name) => {
   const el = document.getElementById(`entry-${name}`);
 
   if(votes[name] !== undefined) {
+    const shaOfArtworks = el.closest('.list-group-item').id;
+
     const givenMedals = Object.entries(votes[name] ?? {}).length-1;
     if(givenMedals === 3 || givenMedals === Object.keys(artworks[name]).length) {
+      
+      if(shaOfArtworks !== votes[name].c) {
+        console.log('SHA does not match!');
+        return;
+      }
       el.classList.remove('wrong');
       el.classList.add('done');
       
