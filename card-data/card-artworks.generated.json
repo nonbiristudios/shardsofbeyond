@@ -345,17 +345,28 @@
 		,{"id": "12dd80f9-bb06-4d38-91d8-e146559471c0", "index":"0"}
 	]
 ,	"Dragonwind Harbinger": [
-		{"id": "10267f95-fbcc-470d-9fc5-c3db31dbaeaa", "index":"1"}
-		,{"id": "10267f95-fbcc-470d-9fc5-c3db31dbaeaa", "index":"3"}
+		{"id": "e4901e8f-dc64-4a32-8b4e-4db18f9edb34", "index":"2"}
+		,{"id": "792d59ef-82cf-4773-9eb4-65105c9208ec", "index":"2"}
 		,{"id": "61d71d29-7f19-4719-9f9d-b595a90e7eac", "index":"3"}
-		,{"id": "64a6f400-afe7-4556-bfe2-ab0db9226e29", "index":"3"}
+		,{"id": "8f47bfa6-8da8-478d-aba1-dff1a5520f1c", "index":"0"}
 		,{"id": "841174db-5c68-41e8-819a-09fa028c5943", "index":"3"}
 		,{"id": "841174db-5c68-41e8-819a-09fa028c5943", "index":"0"}
 		,{"id": "53760255-c6fe-4c4c-ac76-95aa017993f9", "index":"1"}
 		,{"id": "87f09264-db69-471c-a5b1-db98d924778f", "index":"0"}
 		,{"id": "87f09264-db69-471c-a5b1-db98d924778f", "index":"3"}
+		,{"id": "b5789562-2e2e-4ceb-8443-0ae424a3c7dd", "index":"3"}
 	]
 ,	"Dustdance Efreet": [
+		{"id": "ccfe11ca-d68d-42dd-b1cd-d5aa6d3c9b8b", "index":"2"}
+		,{"id": "ccfe11ca-d68d-42dd-b1cd-d5aa6d3c9b8b", "index":"0"}
+		,{"id": "fdd4f64e-d836-4c8f-9358-77cc88394b13", "index":"1"}
+		,{"id": "f309aeec-173a-46f1-b16b-f5f15141815a", "index":"0"}
+		,{"id": "f309aeec-173a-46f1-b16b-f5f15141815a", "index":"2"}
+		,{"id": "f14bf8bf-3033-40a6-9792-dd0d2005d4a4", "index":"2"}
+		,{"id": "f14bf8bf-3033-40a6-9792-dd0d2005d4a4", "index":"0"}
+		,{"id": "f14bf8bf-3033-40a6-9792-dd0d2005d4a4", "index":"1"}
+		,{"id": "1113a14a-e98b-4368-b526-2939a08de537", "index":"2"}
+		,{"id": "2c70cf34-6786-4493-bc7e-731c0f15efba", "index":"1"}
 	]
 ,	"Echo Beetle": [
 	]
@@ -364,8 +375,20 @@
 ,	"Floating Djinn": [
 	]
 ,	"Galeweaver": [
+		{"id": "ded5b3c8-a989-40e4-8be3-5ac67cf41736", "index":"0"}
+		,{"id": "7f5227db-8efa-4198-aad8-a7303c4834f9", "index":"0"}
+		,{"id": "affa39b4-9e17-48c4-8895-78b1f433b9f7", "index":"0"}
+		,{"id": "5b8a0ee5-409e-4609-8aba-0c49858830f9", "index":"3"}
+		,{"id": "5b8a0ee5-409e-4609-8aba-0c49858830f9", "index":"0"}
+		,{"id": "436c6169-6856-4831-9b5e-36c538fafa7c", "index":"3"}
+		,{"id": "658a4dd0-bf6d-47e7-86d8-52ee52a8f214", "index":"2"}
+		,{"id": "7bb8e808-62d2-41bb-8749-200a9089a3e9", "index":"2"}
+		,{"id": "4ccb8031-ae89-47b6-a633-e16eac63166b", "index":"3"}
+		,{"id": "7f81eb9e-f062-46de-9105-f93730a4e7fb", "index":"0"}
 	]
 ,	"Gashopper": [
+		{"id": "aa3828cc-da5b-44fd-a991-7dfa8d358eca", "index":"1"}
+		,{"id": "bb66d639-f343-4845-af2a-5eb193006647", "index":"0"}
 	]
 ,	"Glinteye Hoarder": [
 		{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"0"}
