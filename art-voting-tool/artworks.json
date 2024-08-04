@@ -393,6 +393,10 @@
 		,{"id": "9d22a6ef-3cfd-4390-83a1-bcb607bfc60e", "index":"2"}
 		,{"id": "4a4fcd20-cf99-4f08-98be-e4a9a21447fd", "index":"2"}
 		,{"id": "edce3cff-dccc-4dd6-927a-c86b99379750", "index":"1"}
+		,{"id": "712bc1b1-a311-4c9e-8fd3-9084faf62db5", "index":"1"}
+		,{"id": "712bc1b1-a311-4c9e-8fd3-9084faf62db5", "index":"2"}
+		,{"id": "0ac155c4-dccd-49ea-a6ba-b70dd8d8e9a3", "index":"2"}
+		,{"id": "4675fbf5-6bfc-4c8a-9092-aaf4e3643f28", "index":"2"}
 	]
 ,	"Glinteye Hoarder": [
 		{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"0"}
@@ -433,6 +437,16 @@
 ,	"Pyretic Pet": [
 	]
 ,	"Raijin": [
+		{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"3"}
+		,{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"1"}
+		,{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"0"}
+		,{"id": "032d003e-cfc5-416a-b659-1bdded298c0e", "index":"1"}
+		,{"id": "de56f839-6491-46cf-880d-6d928a2517da", "index":"0"}
+		,{"id": "83e9cfe5-7b3e-4733-9009-d3e420db215a", "index":"1"}
+		,{"id": "5764c6a2-ac2a-45d1-bd44-3056e5b71fde", "index":"3"}
+		,{"id": "dabe2c88-7609-4d23-9be4-b6d03f5043ec", "index":"2"}
+		,{"id": "22f743bd-9c45-49eb-bcae-584391aba2aa", "index":"1"}
+		,{"id": "16ee0dc4-08e6-49e0-be6c-5041c7b5d4f9", "index":"1"}
 	]
 ,	"Raijin's Familiar": [
 	]
