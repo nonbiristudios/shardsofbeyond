@@ -589,12 +589,36 @@
 ,	"Windkite Acolyte": [
 		{"id": "ec1fb5cf-b226-482a-9fd2-005d6f927846", "index":"1"}
 		,{"id": "c502c751-ced3-4cb3-aa77-ce7cf3c560d4", "index":"0"}
+		,{"id": "15eb18a9-adcc-4ad5-bb1a-b9ca187fa7e5", "index":"1"}
+		,{"id": "91bb5265-1010-4c14-8a17-c124ec7328be", "index":"3"}
+		,{"id": "3459e7cd-50f2-4130-be4c-42546280c0e7", "index":"3"}
+		,{"id": "f6913507-2389-4765-a6a4-189bde5ce495", "index":"1"}
+		,{"id": "f6913507-2389-4765-a6a4-189bde5ce495", "index":"2"}
+		,{"id": "1be84c96-df08-4398-88f9-09e5ad8ff402", "index":"2"}
+		,{"id": "59d1a1e1-529a-4cc6-b261-fdc197b29a2b", "index":"1"}
+		,{"id": "33065fbd-b99a-477c-aeda-1e82ea951a22", "index":"3"}
 	]
 ,	"Cinderguard Emberblade": [
 		{"id": "f95877ad-f1f9-416e-ac05-6e7b4ad534ee", "index":"2"}
 		,{"id": "ce3cd5be-146d-4747-a725-96d02fce6988", "index":"3"}
+		,{"id": "3d36ab7a-cfa0-4e3c-835e-4519c7bd02e5", "index":"2"}
+		,{"id": "0c8ecc9c-0eba-4e1f-88ef-eb8a6b5bb902", "index":"0"}
+		,{"id": "915e002d-0994-4e3b-9b5b-10849e3c35ad", "index":"2"}
+		,{"id": "eea88919-f1b3-40c0-9f43-d0e3f3705e14", "index":"2"}
+		,{"id": "727e14da-bc4a-4671-9e13-4f06e7007152", "index":"0"}
+		,{"id": "24410310-250b-4dfc-957c-f04fe0d1851b", "index":"0"}
+		,{"id": "49af1a65-37b2-43e7-abfb-fec1ef5ae6d3", "index":"2"}
+		,{"id": "c49fa673-bcd1-49dc-a65d-b262aa8d349c", "index":"3"}
 	]
 ,	"Dragon Rider": [
+		{"id": "f29821d3-a78b-46a9-ab7b-9b476d6ecfd7", "index":"1"}
+		,{"id": "7f15e033-4d9d-48a2-9a39-7197c3b9bf07", "index":"3"}
+		,{"id": "a6b8108d-1bb5-42d2-a7a0-28095eb3d2c2", "index":"2"}
+		,{"id": "60403217-9653-4c7f-8bd1-52389abddd0b", "index":"2"}
+		,{"id": "35a72dcd-bf6d-4211-a3ec-b4a56e9266de", "index":"3"}
+		,{"id": "64811c7a-9306-4518-8d43-b94ca602125b", "index":"2"}
+		,{"id": "4f36ce57-0d46-485b-824d-f5324b716d84", "index":"1"}
+		,{"id": "b7fa891c-92aa-4309-9f37-1140cd8df7b3", "index":"2"}
 	]
 ,	"Portalrunner": [
 	]
@@ -655,6 +679,7 @@
 ,	"Filthy Peasant": [
 	]
 ,	"Frontier Centurion": [
+		{"id": "e9cfddb2-74e8-4821-93ef-db5a57e9c0e6", "index":"1"}
 	]
 ,	"Gem Merchant": [
 	]
