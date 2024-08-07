@@ -619,16 +619,31 @@
 		,{"id": "64811c7a-9306-4518-8d43-b94ca602125b", "index":"2"}
 		,{"id": "4f36ce57-0d46-485b-824d-f5324b716d84", "index":"1"}
 		,{"id": "b7fa891c-92aa-4309-9f37-1140cd8df7b3", "index":"2"}
+		,{"id": "64a2413c-9261-4124-ba7d-e64c2319aae0", "index":"0"}
+		,{"id": "95d4bd24-c3f9-417f-be00-e2b02341a172", "index":"0"}
 	]
 ,	"Portalrunner": [
 	]
 ,	"Starfall Shaman": [
+		{"id": "0d462342-adfb-4bc1-8852-2f568fbc9684", "index":"2"}
+		,{"id": "eb6b6ed8-09d8-4cb7-8e72-89daeeb5ad45", "index":"1"}
+		,{"id": "0bfb1ddb-5317-44ca-ac28-18bec4484bb2", "index":"2"}
+		,{"id": "fc65d230-0b7a-4bbd-9653-6fa105e5bcec", "index":"3"}
+		,{"id": "48703433-d069-4669-a233-4fb736b88afa", "index":"2"}
+		,{"id": "48703433-d069-4669-a233-4fb736b88afa", "index":"0"}
+		,{"id": "3500932c-0e0c-496e-8393-7f54603731c9", "index":"3"}
+		,{"id": "888400b6-fc24-4382-9b4f-cb536d1c6259", "index":"2"}
 	]
 ,	"Steelclaw Veterans": [
 	]
 ,	"Crazed Hermit": [
 	]
 ,	"Eons-old Dragon": [
+		{"id": "ade40824-39ca-4001-a6f9-b17abaa7f8c9", "index":"2"}
+		,{"id": "237069bf-4281-4ab7-875e-331a4121cc5c", "index":"2"}
+		,{"id": "b817370e-a391-4a6b-9688-f381c88b69b0", "index":"2"}
+		,{"id": "1147f4d1-0ebc-4af6-a726-d02c68d60b73", "index":"0"}
+		,{"id": "1147f4d1-0ebc-4af6-a726-d02c68d60b73", "index":"2"}
 	]
 ,	"Lurking Canopystomper": [
 	]
