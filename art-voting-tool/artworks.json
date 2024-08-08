@@ -644,16 +644,39 @@
 		,{"id": "b817370e-a391-4a6b-9688-f381c88b69b0", "index":"2"}
 		,{"id": "1147f4d1-0ebc-4af6-a726-d02c68d60b73", "index":"0"}
 		,{"id": "1147f4d1-0ebc-4af6-a726-d02c68d60b73", "index":"2"}
+		,{"id": "aad8229e-1d42-48dd-8179-36ff489b78e3", "index":"2"}
+		,{"id": "01a4f043-f235-41b9-8d46-7b35d6f18030", "index":"2"}
+		,{"id": "c0cf7df8-c1a5-454a-bfd0-19b8243d58cc", "index":"1"}
+		,{"id": "16ae4b70-d224-42db-b6b6-ecf2124ed295", "index":"0"}
+		,{"id": "4623ba22-8900-4ec0-baf7-811a3eacf3be", "index":"1"}
 	]
 ,	"Lurking Canopystomper": [
 	]
 ,	"Resourceful Poacher": [
 	]
 ,	"Shardhorde Crystalfang": [
+		{"id": "16b422f4-9fd2-4bb1-9674-585e0409a383", "index":"3"}
+		,{"id": "ce917096-e668-418b-8741-693ddbec1b5e", "index":"3"}
+		,{"id": "dce6223e-4d4d-4a94-b8ed-94d249a1b876", "index":"2"}
+		,{"id": "993d4901-e479-4c23-8e37-374cc886632f", "index":"0"}
+		,{"id": "44b8a171-093e-48a9-b7dd-0eb68cf31160", "index":"0"}
+		,{"id": "c6262938-a0bb-4c14-a59f-2cd741aebb5d", "index":"2"}
+		,{"id": "2d36ed03-9eb8-4873-a6b6-490fa41bd145", "index":"2"}
+		,{"id": "64fe4f62-cd24-4b28-8008-3a9184077878", "index":"1"}
 	]
 ,	"The Skyshrieker": [
 	]
 ,	"Tidecrasher": [
+		{"id": "b85e9529-2c1c-43be-8887-f8653d2daa3e", "index":"1"}
+		,{"id": "cbc1003a-54e1-4023-a949-d6248d86958a", "index":"1"}
+		,{"id": "14907b72-ac7b-441a-89c1-206aa74ae3cc", "index":"3"}
+		,{"id": "da05031f-b161-4dbf-82ed-34f56ec60f8b", "index":"3"}
+		,{"id": "da05031f-b161-4dbf-82ed-34f56ec60f8b", "index":"0"}
+		,{"id": "36f45aba-7dd3-4234-a291-4a6bd6317f10", "index":"2"}
+		,{"id": "36f45aba-7dd3-4234-a291-4a6bd6317f10", "index":"0"}
+		,{"id": "cb5ae9cc-bb0c-4b23-93f2-9aba3eead611", "index":"0"}
+		,{"id": "5346acfb-9c48-4258-a97e-45266d64b6d2", "index":"3"}
+		,{"id": "89be5e2a-6702-40e7-bb2c-87dce748f051", "index":"0"}
 	]
 ,	"Bringer of Bad Omens": [
 	]
