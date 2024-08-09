@@ -685,6 +685,8 @@
 ,	"Lightning Manticore": [
 	]
 ,	"Pyroclastic Zombie": [
+		{"id": "66f83bd6-353d-4924-b469-c22fdaf65162", "index":"2"}
+		,{"id": "21d93227-da2e-4a58-8af8-8d84f202d465", "index":"1"}
 	]
 ,	"Raging Minotaur": [
 	]
@@ -1080,5 +1082,19 @@
 ,	"Realmshifter": [
 	]
 ,	"Shapeshifter": [
+	]
+,	"Rustblooded Boar": [
+	]
+,	"Eclipse Dragon": [
+	]
+,	"Featherfrost Harpy": [
+	]
+,	"Nightbloom Owl": [
+	]
+,	"Frostfire Basilisk": [
+	]
+,	"Sandsilk Fox": [
+	]
+,	"Mistborn Serpent": [
 	]
 }
