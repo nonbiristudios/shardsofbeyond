@@ -24,9 +24,6 @@
 ,	"Cryptosphinx": [
 		{"id": "250e747b-c7e8-4a5b-a483-65446cd307aa", "index":"2"}
 	]
-,	"Cryptroach": [
-		{"id": "b6b028b1-6920-4dde-9694-73d589c7969e", "index":"1"}
-	]
 ,	"Damaged Automaton": [
 		{"id": "3644d9f4-a154-4538-96ea-489d6da10cda", "index":"2"}
 	]
@@ -51,10 +48,10 @@
 ,	"Feline Ushabti": [
 		{"id": "7b73514c-612c-4f7a-b7b0-8d03ff687646", "index":"1"}
 	]
-,	"Guardian Angel": [
-	]
 ,	"Guardian of the Gates": [
 		{"id": "13533eea-4c56-4787-a8d1-5b5de4d2fe40", "index":"0"}
+	]
+,	"Guardian Angel": [
 	]
 ,	"Hallowed Exorcist": [
 		{"id": "fb9ad282-f768-4726-b79b-f40c11d0277b", "index":"3"}
@@ -62,10 +59,13 @@
 ,	"Harmonic Echo": [
 		{"id": "2fb88f6b-7b37-40f3-9ddf-e46da64b9024", "index":"2"}
 	]
-,	"Herald of Eternal Grace": [
-	]
 ,	"Ibis Ushabti": [
 		{"id": "10569df3-af61-474e-9997-08b1211eac4b", "index":"3"}
+	]
+,	"Herald of Eternal Grace": [
+	]
+,	"Maze Master Sphinx": [
+		{"id": "9ccceaff-97a6-4625-9bea-6567b85c04ef", "index":"0"}
 	]
 ,	"Ivoryscar Cursewing": [
 	]
@@ -73,13 +73,10 @@
 	]
 ,	"Kylix of Excess": [
 	]
-,	"Maze Master Sphinx": [
-		{"id": "9ccceaff-97a6-4625-9bea-6567b85c04ef", "index":"0"}
-	]
-,	"Monolith of Meditation": [
-	]
 ,	"Mystic Puzzle Box": [
 		{"id": "0cf0be47-c57f-4feb-84e6-1790219ba54b", "index":"0"}
+	]
+,	"Monolith of Meditation": [
 	]
 ,	"Oasis Sprite": [
 		{"id": "16fb7678-58aa-43f4-976c-6411d373341c", "index":"1"}
@@ -87,13 +84,16 @@
 ,	"Pharaoh's Bodyguard": [
 		{"id": "4e1424fd-a4dd-430d-b5db-da68488eb78a", "index":"0"}
 	]
-,	"Pyramidion": [
-	]
 ,	"Scripture Monkey": [
 		{"id": "3321903a-a303-44ee-8b5d-3487bd693fa9", "index":"3"}
 	]
+,	"Pyramidion": [
+	]
 ,	"Sekhem Chariot": [
 		{"id": "a6b9796b-edf3-4af3-9ed5-c8182508947e", "index":"1"}
+	]
+,	"Thunderswarm Pegasus": [
+		{"id": "2892cac4-ecfc-4b4f-a4e9-1eb61a4971a8", "index":"3"}
 	]
 ,	"Solarsteel Prodigy": [
 	]
@@ -103,22 +103,21 @@
 	]
 ,	"The Kitty of Thamiel": [
 	]
-,	"Thunderswarm Pegasus": [
-		{"id": "2892cac4-ecfc-4b4f-a4e9-1eb61a4971a8", "index":"3"}
-	]
 ,	"Thunderswarm Skirmisher": [
 		{"id": "1352ae1c-e93b-4eeb-9c2b-8d45efc47f38", "index":"0"}
 		,{"id": "e58d0ede-21d0-4b9c-87b3-4745b329f97d", "index":"0"}
 	]
-,	"Towering Obelisk of Xi": [
-	]
 ,	"Tranquil Herd Gem Titan": [
 		{"id": "ed7547f6-59f6-4674-8e51-448f70e1a062", "index":"1"}
 	]
-,	"Winged Ushabti": [
+,	"Towering Obelisk of Xi": [
 	]
 ,	"Wrath of the Pharaoh": [
 		{"id": "557ea44c-dc30-4519-93c0-96caf2f97815", "index":"3"}
+	]
+,	"Winged Ushabti": [
+	]
+,	"Obsidian Scarab": [
 	]
 ,	"Yellow Crusader": [
 	]
@@ -218,38 +217,6 @@
 	]
 ,	"Airstep Sifu": [
 	]
-,	"Amberlock Dragonling": [
-		{"id": "31869c2e-79e0-44a2-bcb2-ef2489f226ad", "index":"3"}
-		,{"id": "86e09484-75c2-4d9e-b33e-31faa3d4e251", "index":"2"}
-		,{"id": "68e2c61d-f9ac-435e-8eb9-44ef82724758", "index":"1"}
-		,{"id": "02a937b0-dc30-4b61-a80a-775950a47d1e", "index":"0"}
-		,{"id": "f8926069-73ab-4045-b918-9cb77758a03b", "index":"3"}
-		,{"id": "a02f660a-1dce-436f-acb5-465e63f5bbc5", "index":"1"}
-		,{"id": "0e687280-8a8e-4bab-ba7e-71eecfd6f625", "index":"2"}
-		,{"id": "5e110d2e-a7e4-436b-bb11-4fb86e1580e9", "index":"3"}
-		,{"id": "5e110d2e-a7e4-436b-bb11-4fb86e1580e9", "index":"2"}
-		,{"id": "750ed738-29ba-42b6-8f6f-d878ddac70d4", "index":"1"}
-	]
-,	"Arcanum Grandmaster": [
-	]
-,	"Auraborne Wyvern": [
-	]
-,	"Blazecharm Kitsune": [
-	]
-,	"Blood Moon Scarab": [
-		{"id": "f076bedf-28b1-43a4-bdf8-5e57ad378122", "index":"3"}
-		,{"id": "2245d2f9-6faa-4d4c-9ddb-94e018ca54af", "index":"0"}
-		,{"id": "2245d2f9-6faa-4d4c-9ddb-94e018ca54af", "index":"2"}
-		,{"id": "8c7e4ea8-e35f-4309-86b6-e6a9f1efaecb", "index":"1"}
-		,{"id": "8c7e4ea8-e35f-4309-86b6-e6a9f1efaecb", "index":"2"}
-		,{"id": "ae00d456-a481-4034-a8c2-fdb97fffe7f6", "index":"1"}
-		,{"id": "ae00d456-a481-4034-a8c2-fdb97fffe7f6", "index":"2"}
-		,{"id": "78ae5a97-8656-4c23-992f-61f8947a1950", "index":"3"}
-		,{"id": "78ae5a97-8656-4c23-992f-61f8947a1950", "index":"2"}
-		,{"id": "237ccf0b-0f9d-4e23-b6d4-df327207e61c", "index":"1"}
-	]
-,	"Boiling Blood Berserker": [
-	]
 ,	"Cavern Lindwurm": [
 		{"id": "4cc82fb7-ff66-4625-86b9-bd6b6019e512", "index":"2"}
 		,{"id": "172ae98b-46c0-4825-b85b-219a47dfecc0", "index":"2"}
@@ -262,6 +229,12 @@
 		,{"id": "da9010de-44c1-42bf-8bbc-f7eb026c1882", "index":"2"}
 		,{"id": "bdfca501-4b58-4f97-83e7-bcf89c7e7f5e", "index":"0"}
 	]
+,	"Arcanum Grandmaster": [
+	]
+,	"Auraborne Wyvern": [
+	]
+,	"Blazecharm Kitsune": [
+	]
 ,	"Cheerful Pixies": [
 		{"id": "5af4932e-1176-4e5d-a15a-6e1142f73928", "index":"2"}
 		,{"id": "e6e0a2be-8317-493d-9a2a-cb227f34a270", "index":"0"}
@@ -273,6 +246,8 @@
 		,{"id": "e7a204c6-76d5-4cd7-9a02-e06393503315", "index":"0"}
 		,{"id": "05e7dc87-7c7f-400d-b1d6-3bce616d0bfb", "index":"2"}
 		,{"id": "b96d47c1-e03b-4dad-bc97-123945866ebe", "index":"3"}
+	]
+,	"Boiling Blood Berserker": [
 	]
 ,	"Cinderguard Irregulars": [
 		{"id": "b7bb5d22-b78d-4859-ab62-b8e907414ebf", "index":"1"}
@@ -322,39 +297,11 @@
 		,{"id": "e3dc4ec9-31d3-451f-b89d-f3942b80c042", "index":"2"}
 		,{"id": "7a2e29fb-bd98-4d30-88b2-8bfee70c4a47", "index":"0"}
 	]
-,	"Diamond Phantom": [
-	]
-,	"Draconic Highpriest": [
-	]
 ,	"Dragon Egg": [
 		{"id": "a4c0044f-a986-4aa9-87bf-000b67966a4b", "index":"0"}
 		,{"id": "1368b59f-6a3a-4f37-b704-dc0023c5a39b", "index":"0"}
 		,{"id": "1368b59f-6a3a-4f37-b704-dc0023c5a39b", "index":"3"}
 		,{"id": "3e4015d3-c57e-4d12-9ddb-df5fcfb9d19d", "index":"0"}
-	]
-,	"Dragonfire Warlock": [
-		{"id": "e1671c8d-c48c-402d-addf-9a0fccad1761", "index":"0"}
-		,{"id": "ba533218-851c-4bf4-a8d6-1d40dd59d983", "index":"0"}
-		,{"id": "01e8e033-593c-490d-a32f-a166ab8baa48", "index":"2"}
-		,{"id": "5eca18e5-b521-4e2a-9848-bc98673ae4d2", "index":"0"}
-		,{"id": "914ae491-f842-47a7-972e-d9a4a84c90f6", "index":"0"}
-		,{"id": "50351124-cb8d-40c5-ba32-ab7ed7975d03", "index":"3"}
-		,{"id": "9b90030e-860f-496a-a734-a45969d1b0dd", "index":"1"}
-		,{"id": "54eedfaf-453e-4a49-bd5b-d4012761a293", "index":"1"}
-		,{"id": "6e8217f3-8ac2-45b0-8dc4-ef5352b479ea", "index":"2"}
-		,{"id": "12dd80f9-bb06-4d38-91d8-e146559471c0", "index":"0"}
-	]
-,	"Dragonwind Harbinger": [
-		{"id": "e4901e8f-dc64-4a32-8b4e-4db18f9edb34", "index":"2"}
-		,{"id": "792d59ef-82cf-4773-9eb4-65105c9208ec", "index":"2"}
-		,{"id": "61d71d29-7f19-4719-9f9d-b595a90e7eac", "index":"3"}
-		,{"id": "8f47bfa6-8da8-478d-aba1-dff1a5520f1c", "index":"0"}
-		,{"id": "841174db-5c68-41e8-819a-09fa028c5943", "index":"3"}
-		,{"id": "841174db-5c68-41e8-819a-09fa028c5943", "index":"0"}
-		,{"id": "53760255-c6fe-4c4c-ac76-95aa017993f9", "index":"1"}
-		,{"id": "87f09264-db69-471c-a5b1-db98d924778f", "index":"0"}
-		,{"id": "87f09264-db69-471c-a5b1-db98d924778f", "index":"3"}
-		,{"id": "b5789562-2e2e-4ceb-8443-0ae424a3c7dd", "index":"3"}
 	]
 ,	"Dustdance Efreet": [
 		{"id": "ccfe11ca-d68d-42dd-b1cd-d5aa6d3c9b8b", "index":"2"}
@@ -368,99 +315,9 @@
 		,{"id": "1113a14a-e98b-4368-b526-2939a08de537", "index":"2"}
 		,{"id": "2c70cf34-6786-4493-bc7e-731c0f15efba", "index":"1"}
 	]
-,	"Echo Beetle": [
+,	"Diamond Phantom": [
 	]
-,	"Ember Whelp": [
-	]
-,	"Floating Djinn": [
-	]
-,	"Galeweaver": [
-		{"id": "ded5b3c8-a989-40e4-8be3-5ac67cf41736", "index":"0"}
-		,{"id": "7f5227db-8efa-4198-aad8-a7303c4834f9", "index":"0"}
-		,{"id": "affa39b4-9e17-48c4-8895-78b1f433b9f7", "index":"0"}
-		,{"id": "5b8a0ee5-409e-4609-8aba-0c49858830f9", "index":"3"}
-		,{"id": "5b8a0ee5-409e-4609-8aba-0c49858830f9", "index":"0"}
-		,{"id": "436c6169-6856-4831-9b5e-36c538fafa7c", "index":"3"}
-		,{"id": "658a4dd0-bf6d-47e7-86d8-52ee52a8f214", "index":"2"}
-		,{"id": "7bb8e808-62d2-41bb-8749-200a9089a3e9", "index":"2"}
-		,{"id": "4ccb8031-ae89-47b6-a633-e16eac63166b", "index":"3"}
-		,{"id": "7f81eb9e-f062-46de-9105-f93730a4e7fb", "index":"0"}
-	]
-,	"Gashopper": [
-		{"id": "aa3828cc-da5b-44fd-a991-7dfa8d358eca", "index":"1"}
-		,{"id": "bb66d639-f343-4845-af2a-5eb193006647", "index":"0"}
-		,{"id": "9d22a6ef-3cfd-4390-83a1-bcb607bfc60e", "index":"0"}
-		,{"id": "9d22a6ef-3cfd-4390-83a1-bcb607bfc60e", "index":"2"}
-		,{"id": "4a4fcd20-cf99-4f08-98be-e4a9a21447fd", "index":"2"}
-		,{"id": "edce3cff-dccc-4dd6-927a-c86b99379750", "index":"1"}
-		,{"id": "712bc1b1-a311-4c9e-8fd3-9084faf62db5", "index":"1"}
-		,{"id": "712bc1b1-a311-4c9e-8fd3-9084faf62db5", "index":"2"}
-		,{"id": "0ac155c4-dccd-49ea-a6ba-b70dd8d8e9a3", "index":"2"}
-		,{"id": "4675fbf5-6bfc-4c8a-9092-aaf4e3643f28", "index":"2"}
-	]
-,	"Glinteye Hoarder": [
-		{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"0"}
-		,{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"2"}
-		,{"id": "47e93cbb-0e71-491a-a49b-5685172b96b1", "index":"2"}
-		,{"id": "c0bbf41e-da40-447a-8817-ba761c755907", "index":"1"}
-		,{"id": "e27864a6-cc07-4984-b181-922b584c0d96", "index":"3"}
-		,{"id": "0a1168a7-16a3-4022-b822-fd13a508a624", "index":"0"}
-		,{"id": "e30e77bd-955e-4e8e-afe4-eae7161982c4", "index":"3"}
-		,{"id": "eaad0536-abea-4999-883c-e3e793929cf4", "index":"3"}
-		,{"id": "a3874385-0194-4c0f-ba14-08b4d7628a67", "index":"1"}
-		,{"id": "8c585bc8-5180-439e-8adb-c3a47c0150fe", "index":"2"}
-	]
-,	"Hermit of the Horizon": [
-	]
-,	"Infernoblight": [
-		{"id": "33f7cc2c-e93d-4e2c-9b65-000f7fec5b4d", "index":"3"}
-		,{"id": "d85c9fc4-fcbf-4427-9461-c7d69924fd22", "index":"3"}
-		,{"id": "ded1343a-822d-4000-b96d-307220437a47", "index":"3"}
-		,{"id": "7b986382-842d-4894-bfa5-8f3a13c28048", "index":"2"}
-		,{"id": "7b986382-842d-4894-bfa5-8f3a13c28048", "index":"1"}
-		,{"id": "3ece9766-fbca-4a9f-b43c-ceacdfd34356", "index":"0"}
-		,{"id": "23146584-f12d-4df7-9044-bc3fddd5aed1", "index":"2"}
-		,{"id": "e7c5e4fe-638b-4178-857e-6623f117ac1e", "index":"3"}
-		,{"id": "d1d4e43a-6294-4cca-b9e9-a8a9b7c14773", "index":"2"}
-		,{"id": "1b37b6ab-c626-42c3-a564-3b3f1a292370", "index":"3"}
-	]
-,	"Mirrorworld Bloodseeker": [
-	]
-,	"Mountain Sage": [
-	]
-,	"Nimbus Claw": [
-	]
-,	"Omen Firefly": [
-	]
-,	"Pixie Summoner": [
-	]
-,	"Pyretic Pet": [
-	]
-,	"Raijin": [
-		{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"3"}
-		,{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"1"}
-		,{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"0"}
-		,{"id": "032d003e-cfc5-416a-b659-1bdded298c0e", "index":"1"}
-		,{"id": "de56f839-6491-46cf-880d-6d928a2517da", "index":"0"}
-		,{"id": "83e9cfe5-7b3e-4733-9009-d3e420db215a", "index":"1"}
-		,{"id": "5764c6a2-ac2a-45d1-bd44-3056e5b71fde", "index":"3"}
-		,{"id": "dabe2c88-7609-4d23-9be4-b6d03f5043ec", "index":"2"}
-		,{"id": "22f743bd-9c45-49eb-bcae-584391aba2aa", "index":"1"}
-		,{"id": "16ee0dc4-08e6-49e0-be6c-5041c7b5d4f9", "index":"1"}
-	]
-,	"Raijin's Familiar": [
-		{"id": "99049fea-fc5d-4752-b9db-6d8c91ccc8ae", "index":"2"}
-		,{"id": "a57b5b64-f263-4fdf-af6b-1b93580bfe5e", "index":"0"}
-		,{"id": "7fc25a68-b33f-47f1-a6ec-9553717b1c97", "index":"0"}
-		,{"id": "7fc25a68-b33f-47f1-a6ec-9553717b1c97", "index":"1"}
-		,{"id": "9f59a1ed-24af-4d99-acaa-6a2a05df2427", "index":"3"}
-		,{"id": "8572f917-df31-4408-8707-1d30d6ca5130", "index":"2"}
-		,{"id": "fb929c6c-57e6-433a-a266-d6503efa9f59", "index":"3"}
-		,{"id": "2ddb8064-c0f9-4c6e-bd7c-5450e649e0ba", "index":"1"}
-		,{"id": "2ddb8064-c0f9-4c6e-bd7c-5450e649e0ba", "index":"0"}
-		,{"id": "c9877abe-5367-4550-95bd-009c5ca1c395", "index":"2"}
-	]
-,	"Red Crusader": [
+,	"Draconic Highpriest": [
 	]
 ,	"Roughlands Scourge": [
 		{"id": "30dad8d4-0f43-43a0-b5ad-94bc8b2c85d6", "index":"2"}
@@ -473,18 +330,6 @@
 		,{"id": "dc135f3d-8b66-4450-857e-ed4b64a3e949", "index":"1"}
 		,{"id": "f552819f-bae0-4fdc-aec9-3c948fadca96", "index":"0"}
 		,{"id": "93fb8cdb-1f21-49e7-be26-dc8ba099f499", "index":"3"}
-	]
-,	"Runecursed Wyvern": [
-		{"id": "304afcfd-7894-408f-9075-b9665b0da9bb", "index":"1"}
-		,{"id": "3f700745-93e9-491e-b302-0f3b8129cd3a", "index":"3"}
-		,{"id": "efc96ed0-d87b-4d29-bb86-f29795728bf8", "index":"2"}
-		,{"id": "b6935539-efed-401f-850a-d485cb53a209", "index":"2"}
-		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"3"}
-		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"1"}
-	]
-,	"Sand Witch": [
-	]
-,	"Shardhorde Galewhelp": [
 	]
 ,	"Shardhorde Leviathan": [
 		{"id": "f04b4fbf-83ad-4f50-9c3a-68843e69ef11", "index":"2"}
@@ -510,45 +355,6 @@
 		,{"id": "ca73b5bd-6fc1-4339-9285-ae03c13a5f5d", "index":"0"}
 		,{"id": "f43fb0f9-219d-46ea-84e7-cebd02ca67fd", "index":"3"}
 	]
-,	"Skulloath Lootclaimer": [
-		{"id": "b782234a-ae27-4ab3-a874-11519512ecce", "index":"1"}
-		,{"id": "bace0219-18ab-4fad-b1cf-6dd7f636ba09", "index":"3"}
-		,{"id": "bace0219-18ab-4fad-b1cf-6dd7f636ba09", "index":"1"}
-		,{"id": "48fb748c-ced1-4a11-b902-08569b23ea3e", "index":"3"}
-		,{"id": "648f33e0-f155-4776-b3ef-cb6a2da47ad2", "index":"0"}
-		,{"id": "88722dbd-81e5-4a88-b7b1-4d119407e4eb", "index":"2"}
-		,{"id": "ac379b8f-0976-49e8-9984-afd4fa85d72d", "index":"2"}
-		,{"id": "ac379b8f-0976-49e8-9984-afd4fa85d72d", "index":"0"}
-		,{"id": "ce81bdef-692d-43ea-9dce-a4b313702bd0", "index":"2"}
-		,{"id": "92e4fd9a-ec61-456e-ae1a-ccf89544238d", "index":"1"}
-	]
-,	"Sparkwielder": [
-	]
-,	"Spell Cat": [
-		{"id": "23c28003-cb9d-4252-b47e-eb31b79c4746", "index":"3"}
-		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"3"}
-		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"0"}
-		,{"id": "ea69db27-0094-46a2-957d-df9c6587cd8f", "index":"1"}
-		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"3"}
-		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"0"}
-	]
-,	"Stormbringer": [
-	]
-,	"Stormlash": [
-	]
-,	"Stormworn Horn": [
-	]
-,	"Tectonic Shifter": [
-		{"id": "04e07353-17ab-4846-84bc-818bc402f09d", "index":"1"}
-		,{"id": "e8e96f76-94bd-41ae-b1bd-4ca96aebdd1e", "index":"3"}
-		,{"id": "ee08debf-6dfa-4c1a-b68d-af2815e27ecd", "index":"0"}
-		,{"id": "a5b23374-c9e0-4cc3-ac9e-7cc693ab07b6", "index":"1"}
-		,{"id": "da48772a-b4d4-44f8-8d55-428c4b7750df", "index":"1"}
-	]
-,	"The Culling Claw": [
-	]
-,	"Thunderfox": [
-	]
 ,	"Torii Spirit": [
 		{"id": "855d9ad2-60fa-4317-90d5-dde695aa3863", "index":"2"}
 		,{"id": "ef31c8de-f61e-4972-86e9-aa9f1831afd5", "index":"0"}
@@ -561,18 +367,11 @@
 		,{"id": "cb83f03b-5441-4ab6-acd4-d6c23cfbf1b0", "index":"1"}
 		,{"id": "11cea0b5-15f6-46ea-9c98-85147c5d0c1d", "index":"2"}
 	]
-,	"Twin Thundertail": [
+,	"Echo Beetle": [
 	]
-,	"Vengeful Gust": [
+,	"Ember Whelp": [
 	]
-,	"Vermillion Firebird": [
-		{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"2"}
-		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"3"}
-		,{"id": "8267de13-464b-4475-8b89-635cac0d70bd", "index":"0"}
-		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"0"}
-		,{"id": "ce13cd47-a205-4d28-96b0-bdf906fae89f", "index":"0"}
-		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"3"}
-		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"1"}
+,	"Floating Djinn": [
 	]
 ,	"Volcano Embodiment": [
 		{"id": "b3f1d5b4-d271-4bb7-9615-dec247ec2937", "index":"0"}
@@ -598,7 +397,209 @@
 		,{"id": "59d1a1e1-529a-4cc6-b261-fdc197b29a2b", "index":"1"}
 		,{"id": "33065fbd-b99a-477c-aeda-1e82ea951a22", "index":"3"}
 	]
-,	"Cinderguard Emberblade": [
+,	"Blood Moon Scarab": [
+		{"id": "f076bedf-28b1-43a4-bdf8-5e57ad378122", "index":"3"}
+		,{"id": "2245d2f9-6faa-4d4c-9ddb-94e018ca54af", "index":"0"}
+		,{"id": "2245d2f9-6faa-4d4c-9ddb-94e018ca54af", "index":"2"}
+		,{"id": "8c7e4ea8-e35f-4309-86b6-e6a9f1efaecb", "index":"1"}
+		,{"id": "8c7e4ea8-e35f-4309-86b6-e6a9f1efaecb", "index":"2"}
+		,{"id": "ae00d456-a481-4034-a8c2-fdb97fffe7f6", "index":"1"}
+		,{"id": "ae00d456-a481-4034-a8c2-fdb97fffe7f6", "index":"2"}
+		,{"id": "78ae5a97-8656-4c23-992f-61f8947a1950", "index":"3"}
+		,{"id": "78ae5a97-8656-4c23-992f-61f8947a1950", "index":"2"}
+		,{"id": "237ccf0b-0f9d-4e23-b6d4-df327207e61c", "index":"1"}
+	]
+,	"Hermit of the Horizon": [
+	]
+,	"Galeweaver": [
+		{"id": "ded5b3c8-a989-40e4-8be3-5ac67cf41736", "index":"0"}
+		,{"id": "7f5227db-8efa-4198-aad8-a7303c4834f9", "index":"0"}
+		,{"id": "affa39b4-9e17-48c4-8895-78b1f433b9f7", "index":"0"}
+		,{"id": "5b8a0ee5-409e-4609-8aba-0c49858830f9", "index":"3"}
+		,{"id": "5b8a0ee5-409e-4609-8aba-0c49858830f9", "index":"0"}
+		,{"id": "436c6169-6856-4831-9b5e-36c538fafa7c", "index":"3"}
+		,{"id": "658a4dd0-bf6d-47e7-86d8-52ee52a8f214", "index":"2"}
+		,{"id": "7bb8e808-62d2-41bb-8749-200a9089a3e9", "index":"2"}
+		,{"id": "4ccb8031-ae89-47b6-a633-e16eac63166b", "index":"3"}
+		,{"id": "7f81eb9e-f062-46de-9105-f93730a4e7fb", "index":"0"}
+	]
+,	"Mirrorworld Bloodseeker": [
+	]
+,	"Mountain Sage": [
+	]
+,	"Nimbus Claw": [
+	]
+,	"Omen Firefly": [
+	]
+,	"Pixie Summoner": [
+	]
+,	"Pyretic Pet": [
+	]
+,	"Infernoblight": [
+		{"id": "33f7cc2c-e93d-4e2c-9b65-000f7fec5b4d", "index":"3"}
+		,{"id": "d85c9fc4-fcbf-4427-9461-c7d69924fd22", "index":"3"}
+		,{"id": "ded1343a-822d-4000-b96d-307220437a47", "index":"3"}
+		,{"id": "7b986382-842d-4894-bfa5-8f3a13c28048", "index":"2"}
+		,{"id": "7b986382-842d-4894-bfa5-8f3a13c28048", "index":"1"}
+		,{"id": "3ece9766-fbca-4a9f-b43c-ceacdfd34356", "index":"0"}
+		,{"id": "23146584-f12d-4df7-9044-bc3fddd5aed1", "index":"2"}
+		,{"id": "e7c5e4fe-638b-4178-857e-6623f117ac1e", "index":"3"}
+		,{"id": "d1d4e43a-6294-4cca-b9e9-a8a9b7c14773", "index":"2"}
+		,{"id": "1b37b6ab-c626-42c3-a564-3b3f1a292370", "index":"3"}
+	]
+,	"Raijin": [
+		{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"3"}
+		,{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"1"}
+		,{"id": "1c379fb0-c7fe-4bce-a2e2-c1046dca0a59", "index":"0"}
+		,{"id": "032d003e-cfc5-416a-b659-1bdded298c0e", "index":"1"}
+		,{"id": "de56f839-6491-46cf-880d-6d928a2517da", "index":"0"}
+		,{"id": "83e9cfe5-7b3e-4733-9009-d3e420db215a", "index":"1"}
+		,{"id": "5764c6a2-ac2a-45d1-bd44-3056e5b71fde", "index":"3"}
+		,{"id": "dabe2c88-7609-4d23-9be4-b6d03f5043ec", "index":"2"}
+		,{"id": "22f743bd-9c45-49eb-bcae-584391aba2aa", "index":"1"}
+		,{"id": "16ee0dc4-08e6-49e0-be6c-5041c7b5d4f9", "index":"1"}
+	]
+,	"Red Crusader": [
+	]
+,	"Tectonic Shifter": [
+		{"id": "04e07353-17ab-4846-84bc-818bc402f09d", "index":"1"}
+		,{"id": "e8e96f76-94bd-41ae-b1bd-4ca96aebdd1e", "index":"3"}
+		,{"id": "ee08debf-6dfa-4c1a-b68d-af2815e27ecd", "index":"0"}
+		,{"id": "a5b23374-c9e0-4cc3-ac9e-7cc693ab07b6", "index":"1"}
+		,{"id": "da48772a-b4d4-44f8-8d55-428c4b7750df", "index":"1"}
+	]
+,	"Amberlock Dragonling": [
+		{"id": "31869c2e-79e0-44a2-bcb2-ef2489f226ad", "index":"3"}
+		,{"id": "86e09484-75c2-4d9e-b33e-31faa3d4e251", "index":"2"}
+		,{"id": "68e2c61d-f9ac-435e-8eb9-44ef82724758", "index":"1"}
+		,{"id": "02a937b0-dc30-4b61-a80a-775950a47d1e", "index":"0"}
+		,{"id": "f8926069-73ab-4045-b918-9cb77758a03b", "index":"3"}
+		,{"id": "a02f660a-1dce-436f-acb5-465e63f5bbc5", "index":"1"}
+		,{"id": "0e687280-8a8e-4bab-ba7e-71eecfd6f625", "index":"2"}
+		,{"id": "5e110d2e-a7e4-436b-bb11-4fb86e1580e9", "index":"3"}
+		,{"id": "5e110d2e-a7e4-436b-bb11-4fb86e1580e9", "index":"2"}
+		,{"id": "750ed738-29ba-42b6-8f6f-d878ddac70d4", "index":"1"}
+	]
+,	"Sand Witch": [
+	]
+,	"Shardhorde Galewhelp": [
+	]
+,	"Dragonfire Warlock": [
+		{"id": "e1671c8d-c48c-402d-addf-9a0fccad1761", "index":"0"}
+		,{"id": "ba533218-851c-4bf4-a8d6-1d40dd59d983", "index":"0"}
+		,{"id": "01e8e033-593c-490d-a32f-a166ab8baa48", "index":"2"}
+		,{"id": "5eca18e5-b521-4e2a-9848-bc98673ae4d2", "index":"0"}
+		,{"id": "914ae491-f842-47a7-972e-d9a4a84c90f6", "index":"0"}
+		,{"id": "50351124-cb8d-40c5-ba32-ab7ed7975d03", "index":"3"}
+		,{"id": "9b90030e-860f-496a-a734-a45969d1b0dd", "index":"1"}
+		,{"id": "54eedfaf-453e-4a49-bd5b-d4012761a293", "index":"1"}
+		,{"id": "6e8217f3-8ac2-45b0-8dc4-ef5352b479ea", "index":"2"}
+		,{"id": "12dd80f9-bb06-4d38-91d8-e146559471c0", "index":"0"}
+	]
+,	"Dragonwind Harbinger": [
+		{"id": "e4901e8f-dc64-4a32-8b4e-4db18f9edb34", "index":"2"}
+		,{"id": "792d59ef-82cf-4773-9eb4-65105c9208ec", "index":"2"}
+		,{"id": "61d71d29-7f19-4719-9f9d-b595a90e7eac", "index":"3"}
+		,{"id": "8f47bfa6-8da8-478d-aba1-dff1a5520f1c", "index":"0"}
+		,{"id": "841174db-5c68-41e8-819a-09fa028c5943", "index":"3"}
+		,{"id": "841174db-5c68-41e8-819a-09fa028c5943", "index":"0"}
+		,{"id": "53760255-c6fe-4c4c-ac76-95aa017993f9", "index":"1"}
+		,{"id": "87f09264-db69-471c-a5b1-db98d924778f", "index":"0"}
+		,{"id": "87f09264-db69-471c-a5b1-db98d924778f", "index":"3"}
+		,{"id": "b5789562-2e2e-4ceb-8443-0ae424a3c7dd", "index":"3"}
+	]
+,	"Gashopper": [
+		{"id": "aa3828cc-da5b-44fd-a991-7dfa8d358eca", "index":"1"}
+		,{"id": "bb66d639-f343-4845-af2a-5eb193006647", "index":"0"}
+		,{"id": "9d22a6ef-3cfd-4390-83a1-bcb607bfc60e", "index":"0"}
+		,{"id": "9d22a6ef-3cfd-4390-83a1-bcb607bfc60e", "index":"2"}
+		,{"id": "4a4fcd20-cf99-4f08-98be-e4a9a21447fd", "index":"2"}
+		,{"id": "edce3cff-dccc-4dd6-927a-c86b99379750", "index":"1"}
+		,{"id": "712bc1b1-a311-4c9e-8fd3-9084faf62db5", "index":"1"}
+		,{"id": "712bc1b1-a311-4c9e-8fd3-9084faf62db5", "index":"2"}
+		,{"id": "0ac155c4-dccd-49ea-a6ba-b70dd8d8e9a3", "index":"2"}
+		,{"id": "4675fbf5-6bfc-4c8a-9092-aaf4e3643f28", "index":"2"}
+	]
+,	"Sparkwielder": [
+	]
+,	"Glinteye Hoarder": [
+		{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"0"}
+		,{"id": "8ccfe4e3-0dd5-4f9c-be98-1629ec29694f", "index":"2"}
+		,{"id": "47e93cbb-0e71-491a-a49b-5685172b96b1", "index":"2"}
+		,{"id": "c0bbf41e-da40-447a-8817-ba761c755907", "index":"1"}
+		,{"id": "e27864a6-cc07-4984-b181-922b584c0d96", "index":"3"}
+		,{"id": "0a1168a7-16a3-4022-b822-fd13a508a624", "index":"0"}
+		,{"id": "e30e77bd-955e-4e8e-afe4-eae7161982c4", "index":"3"}
+		,{"id": "eaad0536-abea-4999-883c-e3e793929cf4", "index":"3"}
+		,{"id": "a3874385-0194-4c0f-ba14-08b4d7628a67", "index":"1"}
+		,{"id": "8c585bc8-5180-439e-8adb-c3a47c0150fe", "index":"2"}
+	]
+,	"Hailbringer": [
+	]
+,	"Stormlash": [
+	]
+,	"Stormworn Horn": [
+	]
+,	"Raijin's Familiar": [
+		{"id": "99049fea-fc5d-4752-b9db-6d8c91ccc8ae", "index":"2"}
+		,{"id": "a57b5b64-f263-4fdf-af6b-1b93580bfe5e", "index":"0"}
+		,{"id": "7fc25a68-b33f-47f1-a6ec-9553717b1c97", "index":"0"}
+		,{"id": "7fc25a68-b33f-47f1-a6ec-9553717b1c97", "index":"1"}
+		,{"id": "9f59a1ed-24af-4d99-acaa-6a2a05df2427", "index":"3"}
+		,{"id": "8572f917-df31-4408-8707-1d30d6ca5130", "index":"2"}
+		,{"id": "fb929c6c-57e6-433a-a266-d6503efa9f59", "index":"3"}
+		,{"id": "2ddb8064-c0f9-4c6e-bd7c-5450e649e0ba", "index":"1"}
+		,{"id": "2ddb8064-c0f9-4c6e-bd7c-5450e649e0ba", "index":"0"}
+		,{"id": "c9877abe-5367-4550-95bd-009c5ca1c395", "index":"2"}
+	]
+,	"The Culling Claw": [
+	]
+,	"Thunderfox": [
+	]
+,	"Runecursed Wyvern": [
+		{"id": "304afcfd-7894-408f-9075-b9665b0da9bb", "index":"1"}
+		,{"id": "3f700745-93e9-491e-b302-0f3b8129cd3a", "index":"3"}
+		,{"id": "efc96ed0-d87b-4d29-bb86-f29795728bf8", "index":"2"}
+		,{"id": "b6935539-efed-401f-850a-d485cb53a209", "index":"2"}
+		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"3"}
+		,{"id": "b1f8f3d5-445f-4c75-8c69-dc3c00dd6a2a", "index":"1"}
+	]
+,	"Twin Thundertail": [
+	]
+,	"Vengeful Gust": [
+	]
+,	"Skulloath Lootclaimer": [
+		{"id": "b782234a-ae27-4ab3-a874-11519512ecce", "index":"1"}
+		,{"id": "bace0219-18ab-4fad-b1cf-6dd7f636ba09", "index":"3"}
+		,{"id": "bace0219-18ab-4fad-b1cf-6dd7f636ba09", "index":"1"}
+		,{"id": "48fb748c-ced1-4a11-b902-08569b23ea3e", "index":"3"}
+		,{"id": "648f33e0-f155-4776-b3ef-cb6a2da47ad2", "index":"0"}
+		,{"id": "88722dbd-81e5-4a88-b7b1-4d119407e4eb", "index":"2"}
+		,{"id": "ac379b8f-0976-49e8-9984-afd4fa85d72d", "index":"2"}
+		,{"id": "ac379b8f-0976-49e8-9984-afd4fa85d72d", "index":"0"}
+		,{"id": "ce81bdef-692d-43ea-9dce-a4b313702bd0", "index":"2"}
+		,{"id": "92e4fd9a-ec61-456e-ae1a-ccf89544238d", "index":"1"}
+	]
+,	"Spell Cat": [
+		{"id": "23c28003-cb9d-4252-b47e-eb31b79c4746", "index":"3"}
+		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"3"}
+		,{"id": "c014fa78-9b56-4e92-9380-05f3c1bc63f2", "index":"0"}
+		,{"id": "ea69db27-0094-46a2-957d-df9c6587cd8f", "index":"1"}
+		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"3"}
+		,{"id": "d8a56be5-0fe5-434b-a77a-b6146873ea1a", "index":"0"}
+	]
+,	"Vermillion Firebird": [
+		{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"2"}
+		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"3"}
+		,{"id": "8267de13-464b-4475-8b89-635cac0d70bd", "index":"0"}
+		,{"id": "855584b6-ff81-449c-bfc8-776b89e2e1b6", "index":"0"}
+		,{"id": "ce13cd47-a205-4d28-96b0-bdf906fae89f", "index":"0"}
+		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"3"}
+		,{"id": "a18746cf-975e-483a-9c0c-94c134cf6af2", "index":"1"}
+	]
+,	"Oasisdweller": [
+	]
+,	"Cinderguard Flamebearer": [
 		{"id": "f95877ad-f1f9-416e-ac05-6e7b4ad534ee", "index":"2"}
 		,{"id": "ce3cd5be-146d-4747-a725-96d02fce6988", "index":"3"}
 		,{"id": "3d36ab7a-cfa0-4e3c-835e-4519c7bd02e5", "index":"2"}
@@ -609,18 +610,6 @@
 		,{"id": "24410310-250b-4dfc-957c-f04fe0d1851b", "index":"0"}
 		,{"id": "49af1a65-37b2-43e7-abfb-fec1ef5ae6d3", "index":"2"}
 		,{"id": "c49fa673-bcd1-49dc-a65d-b262aa8d349c", "index":"3"}
-	]
-,	"Dragon Rider": [
-		{"id": "f29821d3-a78b-46a9-ab7b-9b476d6ecfd7", "index":"1"}
-		,{"id": "7f15e033-4d9d-48a2-9a39-7197c3b9bf07", "index":"3"}
-		,{"id": "a6b8108d-1bb5-42d2-a7a0-28095eb3d2c2", "index":"2"}
-		,{"id": "60403217-9653-4c7f-8bd1-52389abddd0b", "index":"2"}
-		,{"id": "35a72dcd-bf6d-4211-a3ec-b4a56e9266de", "index":"3"}
-		,{"id": "64811c7a-9306-4518-8d43-b94ca602125b", "index":"2"}
-		,{"id": "4f36ce57-0d46-485b-824d-f5324b716d84", "index":"1"}
-		,{"id": "b7fa891c-92aa-4309-9f37-1140cd8df7b3", "index":"2"}
-		,{"id": "64a2413c-9261-4124-ba7d-e64c2319aae0", "index":"0"}
-		,{"id": "95d4bd24-c3f9-417f-be00-e2b02341a172", "index":"0"}
 	]
 ,	"Portalrunner": [
 	]
@@ -638,6 +627,22 @@
 	]
 ,	"Crazed Hermit": [
 	]
+,	"Dragon Rider": [
+		{"id": "f29821d3-a78b-46a9-ab7b-9b476d6ecfd7", "index":"1"}
+		,{"id": "7f15e033-4d9d-48a2-9a39-7197c3b9bf07", "index":"3"}
+		,{"id": "a6b8108d-1bb5-42d2-a7a0-28095eb3d2c2", "index":"2"}
+		,{"id": "60403217-9653-4c7f-8bd1-52389abddd0b", "index":"2"}
+		,{"id": "35a72dcd-bf6d-4211-a3ec-b4a56e9266de", "index":"3"}
+		,{"id": "64811c7a-9306-4518-8d43-b94ca602125b", "index":"2"}
+		,{"id": "4f36ce57-0d46-485b-824d-f5324b716d84", "index":"1"}
+		,{"id": "b7fa891c-92aa-4309-9f37-1140cd8df7b3", "index":"2"}
+		,{"id": "64a2413c-9261-4124-ba7d-e64c2319aae0", "index":"0"}
+		,{"id": "95d4bd24-c3f9-417f-be00-e2b02341a172", "index":"0"}
+	]
+,	"Lurking Canopystomper": [
+	]
+,	"Resourceful Poacher": [
+	]
 ,	"Eons-old Dragon": [
 		{"id": "ade40824-39ca-4001-a6f9-b17abaa7f8c9", "index":"2"}
 		,{"id": "237069bf-4281-4ab7-875e-331a4121cc5c", "index":"2"}
@@ -650,9 +655,7 @@
 		,{"id": "16ae4b70-d224-42db-b6b6-ecf2124ed295", "index":"0"}
 		,{"id": "4623ba22-8900-4ec0-baf7-811a3eacf3be", "index":"1"}
 	]
-,	"Lurking Canopystomper": [
-	]
-,	"Resourceful Poacher": [
+,	"The Skyshrieker": [
 	]
 ,	"Shardhorde Crystalfang": [
 		{"id": "16b422f4-9fd2-4bb1-9674-585e0409a383", "index":"3"}
@@ -664,7 +667,11 @@
 		,{"id": "2d36ed03-9eb8-4873-a6b6-490fa41bd145", "index":"2"}
 		,{"id": "64fe4f62-cd24-4b28-8008-3a9184077878", "index":"1"}
 	]
-,	"The Skyshrieker": [
+,	"Bringer of Bad Omens": [
+	]
+,	"Gaunt Visitation": [
+	]
+,	"Lightning Manticore": [
 	]
 ,	"Tidecrasher": [
 		{"id": "b85e9529-2c1c-43be-8887-f8653d2daa3e", "index":"1"}
@@ -678,62 +685,68 @@
 		,{"id": "5346acfb-9c48-4258-a97e-45266d64b6d2", "index":"3"}
 		,{"id": "89be5e2a-6702-40e7-bb2c-87dce748f051", "index":"0"}
 	]
-,	"Bringer of Bad Omens": [
-	]
-,	"Gaunt Visitation": [
-	]
-,	"Lightning Manticore": [
+,	"Raging Minotaur": [
 	]
 ,	"Pyroclastic Zombie": [
 		{"id": "66f83bd6-353d-4924-b469-c22fdaf65162", "index":"2"}
 		,{"id": "21d93227-da2e-4a58-8af8-8d84f202d465", "index":"1"}
-	]
-,	"Raging Minotaur": [
-	]
-,	"Skulloath Marauder": [
+		,{"id": "de56e6d6-8aad-4bd2-87f9-f0c5f1ec9d8d", "index":"0"}
+		,{"id": "57f88d60-31a2-4dbc-a2ac-7dd5f12faad2", "index":"1"}
+		,{"id": "2148c090-768e-48c9-837a-fed7af76f1c3", "index":"1"}
+		,{"id": "59597b80-8b3f-4d4b-806c-dcf5365bda0f", "index":"2"}
 	]
 ,	"Venomshade Lamia": [
+	]
+,	"Skulloath Marauder": [
+		{"id": "9837fc27-5358-46a5-b2d5-4b2eccd5199c", "index":"0"}
+		,{"id": "1611e437-755b-410f-b205-ccef721ff7ae", "index":"1"}
+		,{"id": "1611e437-755b-410f-b205-ccef721ff7ae", "index":"2"}
+		,{"id": "d0513e19-1ac0-4d65-b7d1-c084eaa39eb1", "index":"1"}
+		,{"id": "cb5a0d7d-cfdf-4743-8f88-5b4c20641ec8", "index":"0"}
+		,{"id": "0e38f1ce-471e-455b-890a-7a46d67a8c3c", "index":"3"}
+		,{"id": "651c5e10-daa8-4734-8d9e-45e6e71afe5e", "index":"3"}
+		,{"id": "b305aa77-1f10-402e-b176-99e909abfb9d", "index":"3"}
+		,{"id": "3f1e36e7-8385-4701-8ad1-a8a145d654d4", "index":"2"}
+		,{"id": "05ead972-45fd-4d93-b3b6-736da52e9d68", "index":"1"}
 	]
 ,	"Wasteland Overlord": [
 	]
 ,	"Alchemist's Incense": [
 	]
-,	"Ambrosia Bee": [
-	]
 ,	"Bastion Architect": [
 	]
-,	"Bloodfleet Harpooneer": [
-	]
-,	"Bloodfleet Raider": [
-	]
-,	"Blue Crusader": [
-	]
-,	"Caring Mother": [
+,	"Ambrosia Bee": [
 	]
 ,	"Cinderguard Saboteur": [
 	]
-,	"Dojo Drill Instructor": [
-	]
-,	"Eagle of the Legion": [
+,	"Blue Crusader": [
 	]
 ,	"Filthy Peasant": [
 	]
 ,	"Frontier Centurion": [
 		{"id": "e9cfddb2-74e8-4821-93ef-db5a57e9c0e6", "index":"1"}
 	]
+,	"Ironstride Courser": [
+	]
+,	"Eagle of the Legion": [
+	]
+,	"Pocket Dragon": [
+	]
+,	"Prime Golem": [
+	]
 ,	"Gem Merchant": [
 	]
 ,	"Gladehost Shotmaster": [
 	]
-,	"Gold Colibri": [
+,	"Siegebreaker": [
 	]
-,	"Greedy Senator": [
+,	"Snow Crane": [
 	]
 ,	"Imperial Tyrant": [
 	]
-,	"Ironclad Jailwalker": [
+,	"Stormforged Recruit": [
 	]
-,	"Ironstride Courser": [
+,	"Supply Camel": [
 	]
 ,	"Legion of the Moonspear": [
 	]
@@ -745,21 +758,21 @@
 	]
 ,	"Mountblade Squire": [
 	]
-,	"Old Bessy": [
+,	"Trusty Companion": [
 	]
 ,	"Old Fisherman": [
 	]
-,	"Paragon of Conquest": [
+,	"Bloodfleet Harpooneer": [
 	]
 ,	"Pinwheel Illusionist": [
 	]
-,	"Pocket Dragon": [
+,	"Gold Colibri": [
 	]
-,	"Prime Golem": [
+,	"Greedy Senator": [
 	]
 ,	"Quadriga of Triumph": [
 	]
-,	"Rampart Shellback": [
+,	"Old Bessy": [
 	]
 ,	"Recruiting Officer": [
 	]
@@ -767,29 +780,35 @@
 	]
 ,	"Sandring Pridemane": [
 	]
-,	"Scalehide Trapper": [
+,	"Paragon of Conquest": [
 	]
 ,	"Scapegoat": [
 	]
-,	"Siegebreaker": [
+,	"Tilling Yoke Beast": [
 	]
-,	"Snow Crane": [
+,	"Bloodfleet Raider": [
 	]
-,	"Stormforged Recruit": [
+,	"Caring Mother": [
 	]
-,	"Supply Camel": [
+,	"Dojo Drill Instructor": [
 	]
 ,	"Surly Donkey": [
 	]
 ,	"The Grand Ruiner": [
 	]
-,	"Tilling Yoke Beast": [
+,	"Ironclad Jailwalker": [
 	]
 ,	"Trading Post Camel": [
 	]
+,	"Rampart Shellback": [
+	]
+,	"Scalehide Trapper": [
+	]
 ,	"Trapmaster": [
 	]
-,	"Trusty Companion": [
+,	"Cinderguard Emberblade": [
+	]
+,	"Augur of the Moonspear": [
 	]
 ,	"Wayward Automaton": [
 	]
@@ -949,15 +968,16 @@
 	]
 ,	"Tainted Jade Initiate": [
 	]
+,	"Cryptroach": [
+		{"id": "b6b028b1-6920-4dde-9694-73d589c7969e", "index":"1"}
+	]
 ,	"Abyssal Silencer": [
 	]
 ,	"Blightcoven Puppeteer": [
 	]
-,	"Bloodthrone Ambassador": [
-	]
 ,	"Bloodthrone Familiar": [
 	]
-,	"Bloodthrone Sovereign": [
+,	"Bloodthrone Ambassador": [
 	]
 ,	"Carnage Hornet": [
 	]
@@ -977,17 +997,17 @@
 	]
 ,	"Dread Cryptlord": [
 	]
-,	"Emissary of Darkness": [
+,	"Bloodthrone Sovereign": [
 	]
 ,	"Fatepeek Imp": [
+	]
+,	"Emissary of Darkness": [
 	]
 ,	"Forsaken Chronicler": [
 	]
 ,	"Forsaken Serenader": [
 	]
 ,	"Foul Corruptor": [
-	]
-,	"Ghoulflesh Devourer": [
 	]
 ,	"Gravebound Ghoul": [
 	]
@@ -997,27 +1017,27 @@
 	]
 ,	"Grim Titan": [
 	]
-,	"Grinning Amphora": [
+,	"Ghoulflesh Devourer": [
 	]
-,	"Hellblade": [
+,	"Grinning Amphora": [
 	]
 ,	"Hungry Shambler": [
 	]
-,	"Ill-Tempered Imp": [
+,	"Hellblade": [
 	]
-,	"Intrusive Advisor": [
+,	"Ill-Tempered Imp": [
 	]
 ,	"Meekbone Soldier": [
 	]
 ,	"Monarch of Shadows": [
+	]
+,	"Intrusive Advisor": [
 	]
 ,	"Nethersilk Moth": [
 	]
 ,	"Nightmare Penguin": [
 	]
 ,	"Nightreaper": [
-	]
-,	"Obsidian Scarab": [
 	]
 ,	"Omenshadow": [
 	]
@@ -1048,6 +1068,8 @@
 ,	"Symbiotic Crawler": [
 	]
 ,	"The Forsaken King": [
+	]
+,	"Gorgon Serpentress": [
 	]
 ,	"Thoughtfeaster": [
 	]
