@@ -250,10 +250,10 @@
 ,	"Boiling Blood Berserker": [
 	]
 ,	"Cinderguard Irregulars": [
-		{"id": "b7bb5d22-b78d-4859-ab62-b8e907414ebf", "index":"1"}
-		,{"id": "f605d05d-eca6-4ad3-8b9d-de3c34ab78f5", "index":"1"}
-		,{"id": "021e9046-af64-4322-8e14-9b735bb77e33", "index":"3"}
-		,{"id": "6a07ff77-26e4-4409-95e3-13b470abd6f9", "index":"1"}
+		{"id": "9abdcae0-7389-454b-bde3-fb534aec9fa4", "index":"1"}
+		,{"id": "21aae87c-bcf0-4967-94c8-66c12bd2dd5f", "index":"2"}
+		,{"id": "ff085a28-2be3-400f-b0aa-dfbaad7ad260", "index":"3"}
+		,{"id": "7daae98b-96af-490a-abb0-c40d53d449c6", "index":"1"}
 		,{"id": "7dd032d6-0ed5-4d3f-926c-322526d5acea", "index":"3"}
 		,{"id": "78be4041-6983-4fec-ac2f-158748bc0f07", "index":"1"}
 		,{"id": "081fdde2-8231-41d5-aa5c-be3ff2f37b5d", "index":"2"}
@@ -262,12 +262,12 @@
 		,{"id": "fe6e9b6c-1cca-4a3d-b1ff-7bb7fd6ebc36", "index":"0"}
 	]
 ,	"Cinderguard Scribe": [
-		{"id": "d013a66e-19b4-4dec-ad91-83482b06319e", "index":"1"}
-		,{"id": "f6b88e68-28ee-4a1b-9280-939e7e23c7ec", "index":"1"}
-		,{"id": "f597e2fa-e022-4cff-be04-37c4d1d52ecb", "index":"3"}
-		,{"id": "1ddd3864-3f10-431d-9dbe-3e4a143074c6", "index":"2"}
-		,{"id": "65e663c8-cf04-4c54-9eb8-9755a000000b", "index":"2"}
-		,{"id": "1af2a498-3786-4ad5-aef0-a5378f2dfbf2", "index":"3"}
+		{"id": "3583fb04-e10f-4436-a53d-ac6033c51e68", "index":"3"}
+		,{"id": "9bfd0617-c169-4772-bad8-21583764dcf1", "index":"1"}
+		,{"id": "bd88a85c-62e5-4ed4-9515-3411b61e2af9", "index":"2"}
+		,{"id": "3506fd93-a468-430b-b68e-56e0adb3bfa1", "index":"3"}
+		,{"id": "c5421a0e-601f-4a74-bd6d-431efe095978", "index":"2"}
+		,{"id": "522c30ba-cd4c-47ac-8df5-bc6a0c728eef", "index":"0"}
 		,{"id": "f9350fe6-d4bf-4a09-be2d-6d486b1be787", "index":"3"}
 		,{"id": "6364f253-c9ef-441f-a5a5-5cd35f3f48b4", "index":"2"}
 		,{"id": "6364f253-c9ef-441f-a5a5-5cd35f3f48b4", "index":"1"}
@@ -600,9 +600,9 @@
 ,	"Oasisdweller": [
 	]
 ,	"Cinderguard Flamebearer": [
-		{"id": "f95877ad-f1f9-416e-ac05-6e7b4ad534ee", "index":"2"}
+		{"id": "ad69563e-8c74-41b0-8e13-8b39afa3b3cf", "index":"3"}
 		,{"id": "ce3cd5be-146d-4747-a725-96d02fce6988", "index":"3"}
-		,{"id": "3d36ab7a-cfa0-4e3c-835e-4519c7bd02e5", "index":"2"}
+		,{"id": "e1308eb5-a0fa-420c-983e-4f03c2e8e1b1", "index":"3"}
 		,{"id": "0c8ecc9c-0eba-4e1f-88ef-eb8a6b5bb902", "index":"0"}
 		,{"id": "915e002d-0994-4e3b-9b5b-10849e3c35ad", "index":"2"}
 		,{"id": "eea88919-f1b3-40c0-9f43-d0e3f3705e14", "index":"2"}
@@ -1118,5 +1118,11 @@
 ,	"Sandsilk Fox": [
 	]
 ,	"Mistborn Serpent": [
+	]
+,	"Divine Rare": [
+	]
+,	"Nature Rare": [
+	]
+,	"Void Rare": [
 	]
 }
