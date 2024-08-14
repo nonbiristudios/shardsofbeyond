@@ -720,18 +720,53 @@
 		,{"id": "05ead972-45fd-4d93-b3b6-736da52e9d68", "index":"1"}
 	]
 ,	"Wasteland Overlord": [
+		{"id": "721910bd-16ac-4a72-aa68-a72421d90c86", "index":"1"}
+		,{"id": "e4ab81e9-3fd7-4319-9c94-67577b4742fc", "index":"1"}
+		,{"id": "672168db-d4c7-464a-9a08-3f0b7300f117", "index":"0"}
 	]
 ,	"Alchemist's Incense": [
+		{"id": "acb30613-f9af-4a64-81e9-e6b568cba824", "index":"2"}
+		,{"id": "f8601415-70ff-4ce2-aed0-f550f9d08f3d", "index":"0"}
+		,{"id": "f8601415-70ff-4ce2-aed0-f550f9d08f3d", "index":"1"}
+		,{"id": "f8601415-70ff-4ce2-aed0-f550f9d08f3d", "index":"2"}
+		,{"id": "2a292725-24e5-4da2-ae58-2f0eadedb275", "index":"2"}
+		,{"id": "f8601415-70ff-4ce2-aed0-f550f9d08f3d", "index":"0"}
+		,{"id": "3b50b5d8-08a1-4b97-8366-8e40ccb84ae0", "index":"3"}
 	]
 ,	"Bastion Architect": [
 	]
 ,	"Ambrosia Bee": [
+		{"id": "86b3223b-25b2-49c4-9ba0-56eef1eedbbf", "index":"1"}
+		,{"id": "aea064ae-88ea-47ba-a280-c9e470d12b69", "index":"2"}
+		,{"id": "8e48c3ce-1b90-4253-abcc-2da0b25ad425", "index":"1"}
+		,{"id": "64dbf7d3-51d9-49d7-826e-908e3f7f1760", "index":"1"}
+		,{"id": "64dbf7d3-51d9-49d7-826e-908e3f7f1760", "index":"0"}
+		,{"id": "3f24055e-e0a2-47c1-8470-64c33d0f6866", "index":"2"}
+		,{"id": "7ebb9929-e2ad-442f-b9a8-ea6f82e7e006", "index":"3"}
 	]
 ,	"Cinderguard Saboteur": [
+		{"id": "82cf010f-86e1-4c76-bba4-1f5a5c122086", "index":"2"}
+		,{"id": "82cf010f-86e1-4c76-bba4-1f5a5c122086", "index":"3"}
+		,{"id": "2be582e5-299d-470b-9cbc-a89027a4991d", "index":"3"}
+		,{"id": "a3f9b0a5-cf95-46d6-b2ad-b875e23a9b7b", "index":"3"}
+		,{"id": "a3f9b0a5-cf95-46d6-b2ad-b875e23a9b7b", "index":"2"}
+		,{"id": "a3f9b0a5-cf95-46d6-b2ad-b875e23a9b7b", "index":"1"}
+		,{"id": "b446efd1-d0f0-46e6-bb05-0789f08d931d", "index":"1"}
+		,{"id": "b446efd1-d0f0-46e6-bb05-0789f08d931d", "index":"3"}
+		,{"id": "74ae0134-7c5f-4b5f-b25f-6d6412423dc0", "index":"1"}
 	]
 ,	"Blue Crusader": [
 	]
 ,	"Filthy Peasant": [
+		{"id": "8681b697-3ab5-4ab3-8d4d-13ada408b719", "index":"2"}
+		,{"id": "ef758448-e6c6-4375-a43a-ca7ef038fb25", "index":"0"}
+		,{"id": "4ebf7027-ca2f-44a2-9f30-1afa66999935", "index":"3"}
+		,{"id": "49574fbd-fd5a-42b4-ba67-f1956f3a5a0d", "index":"1"}
+		,{"id": "460856be-5a5a-4e01-880f-a9cc4ae12568", "index":"3"}
+		,{"id": "b950d7fe-0373-44bc-876b-60878bbaa0ab", "index":"1"}
+		,{"id": "284a6f4c-c46f-4a01-9341-585d947f44bd", "index":"1"}
+		,{"id": "cb3ef15b-833e-4f93-9735-f5e82d3fc66a", "index":"0"}
+		,{"id": "1c7bdaca-4cf8-4915-ae8e-aacfc7c209d2", "index":"3"}
 	]
 ,	"Frontier Centurion": [
 		{"id": "e9cfddb2-74e8-4821-93ef-db5a57e9c0e6", "index":"1"}
@@ -819,6 +854,7 @@
 ,	"Cinderguard Emberblade": [
 	]
 ,	"Augur of the Moonspear": [
+		{"id": "f708086f-145d-4ad0-9476-e5c3de78f661", "index":"3"}
 	]
 ,	"Wayward Automaton": [
 	]
@@ -1115,7 +1151,7 @@
 	]
 ,	"Shapeshifter": [
 	]
-,	"Rustblooded Boar": [
+,	"Rustblood": [
 	]
 ,	"Eclipse Dragon": [
 	]
@@ -1136,5 +1172,85 @@
 ,	"Graverobbing Robot": [
 	]
 ,	"Fancy Schmancy Byrrd Type": [
+	]
+,	"Bandage Beetle": [
+	]
+,	"Invigorating Lotus Bloom": [
+	]
+,	"Bringer of Good News": [
+	]
+,	"Venom-Dew": [
+	]
+,	"Guardian of Heaven": [
+	]
+,	"Bringer of Pestilence": [
+	]
+,	"Crazed Acolyte": [
+	]
+,	"Haze Hermit": [
+	]
+,	"Ancient Lamp": [
+	]
+,	"Oblivion": [
+	]
+,	"Sovereign of the Rejuvenating Springs": [
+	]
+,	"Pegasus": [
+	]
+,	"Blinking Onyxion": [
+	]
+,	"Dragon Queen Thalis": [
+	]
+,	"Fuming Fukuisaur": [
+	]
+,	"Spreading Spore": [
+	]
+,	"Nightmare Creeper": [
+	]
+,	"Chapel Watcher": [
+	]
+,	"Luring Flametooth": [
+	]
+,	"Shardsplosion": [
+	]
+,	"Dragoncaller": [
+	]
+,	"Stalagmite Twin": [
+	]
+,	"Bloodthrone Sovereign": [
+	]
+,	"Desert Mirage": [
+	]
+,	"Heavenbound Heka-Mage": [
+	]
+,	"Twilight Sorceress": [
+	]
+,	"Twinfang Huntcaller": [
+	]
+,	"Vanguard Diviner": [
+	]
+,	"Behemoth Guider": [
+	]
+,	"The Yesterknight": [
+	]
+,	"Young Alchemist": [
+	]
+,	"Mirrorkin": [
+	]
+,	"Ticking Tick": [
+	]
+,	"Blue Sucker": [
+	]
+,	"Green Sucker": [
+	]
+,	"Yellow Sucker": [
+	]
+,	"Purple Sucker": [
+	]
+,	"Red Sucker": [
+	]
+,	"""Twilight Conduit""": [
+	]
+,	"Shaman of the Scale": [
 	]
 }
