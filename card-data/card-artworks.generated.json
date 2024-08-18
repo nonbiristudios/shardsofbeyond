@@ -118,6 +118,11 @@
 ,	"Winged Ushabti": [
 	]
 ,	"Obsidian Scarab": [
+		{"id": "5742c34c-4780-42a9-88f6-56a1b9ce53f4", "index":"0"}
+		,{"id": "8b38cf8f-f197-4c3a-befd-e184edaf89b1", "index":"1"}
+		,{"id": "05eda290-6a12-4283-8598-0203ce13dc18", "index":"0"}
+		,{"id": "355d3553-313f-4638-bf69-02b34f653fae", "index":"2"}
+		,{"id": "3be1dd1a-b5e1-4576-84ea-2c53a6c076e3", "index":"1"}
 	]
 ,	"Yellow Crusader": [
 	]
@@ -778,20 +783,47 @@
 		,{"id": "22a34a29-1762-4b99-a1b7-f4960f0961b3", "index":"0"}
 	]
 ,	"Ironstride Courser": [
+		{"id": "8d1657bf-8d7f-4836-b474-5c1cff1916c0", "index":"2"}
+		,{"id": "fdf1b8f9-ccc0-4aaa-8191-4fab233512d4", "index":"0"}
+		,{"id": "54b00b16-65a7-4baa-b8e3-37fd71f85d8f", "index":"3"}
+		,{"id": "a70a1341-a55b-41e0-af0e-c975f47bf9b4", "index":"0"}
+		,{"id": "81588d14-ce8b-416b-ab7d-351ff14b045b", "index":"1"}
 	]
 ,	"Eagle of the Legion": [
 	]
 ,	"Pocket Dragon": [
+		{"id": "4ff343f0-4546-4f8f-bb97-7214850f4953", "index":"1"}
+		,{"id": "4ff343f0-4546-4f8f-bb97-7214850f4953", "index":"3"}
+		,{"id": "f73f0149-0f46-4732-a763-e53b93a1af4c", "index":"2"}
+		,{"id": "c05760f1-f3cd-41ec-8511-d7268f2ece64", "index":"3"}
+		,{"id": "c05760f1-f3cd-41ec-8511-d7268f2ece64", "index":"0"}
+		,{"id": "c05760f1-f3cd-41ec-8511-d7268f2ece64", "index":"2"}
+		,{"id": "14c4af69-8e71-4174-ab81-7b2daa2c165f", "index":"3"}
 	]
 ,	"Prime Golem": [
+		{"id": "60b4cdd1-0eb4-42fa-9e84-240b001d2af7", "index":"1"}
+		,{"id": "ffb1e104-375b-4f63-8128-521e20f32108", "index":"3"}
+		,{"id": "cd68eca5-b2a0-4c1c-8754-be10ef5594c4", "index":"2"}
+		,{"id": "cd68eca5-b2a0-4c1c-8754-be10ef5594c4", "index":"0"}
+		,{"id": "2627db62-ac7f-48d3-8657-931ef0586217", "index":"0"}
 	]
 ,	"Gem Merchant": [
 	]
 ,	"Gladehost Shotmaster": [
 	]
 ,	"Siegebreaker": [
+		{"id": "9978fdf6-d358-4abc-9d71-d32a8d78e40a", "index":"1"}
+		,{"id": "0e512ffb-8345-4946-84e7-5131a9bbf7ae", "index":"2"}
+		,{"id": "0e512ffb-8345-4946-84e7-5131a9bbf7ae", "index":"0"}
+		,{"id": "71ad0300-4ba1-428b-8822-b9eb4533ed5b", "index":"2"}
+		,{"id": "f1e95a77-2ca1-473a-a951-6d24ac381780", "index":"0"}
+		,{"id": "f1e95a77-2ca1-473a-a951-6d24ac381780", "index":"1"}
 	]
 ,	"Snow Crane": [
+		{"id": "f49f8020-8320-4fdc-ae76-8030c07ee2b5", "index":"0"}
+		,{"id": "7f3fc151-552c-4fdc-8562-e0fb8c45fd4e", "index":"1"}
+		,{"id": "2d0e2890-33fe-48d4-b23e-7e57b1b55461", "index":"3"}
+		,{"id": "c4613f86-a57d-47d7-a262-96719837ce9c", "index":"1"}
 	]
 ,	"Imperial Tyrant": [
 	]
@@ -1108,6 +1140,7 @@
 ,	"Shadowsting Scorpion": [
 	]
 ,	"Shiverskull": [
+		{"id": "5531e7cf-23f3-4725-986f-2de126d022b2", "index":"2"}
 	]
 ,	"Shroom Behemoth": [
 	]
@@ -1255,7 +1288,7 @@
 	]
 ,	"Red Sucker": [
 	]
-,	"""Twilight Conduit""": [
+,	"Twilight Conduit": [
 	]
 ,	"Shaman of the Scale": [
 	]
@@ -1264,5 +1297,11 @@
 ,	"Mega Ultra Chicken": [
 	]
 ,	"Slumbering Cavedrake": [
+	]
+,	"Advocate of the Grove": [
+	]
+,	"Heathborn Protector": [
+	]
+,	"Harvest Sanctifier": [
 	]
 }
