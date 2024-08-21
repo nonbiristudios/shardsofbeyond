@@ -866,30 +866,65 @@
 	]
 ,	"Stormforged Recruit": [
 		{"id": "1c4b3aa0-24ce-4b0d-932d-a4ef2357ffd3", "index":"3"}
+		,{"id": "f7f3688f-3853-44d1-bca6-d995d6876cc0", "index":"3"}
+		,{"id": "a7bc418c-0990-4a3f-bc7d-3afbdf436f51", "index":"3"}
+		,{"id": "e18914ea-b88b-4850-b270-9a974e0f9c38", "index":"3"}
+		,{"id": "cad89887-2107-4a4a-a838-1f9e91e99c08", "index":"3"}
+		,{"id": "cad89887-2107-4a4a-a838-1f9e91e99c08", "index":"0"}
+		,{"id": "4472fa6e-c6fb-4157-b854-c8e1d2b42995", "index":"3"}
 	]
 ,	"Supply Camel": [
+		{"id": "c9d4bd01-17d8-4d2f-9739-b9d56ab0d774", "index":"2"}
+		,{"id": "c9d4bd01-17d8-4d2f-9739-b9d56ab0d774", "index":"0"}
+		,{"id": "1896af7e-08b8-4744-8b7a-ffb98cf9d3de", "index":"1"}
+		,{"id": "6a68bc3e-bd7f-4880-954d-ff357e0580c0", "index":"2"}
+		,{"id": "8300a565-8179-4b9c-9445-18cd11e30feb", "index":"2"}
 	]
 ,	"Trusty Companion": [
+		{"id": "7953e818-8128-4a30-b696-521dc3af66e0", "index":"2"}
+		,{"id": "8eec2fb9-6cc5-4526-b1b2-63f80ac65f95", "index":"1"}
 	]
 ,	"Bloodfleet Raider": [
+		{"id": "aa227e04-65dd-48c2-abfd-6e6fa6008da2", "index":"0"}
+		,{"id": "aa227e04-65dd-48c2-abfd-6e6fa6008da2", "index":"3"}
+		,{"id": "b4c3f4b0-05dc-4917-a882-3e522fb1d744", "index":"3"}
+		,{"id": "b4c3f4b0-05dc-4917-a882-3e522fb1d744", "index":"1"}
+		,{"id": "af6bbace-c1a5-4a89-859d-e260f362a5a4", "index":"2"}
+		,{"id": "18828197-cdfc-419a-ae08-acae2277df70", "index":"1"}
+		,{"id": "18828197-cdfc-419a-ae08-acae2277df70", "index":"0"}
 	]
 ,	"Caring Mother": [
+		{"id": "058ca6a3-cba6-4255-a098-e15d86ecc1d3", "index":"3"}
+		,{"id": "a770b241-fcb3-4872-830b-d7c0ffd5ae73", "index":"3"}
+		,{"id": "1702a29f-fe1f-40f0-aeb3-2892a3f1c0bc", "index":"2"}
 	]
 ,	"Wayward Automaton": [
 	]
 ,	"Battle Ant Dreadnought": [
 	]
 ,	"Dojo Drill Instructor": [
+		{"id": "ce889b3b-91f9-4ff2-add2-e60285c57b17", "index":"1"}
+		,{"id": "b2dbb6cd-e386-4a06-bf27-555adcb9d763", "index":"2"}
+		,{"id": "7de8364c-0f5a-4d7b-b841-1f453c148129", "index":"0"}
 	]
 ,	"Rune Whisperer": [
 	]
 ,	"Ironclad Jailwalker": [
+		{"id": "8cc237fc-a571-4903-b553-94f9efeddb14", "index":"1"}
+		,{"id": "8cc237fc-a571-4903-b553-94f9efeddb14", "index":"2"}
+		,{"id": "1ba85f4c-e36a-405c-84dd-450c9b836a2a", "index":"0"}
+		,{"id": "d8f42a0c-63c6-40cf-9275-6ffc2157f99f", "index":"1"}
+		,{"id": "e6884d89-a8ec-43ec-85a8-dcc30ca69669", "index":"3"}
 	]
 ,	"The Holy Chicken": [
 	]
 ,	"The Life Tree": [
 	]
 ,	"Rampart Shellback": [
+		{"id": "beade48b-dfc3-4b0d-a7b3-e813a507b363", "index":"0"}
+		,{"id": "aff786fd-7fc1-4a2d-9343-59060d86249f", "index":"0"}
+		,{"id": "3a69abc9-4dbb-4de3-8916-1f75f4991dac", "index":"3"}
+		,{"id": "5c6c381c-6392-4f21-a9e1-c5126a4d283d", "index":"2"}
 	]
 ,	"Zodiac Samurai": [
 	]
@@ -937,6 +972,7 @@
 ,	"Senatorial Phalanx": [
 	]
 ,	"Ferromancer": [
+		{"id": "a407a34c-2a7a-47d2-858a-c385875cdc0c", "index":"0"}
 	]
 ,	"Frontier Centurion": [
 		{"id": "e9cfddb2-74e8-4821-93ef-db5a57e9c0e6", "index":"1"}
@@ -1131,6 +1167,8 @@
 ,	"Sun Crystal Saurus": [
 	]
 ,	"Sandsilk Fox": [
+		{"id": "d32d623f-8304-4652-a723-5e08c4834598", "index":"1"}
+		,{"id": "d32d623f-8304-4652-a723-5e08c4834598", "index":"0"}
 	]
 ,	"Living Thicket": [
 	]
