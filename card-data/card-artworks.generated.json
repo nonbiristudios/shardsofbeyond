@@ -925,19 +925,49 @@
 		,{"id": "aff786fd-7fc1-4a2d-9343-59060d86249f", "index":"0"}
 		,{"id": "3a69abc9-4dbb-4de3-8916-1f75f4991dac", "index":"3"}
 		,{"id": "5c6c381c-6392-4f21-a9e1-c5126a4d283d", "index":"2"}
+		,{"id": "9782e556-bad6-4ad2-9833-8d831131a5eb", "index":"1"}
+		,{"id": "939e6242-52c0-48ac-b399-3e52fec2a04a", "index":"0"}
+		,{"id": "b1d61053-bd99-4609-9c8c-ba7d1af8873a", "index":"2"}
+		,{"id": "cbeba22e-057c-463e-8a6c-d84fec4e4147", "index":"0"}
 	]
 ,	"Zodiac Samurai": [
 	]
 ,	"Scalehide Trapper": [
+		{"id": "2ba47d27-dbef-49be-8e14-890b895409a3", "index":"2"}
+		,{"id": "c6991389-b3bd-41f0-94f8-3a128fa5ced1", "index":"3"}
+		,{"id": "5bd0ca22-a83a-414a-9139-c2092a485671", "index":"1"}
+		,{"id": "22a8f992-981f-46f6-9814-6acd4fd78883", "index":"2"}
+		,{"id": "e9ced58e-d729-4c3b-b959-01736c8f312f", "index":"1"}
+		,{"id": "a40c6919-d2e2-4cdd-a1de-4ce6a532def9", "index":"3"}
+		,{"id": "9d1c0ad9-d7ac-48b5-8887-39cdbcde27cd", "index":"2"}
+		,{"id": "08e98d57-c82d-41bf-974e-2594723e8387", "index":"3"}
+		,{"id": "8edd484f-1cb1-4f1f-933e-b6506442c848", "index":"1"}
+		,{"id": "cd0955a7-8a85-43d7-97b8-c639bd21502c", "index":"3"}
 	]
 ,	"Crescent Oracle": [
 	]
 ,	"Trapmaster": [
+		{"id": "2a3b4bb4-107d-4a0e-82e5-32c1dc607528", "index":"0"}
+		,{"id": "1b7457f5-ab2d-4751-b1f3-3957be5a28c2", "index":"2"}
+		,{"id": "d5d7a3d8-bc57-4d5e-9030-e092ef28934d", "index":"1"}
+		,{"id": "d75ae876-16de-4a4f-80fb-098c3204e2e3", "index":"2"}
+		,{"id": "834cdaa2-b2f5-4156-998e-506a5ca68984", "index":"2"}
+		,{"id": "104896b4-1644-44c0-97cb-a115a5a27f3b", "index":"0"}
+		,{"id": "d04ef1e9-013f-4c58-8d1d-7d6410f55644", "index":"3"}
+		,{"id": "b1a05e1b-d3e7-4c3b-8a21-e208cfcab472", "index":"0"}
+		,{"id": "32c69796-a1fc-4d40-86e1-8b215a05bb23", "index":"0"}
 	]
 ,	"Gemcrazed Clown": [
 	]
 ,	"Augur of the Moonspear": [
 		{"id": "f708086f-145d-4ad0-9476-e5c3de78f661", "index":"3"}
+		,{"id": "ca45b97d-ac28-459d-8fb9-5efff2a635e4", "index":"0"}
+		,{"id": "ca45b97d-ac28-459d-8fb9-5efff2a635e4", "index":"1"}
+		,{"id": "aee22cf0-e1c9-45a5-a846-dba786d16a8c", "index":"2"}
+		,{"id": "80b0da3a-75e9-4521-9a8a-d80a02376aef", "index":"3"}
+		,{"id": "6449d263-572c-48fd-abea-49b336ed533e", "index":"0"}
+		,{"id": "6aaaa00b-e42b-42c5-ba0e-45f3ec7aae7e", "index":"2"}
+		,{"id": "6aaaa00b-e42b-42c5-ba0e-45f3ec7aae7e", "index":"1"}
 	]
 ,	"Sanguine Student": [
 	]
