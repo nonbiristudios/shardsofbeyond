@@ -1,25 +1,15 @@
 let artworks;
+let reverse_hash_name = {};
 const medals = ['🏅','🥈','🥉'];
 const medalValues = ['gold', 'silver', 'bronze'];
 let table;
-
-async function sha256(message) {
-  const msgBuffer = new TextEncoder('utf-8').encode(message);                    
-
-  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-             
-  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 6);
-  return hashHex;
-}
 
 const createURL = (id, index) => `https://cdn.midjourney.com/${id}/0_${index}.png`;
 let votes = {};
 let codeField;
 
 document.addEventListener('DOMContentLoaded', async () => {
-  data = await fetch('artworks.json');
+  data = await fetch('artworks.generated.json');
   artworks = await data.json();
   table = document.getElementById('entries');
   codeField  = document.getElementById('codeInput');
@@ -29,31 +19,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 const update = () => {
   // Populate names
-  Object.entries(artworks).forEach(async ([name, images]) => {
-    if(name === 'Alabaster Exarch') console.log('SHA1', images);
-    const sha = await sha256(JSON.stringify(images));
+  Object.entries(artworks).forEach(async ([name, values]) => {
+    // Only show artworks that have atleast one Option!
+    if(values.artworks.length === 0) return;
 
-    images = images.map((image) => 
-      `<div class="imageEntry" id="entry-${image.id}_${image.index}">
-        <img class="prevent-drag" src=${createURL(image.id, image.index)}>
+    votes[values.hashedName] = {};
+    reverse_hash_name[values.hashedName] = name;
+
+    images = values.artworks.map((artwork) => 
+      `<div class="imageEntry" id="entry-${values.hashedName}-${artwork.hash}">
+        <img class="prevent-drag" src=${createURL(artwork.id, artwork.index)}>
         <div class="medal">
           <center>
             <div class="btn-group btn-group-toggle">
               ${medals.map((medal, i) => {
-                if(medal === 'c') return '';
-                const imageId = `${image.id}_${image.index}_${i}`;
-                const event = {
-                  ...image,
-                  medal: i
-                };
-
                 return `
                   <label class="btn btn-primary">
                     <input 
-                      onclick="updateSelection('${name}', '${btoa(JSON.stringify(event))}')"
+                      onclick="updateSelection('${values.hashedName}', '${artwork.hash}', ${i}, '${values.checksum}')"
                       type="radio"
                       name="options-${name}-${i}"
-                      id="${imageId}"
+                      id="${medalValues[i]}-${values.hashedName}-${artwork.hash}"
                     >
                     ${medal}
                   </label>
@@ -66,8 +52,8 @@ const update = () => {
     `);
 
     table.insertAdjacentHTML('beforeend', 
-      `<li class="list-group-item" id="${sha}">
-        <div class="entry wrong" id="entry-${name}">
+      `<li class="list-group-item" id="${values.hashedName}">
+        <div class="entry wrong" id="entry-${values.hashedName}">
           <div class="name" onclick="toggleImageRow(event)">
             ${name}
           </div>
@@ -98,30 +84,34 @@ const toggleImageRow = (e) => {
   }
 };
 
-const updateSelection = async (name, selection) => {
-  selection = JSON.parse(atob(selection));
-
+const updateSelection = async (cardHash, artworkHash, place, checksum) => {
   // Disable all other selections on that image.
   const otherMedals = [0, 1, 2];
-  otherMedals.splice(selection.medal, 1);
 
   otherMedals.forEach((medal) => {
-    const el = document.getElementById(`${selection.id}_${selection.index}_${medal}`);
+    if(otherMedals === place) return;
+
+    const el = document.getElementById(`${medalValues[medal]}-${cardHash}-${artworkHash}`);
     if(el.checked) {
       el.checked = false;
       // Remove from data, too.
-      delete votes[name][medal];
+      delete votes[cardHash][medal];
     }
   });
 
+  // The artwork might already be voted for with regards to another medal. In that case, reset that rating.
+  Object.entries(votes[cardHash])
+    .filter(([key, value]) => key !== place && value == artworkHash)
+    .forEach(([key, value]) => votes[cardHash][key] = undefined);
+
   // Save information about selection.
-  votes[name] = votes[name] ?? {};
-  votes[name][selection.medal] = `${selection.id}_${selection.index}`;
-  //votes[name].c = Object.keys(artworks[name]).length;
+  votes[cardHash] = votes[cardHash] ?? {};
+  votes[cardHash][place] = artworkHash;
 
-  votes[name].c = await sha256(JSON.stringify(artworks[name]));
+  votes[cardHash].c = checksum;
+  console.log(votes[cardHash]);
 
-  updateCorrectness(name);
+  updateCorrectness(cardHash);
 };
 
 const updateCode = () => {
@@ -159,47 +149,39 @@ const codeChanged = () => {
   });
 }
 
-const updateCorrectness = (name) => {
+const updateCorrectness = (cardHash) => {
   // Update marking of title.
-  const el = document.getElementById(`entry-${name}`);
+  const el = document.getElementById(`entry-${cardHash}`);
 
-  if(votes[name] !== undefined) {
-    const shaOfArtworks = el.closest('.list-group-item').id;
+  const givenMedals = Object.entries(votes[cardHash] ?? {}).length-1;
 
-    const givenMedals = Object.entries(votes[name] ?? {}).length-1;
-    if(givenMedals === 3 || givenMedals === Object.keys(artworks[name]).length) {
-      
-      if(shaOfArtworks !== votes[name].c) {
-        console.log('SHA does not match!');
-        return;
-      }
-      el.classList.remove('wrong');
-      el.classList.add('done');
-      
-      updateCode();
-      codeField.classList.remove('wrong');
-    } else {
-      el.classList.remove('done');
-      el.classList.add('wrong');
-    }
-
-    // Remove colors.
-    artworks[name].forEach((image) => {
-      const id = `${image.id}_${image.index}`;
-      const entry = document.getElementById(`entry-${id}`);
-      
-      if(!entry) return;
-
-      entry.classList.remove('gold-medal');
-      entry.classList.remove('silver-medal');
-      entry.classList.remove('bronze-medal');
-
-      // Any medal given?
-      const medal = Object.entries(votes[name]).filter((a) => a[1] == id);
-
-      if(medal.length == 0) return;
-
-      entry.classList.add(`${medalValues[medal[0][0]]}-medal`);
-    })
+  if(givenMedals === 3 || givenMedals === Object.keys(artworks[reverse_hash_name[cardHash]]?.artworks ?? {}).length) {
+    el.classList.remove('wrong');
+    el.classList.add('done');
+    
+    updateCode();
+    codeField.classList.remove('wrong');
+  } else {
+    el.classList.remove('done');
+    el.classList.add('wrong');
   }
+
+  // Remove colors.
+  artworks[reverse_hash_name[cardHash]].artworks.forEach((image) => {
+    const entry = document.getElementById(`entry-${cardHash}-${image.hash}`);
+    
+    if(!entry) return;
+
+    entry.classList.remove('gold-medal');
+    entry.classList.remove('silver-medal');
+    entry.classList.remove('bronze-medal');
+
+    // Which medal was given?
+    const givenMedal = Object.entries(votes[cardHash])
+      .find(([key, value]) => value === image.hash)
+      .map(([key, value]) => key);
+
+
+    entry.classList.add(`${medalValues[givenMedal]}-medal`);
+  })
 };
