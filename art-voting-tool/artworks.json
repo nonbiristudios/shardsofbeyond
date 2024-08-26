@@ -160,6 +160,8 @@
 	]
 ,	"Auric Ant Regent": [
 	]
+,	"Blessing Bestower": [
+	]
 ,	"Obelisk Waypost": [
 	]
 ,	"Crimson Flamechick": [
@@ -978,14 +980,36 @@
 ,	"Willing Sacrifice": [
 	]
 ,	"Bloodfleet Harpooneer": [
+		{"id": "51236e4b-aa09-40de-ae37-9c9b9cd7e7e5", "index":"2"}
+		,{"id": "51236e4b-aa09-40de-ae37-9c9b9cd7e7e5", "index":"0"}
+		,{"id": "615b65df-6059-4623-9a52-ba6e23fd19a8", "index":"3"}
+		,{"id": "615b65df-6059-4623-9a52-ba6e23fd19a8", "index":"0"}
+		,{"id": "615b65df-6059-4623-9a52-ba6e23fd19a8", "index":"1"}
 	]
 ,	"Gold Colibri": [
+		{"id": "4b96f219-952d-4629-9ea5-07d8b6625b64", "index":"3"}
+		,{"id": "9a06b103-b5a9-4d2f-a06c-f2a3692244cc", "index":"0"}
+		,{"id": "b697235d-58dc-46a5-852e-9cf127307d53", "index":"2"}
+		,{"id": "fbd01acd-ec46-450e-a41b-df9c33a118ab", "index":"1"}
 	]
 ,	"Greedy Senator": [
+		{"id": "88e3f9b4-074b-4645-969f-b36b4a03b283", "index":"0"}
+		,{"id": "48ee5064-30f0-4f2f-bf04-ffa46a4af4b3", "index":"2"}
+		,{"id": "1712423c-8247-4d89-938a-b7a8f72676d3", "index":"3"}
+		,{"id": "52110149-5889-41ad-8d65-2ed05aed8c38", "index":"3"}
+		,{"id": "83be14db-adaf-4786-aeef-ad19b39bd2ca", "index":"2"}
+		,{"id": "12fada4d-5aaf-4322-b3d3-24be5496e64d", "index":"3"}
 	]
 ,	"Armordillo": [
 	]
 ,	"Paragon of Conquest": [
+		{"id": "dc99fa2e-811a-4134-88e2-76ee3a711eec", "index":"3"}
+		,{"id": "c4a83c37-4d6d-4f59-96bb-5d38ce1a9de6", "index":"3"}
+		,{"id": "bdf467d6-4699-4676-a6f9-39e3cbb899e5", "index":"0"}
+		,{"id": "47bd8a99-96cc-4b41-bc50-6ab93ee3369d", "index":"0"}
+		,{"id": "a1a13900-c801-42e6-af4f-64055214e78b", "index":"2"}
+		,{"id": "26cf6a40-ae53-40b8-b6e8-cf911b9a91a6", "index":"3"}
+		,{"id": "bb65025a-3646-4b47-89da-e109c9da39f9", "index":"2"}
 	]
 ,	"Tilling Yoke Beast": [
 	]
@@ -1042,7 +1066,13 @@
 	]
 ,	"Ordinary Flower Pot": [
 	]
+,	"Ancient Scholar": [
+	]
 ,	"Little Lamb": [
+	]
+,	"Weaponized Pest": [
+	]
+,	"Beastcaster": [
 	]
 ,	"Trained War Elephant": [
 	]
@@ -1382,6 +1412,8 @@
 	]
 ,	"Scythe Abomination": [
 	]
+,	"Rotten Stalker": [
+	]
 ,	"Wringing Wyvern": [
 	]
 ,	"Clawing Centipede": [
@@ -1400,10 +1432,16 @@
 	]
 ,	"Clocktower Drake": [
 	]
+,	"Roaming Cherub": [
+	]
 ,	"Old Bessy": [
 	]
 ,	"Realmshifter": [
 	]
 ,	"Shapeshifter": [
+	]
+,	"Big Dino Boy": [
+	]
+,	"Middle Dino Boy": [
 	]
 }
