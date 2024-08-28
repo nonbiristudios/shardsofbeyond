@@ -1,22 +1,37 @@
 "use strict";
 
-import { createCanvas, loadImage } from 'canvas';
 import path from 'path';
 
 import fs from 'fs';
 import svgConvert from 'convert-svg-to-png';
 import csv from 'csv-parser';
 
-const { convert, createConverter } = svgConvert;
+const { createConverter } = svgConvert;
 
-const myVariable = process.env.MY_VARIABLE;
+const requiredParameters = [
+    'CARDS_FILE',
+    'ARTWORKS_FOLDER',
+    'TEMPLATE_FOLDER',
+    'EXPORT_FOLDER',
+    'CARD_RENDER_TEMPLATE',
+    'DATA_FOLDER',
+    'VOTED_ARTWORKS',
+    'EXPORT_IMAGE_FOLDER'
+];
+
+requiredParameters.forEach((parameter) => {
+    if(process.env[parameter] === undefined) {
+        throw new Error(`The environment variable "${parameter}" needs to be defined!`);
+    }
+});
 
 // Folder definitions.
-const dataFolder = process.env.DATA_FOLDER || './card-data'
-const artworkFolder = process.env.ARTWORK_FOLDER || './artworks';
-const templateFolder = process.env.TEMPLATE_FOLDER || './templates';
-const exportFolder = process.env.EXPORT_FOLDER || './export/images/default';
-const cardLayout = process.env.RENDER_SCRIPT || './templates/template-v4.svgjs';
+const votedArtworkFile = process.env.VOTED_ARTWORKS
+const cardFilePath = process.env.CARDS_FILE
+const artworkFolder = process.env.ARTWORKS_FOLDER
+const templateFolder = process.env.TEMPLATE_FOLDER
+const exportFolder = process.env.EXPORT_FOLDER
+const cardLayout = process.env.CARD_RENDER_TEMPLATE
 
 const createFolderIfNotExists = (dir) => {
     if (!fs.existsSync(dir)){
@@ -107,15 +122,10 @@ const explanations = {
 };
 
 // Load all .csvs
-const allCsvFiles = await Promise.allSettled(
-    fs.readdirSync(dataFolder, {withFileTypes: true})
-    .map((dirent) => `${dirent.path}/${dirent.name}`)
-    .filter((path) => path.endsWith('.csv'))
-    .map(async (path) => await loadCSVData(path))
-);
+const allCsvFiles = await loadCSVData(cardFilePath);
 
 // Load cards.
-let cards = [...allCsvFiles.values()][0].value
+let cards = allCsvFiles
     .filter((card) => card.Name.trim().length > 0);
 
 console.log(`Loaded a total of ${cards.length} cards!`);
@@ -130,9 +140,9 @@ fs.readdirSync(artworkFolder, {withFileTypes: true})
     .forEach((found) => artworks.set(found.name.replace(/\.png/i, '').toLowerCase(), found.path + '/' + found.name));
 
 // Next, possible Artworks that were voted for.
-Object.entries(JSON.parse(fs.readFileSync(`${dataFolder}/voted-artworks.json`).toString()))
+Object.entries(JSON.parse(fs.readFileSync(votedArtworkFile).toString()))
     .forEach(([key, value]) => {
-        const filePath = `${artworkFolder}/all/${value}.png`;
+        const filePath = `${artworkFolder}/all/${value}`;
 
         if(!fs.existsSync(filePath)) {
             console.warn(filePath, "does not exist!");
@@ -170,8 +180,7 @@ for(let card of cards) {
         baseUrl: baseUrl
     });
 
-    fs.writeFileSync(`${exportFolder}/${card.Name}.png`, image);
+    createFolderIfNotExists(process.env.EXPORT_IMAGE_FOLDER);
+    fs.writeFileSync(`${process.env.EXPORT_IMAGE_FOLDER}/${card.Name}.png`, image);
 }
 await converter.destroy();
-
-// For each card, generate its "template".

@@ -5,6 +5,28 @@ const medalValues = ['gold', 'silver', 'bronze'];
 let table;
 
 const createURL = (id, index) => `https://cdn.midjourney.com/${id}/0_${index}.png`;
+async function hash(message) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(message);
+  const hash = await crypto.subtle.digest('SHA-256', data);
+  return arrayBufferToBase64(new Uint8Array(hash));
+}
+
+function arrayBufferToBase64(buffer) {
+  // Convert the ArrayBuffer to a Uint8Array
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  const len = bytes.byteLength;
+
+  // Build a binary string from the Uint8Array
+  for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+  }
+
+  // Convert the binary string to a Base64 encoded string
+  return window.btoa(binary);
+}
+
 let votes = {};
 let codeField;
 
@@ -21,7 +43,7 @@ const update = () => {
   // Populate names
   Object.entries(artworks).forEach(async ([name, values]) => {
     // Only show artworks that have atleast one Option!
-    if(values.artworks.length === 0) return;
+    if(values.artworks.length <= 1) return;
 
     votes[values.hashedName] = {};
     reverse_hash_name[values.hashedName] = name;
@@ -109,7 +131,6 @@ const updateSelection = async (cardHash, artworkHash, place, checksum) => {
   votes[cardHash][place] = artworkHash;
 
   votes[cardHash].c = checksum;
-  console.log(votes[cardHash]);
 
   updateCorrectness(cardHash);
 };
@@ -149,27 +170,33 @@ const codeChanged = () => {
   });
 }
 
-const updateCorrectness = (cardHash) => {
+const updateCorrectness = async (cardHash) => {
+  const referencedCard = reverse_hash_name[cardHash];
   // Update marking of title.
   const el = document.getElementById(`entry-${cardHash}`);
 
   const givenMedals = Object.entries(votes[cardHash] ?? {}).length-1;
 
-  if(givenMedals === 3 || givenMedals === Object.keys(artworks[reverse_hash_name[cardHash]]?.artworks ?? {}).length) {
-    el.classList.remove('wrong');
-    el.classList.add('done');
-    
-    updateCode();
-    codeField.classList.remove('wrong');
-  } else {
+  if(votes[cardHash].c !== artworks[referencedCard].checksum) {
     el.classList.remove('done');
     el.classList.add('wrong');
+  } else {
+    if(givenMedals === 3 || givenMedals === Object.keys(artworks[reverse_hash_name[cardHash]]?.artworks ?? {}).length) {
+      el.classList.remove('wrong');
+      el.classList.add('done');
+      
+      updateCode();
+      codeField.classList.remove('wrong');
+    } else {
+      el.classList.remove('done');
+      el.classList.add('wrong');
+    }
   }
 
   // Remove colors.
   artworks[reverse_hash_name[cardHash]].artworks.forEach((image) => {
     const entry = document.getElementById(`entry-${cardHash}-${image.hash}`);
-    
+
     if(!entry) return;
 
     entry.classList.remove('gold-medal');
@@ -178,10 +205,10 @@ const updateCorrectness = (cardHash) => {
 
     // Which medal was given?
     const givenMedal = Object.entries(votes[cardHash])
-      .find(([key, value]) => value === image.hash)
-      .map(([key, value]) => key);
+      .find(([key, value]) => value === image.hash);
 
+    if(givenMedal === undefined) return;
 
-    entry.classList.add(`${medalValues[givenMedal]}-medal`);
+    entry.classList.add(`${medalValues[givenMedal[0]]}-medal`);
   })
 };

@@ -1,0 +1,41 @@
+name: Update XLSX File
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-workspace:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Use NodeJS
+      uses: actions/setup-node@v4
+    
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Apply .env variables
+      uses: . ./apply-env.sh
+    
+    - name: Update Sheets
+      run: node {{ SCRIPTS_FOLDER }}/update-worksheets.mjs
+        
+    - name: Update Workspace
+      run: node {{ SCRIPTS_FOLDER }}/update-workspace.mjs
+        
+    - name: Set up Git
+      run: |
+        git config --local --get remote.origin.url
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git pull
+        ls
+      
+    - name: Commit and push changes
+      run: |
+        git add ./workspace/*
+        git add ./art-voting-tool/*
+        git commit -m "Updated workspace. [skip ci]"
+        git push
