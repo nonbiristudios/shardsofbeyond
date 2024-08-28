@@ -23,7 +23,9 @@ jobs:
       run: npm install
     
     - name: Update Sheets
-      run: node --env-file=.env ./scripts/update-worksheets.mjs
+      run: |
+        echo $GOOGLE_SHEET_URL
+        node --env-file=.env ./scripts/update-worksheets.mjs
       env:
         GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
         
