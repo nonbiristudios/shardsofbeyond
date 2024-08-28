@@ -12,24 +12,21 @@ jobs:
     steps:
     - name: Use NodeJS
       uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        check-latest: true
     
     - name: Checkout repository
       uses: actions/checkout@v4
-      
-    - name: Apply .env variables
-      run: source ./apply-env.sh
       
     - name: Install Node dependencies
       run: npm install
     
     - name: Update Sheets
-      run: |
-        printenv
-        echo $SCRIPTS_FOLDER
-        node $SCRIPTS_FOLDER/update-worksheets.mjs
+      run: node --env-file=.env ./scripts/update-worksheets.mjs
         
     - name: Update Workspace
-      run: "node $SCRIPTS_FOLDER/update-workspace.mjs"
+      run: node --env-file=.env ./scripts/update-workspace.mjs"
         
     - name: Set up Git
       run: |
