@@ -30,7 +30,7 @@ jobs:
         GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
         
     - name: Update Workspace
-      run: node --env-file=.env ./scripts/update-workspace.mjs"
+      run: node --env-file=.env ./scripts/update-workspace.mjs
         
     - name: Set up Git
       run: |
