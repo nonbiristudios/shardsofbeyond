@@ -18,6 +18,9 @@ jobs:
         
       - name: Set up Node.js
         uses: actions/setup-node@v4
+                    
+      - name: Apply .env variables
+        uses: ./workspace/scripts/apply-env.sh
           
       - name: Install necessary fonts
         run: |
@@ -28,8 +31,7 @@ jobs:
         
       - name: Create export folders
         run: |
-          mkdir -p export
-          mkdir -p tabletop
+          mkdir -p {{ EXPORT_FOLDER }}
 
       - name: Render cards
         run: node scripts/create-cards.mjs

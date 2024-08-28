@@ -1,0 +1,13 @@
+{
+  "name": "shardsofbeyond",
+  "version": "1.0.0",
+  "description": "Workspace for Shards of Beyond",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "convert-svg-to-png": "^0.6.4",
+    "csv-parser": "^3.0.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}

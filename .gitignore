@@ -1,8 +1,4 @@
 node_modules/
-package.json
-package-lock.json
-export/
-tabletop/
-tabletop/*
-*.svg
+workspace/export/
 coverage/
+git-filter-repo.py
