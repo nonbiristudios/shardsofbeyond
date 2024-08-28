@@ -1,4 +1,4 @@
-name: Update XLSX File
+name: Update Workspace
 
 on:
   schedule:
