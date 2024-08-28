@@ -18,9 +18,14 @@ jobs:
       
     - name: Apply .env variables
       run: . ./apply-env.sh
+      
+    - name: Install Node dependencies
+      run: npm install
     
     - name: Update Sheets
-      run: "node $SCRIPTS_FOLDER/update-worksheets.mjs"
+      run: |
+        print $SCRIPTS_FOLDER
+        node $SCRIPTS_FOLDER/update-worksheets.mjs
         
     - name: Update Workspace
       run: "node $SCRIPTS_FOLDER/update-workspace.mjs"
