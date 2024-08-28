@@ -24,6 +24,7 @@ jobs:
     
     - name: Update Sheets
       run: |
+        printenv
         echo $SCRIPTS_FOLDER
         node $SCRIPTS_FOLDER/update-worksheets.mjs
         
