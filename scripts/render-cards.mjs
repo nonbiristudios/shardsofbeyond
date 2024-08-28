@@ -180,7 +180,11 @@ for(let card of cards) {
         baseUrl: baseUrl
     });
 
+    cards[card].Artwork = image;
+
     createFolderIfNotExists(process.env.EXPORT_IMAGE_FOLDER);
     fs.writeFileSync(`${process.env.EXPORT_IMAGE_FOLDER}/${card.Name}.png`, image);
 }
 await converter.destroy();
+
+// Create Tabletop Sheets (sorted by rarity);
