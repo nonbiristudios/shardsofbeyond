@@ -24,6 +24,8 @@ jobs:
     
     - name: Update Sheets
       run: node --env-file=.env ./scripts/update-worksheets.mjs
+      env:
+        GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
         
     - name: Update Workspace
       run: node --env-file=.env ./scripts/update-workspace.mjs"
