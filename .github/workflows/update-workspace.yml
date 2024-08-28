@@ -17,14 +17,14 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Apply .env variables
-      run: . ./apply-env.sh
+      run: source ./apply-env.sh
       
     - name: Install Node dependencies
       run: npm install
     
     - name: Update Sheets
       run: |
-        print $SCRIPTS_FOLDER
+        echo $SCRIPTS_FOLDER
         node $SCRIPTS_FOLDER/update-worksheets.mjs
         
     - name: Update Workspace
