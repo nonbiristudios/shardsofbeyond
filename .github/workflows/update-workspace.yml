@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Apply .env variables
-      uses: . ./apply-env.sh
+      run: . ./apply-env.sh
     
     - name: Update Sheets
       run: node {{ SCRIPTS_FOLDER }}/update-worksheets.mjs
