@@ -3,6 +3,8 @@ https://cdn.midjourney.com/8b38cf8f-f197-4c3a-befd-e184edaf89b1/0_1.png --save a
 https://cdn.midjourney.com/05eda290-6a12-4283-8598-0203ce13dc18/0_0.png --save as--> 05eda290-6a12-4283-8598-0203ce13dc18_0.png
 https://cdn.midjourney.com/355d3553-313f-4638-bf69-02b34f653fae/0_2.png --save as--> 355d3553-313f-4638-bf69-02b34f653fae_2.png
 https://cdn.midjourney.com/3be1dd1a-b5e1-4576-84ea-2c53a6c076e3/0_1.png --save as--> 3be1dd1a-b5e1-4576-84ea-2c53a6c076e3_1.png
+https://cdn.midjourney.com/c4d3570a-e402-453c-89c3-0ec343f16195/0_2.png --save as--> c4d3570a-e402-453c-89c3-0ec343f16195_2.png
+https://cdn.midjourney.com/dc24ed1d-b615-4b1e-b267-7f9c968a5009/0_3.png --save as--> dc24ed1d-b615-4b1e-b267-7f9c968a5009_3.png
 https://cdn.midjourney.com/5af4932e-1176-4e5d-a15a-6e1142f73928/0_2.png --save as--> 5af4932e-1176-4e5d-a15a-6e1142f73928_2.png
 https://cdn.midjourney.com/e6e0a2be-8317-493d-9a2a-cb227f34a270/0_0.png --save as--> e6e0a2be-8317-493d-9a2a-cb227f34a270_0.png
 https://cdn.midjourney.com/a530c54d-e253-4627-adf2-00999c92b877/0_1.png --save as--> a530c54d-e253-4627-adf2-00999c92b877_1.png
@@ -427,6 +429,8 @@ https://cdn.midjourney.com/26cf6a40-ae53-40b8-b6e8-cf911b9a91a6/0_3.png --save a
 https://cdn.midjourney.com/bb65025a-3646-4b47-89da-e109c9da39f9/0_2.png --save as--> bb65025a-3646-4b47-89da-e109c9da39f9_2.png
 https://cdn.midjourney.com/1ee1739c-f460-4f92-977f-b926ed62b9c9/0_2.png --save as--> 1ee1739c-f460-4f92-977f-b926ed62b9c9_2.png
 https://cdn.midjourney.com/210e4748-4c39-4d6d-84d6-16b05dcaab37/0_1.png --save as--> 210e4748-4c39-4d6d-84d6-16b05dcaab37_1.png
+https://cdn.midjourney.com/4865252e-62d3-4d61-a1ff-9e163d348e13/0_2.png --save as--> 4865252e-62d3-4d61-a1ff-9e163d348e13_2.png
+https://cdn.midjourney.com/c6c2204f-73dc-4f96-bf79-85232ef0cb07/0_0.png --save as--> c6c2204f-73dc-4f96-bf79-85232ef0cb07_0.png
 https://cdn.midjourney.com/a407a34c-2a7a-47d2-858a-c385875cdc0c/0_0.png --save as--> a407a34c-2a7a-47d2-858a-c385875cdc0c_0.png
 https://cdn.midjourney.com/e9cfddb2-74e8-4821-93ef-db5a57e9c0e6/0_1.png --save as--> e9cfddb2-74e8-4821-93ef-db5a57e9c0e6_1.png
 https://cdn.midjourney.com/3bf3147f-0874-4e69-a5cf-babf4744fc51/0_3.png --save as--> 3bf3147f-0874-4e69-a5cf-babf4744fc51_3.png

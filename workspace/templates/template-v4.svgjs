@@ -26,6 +26,16 @@
         
         return '';
     }}};
+    
+    {{(card) => {
+        card.RarityColor = {
+            Common: '#75491c',
+            Uncommon: 'silver',
+            Rare: '#ad8f2b'
+        }[card.Rarity];
+        
+        return '';
+    }}}
  
     <!-- Filters -->
     <filter id="shadow" x="-150%" y="-150%" width="300%" height="300%">
@@ -33,15 +43,33 @@
         <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
         <feComposite in2="SourceGraphic" operator="over" />
     </filter>
-    <filter id="blur" x="-150%" y="-150%" width="300%" height="300%">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+        <filter id="rarityShadow" x="-150%" y="-150%" width="300%" height="300%">
+        <feFlood flood-color="{{(card) => card.RarityColor}}" result="color" />
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+        <feComposite in2="SourceGraphic" operator="over" />
     </filter>
-    
+    <filter id="blur" x="-150%" y="-150%" width="300%" height="300%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+      <filter id="sprayGalaxy">
+        <feDiffuseLighting in="SourceGraphic" result="light" lighting-color="{{(card) => card.RarityColor}}">
+          <feDistantLight azimuth="240" elevation="30" />
+        </feDiffuseLighting>
+
+        <feComposite
+          in="SourceGraphic"
+          in2="light"
+          operator="arithmetic"
+          k1="1"
+          k2="0.4"
+          k3="0"
+          k4="0" />
+      </filter>
     <!-- Definitions -->
     <defs>
         <!-- Gradients -->
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="40%" style="stop-color: {{(card) => {
+            <stop offset="45%" style="stop-color: {{(card) => {
                 if(card.Realms.length == 0) return '#666666';
                 
                 if(card.Realms.includes('Divine')) {
@@ -56,7 +84,7 @@
                     return '#300D51';
                 }
             }}}" />
-            <stop offset="60%" style="stop-color: {{(card) => {
+            <stop offset="55%" style="stop-color: {{(card) => {
                 if(card.Realms.length == 0) return '#666666';
                 
                 if(card.Realms.includes('Void')) {
@@ -74,13 +102,14 @@
         </linearGradient>
         
         <!-- Gradient Filter-->
-        <rect id="complete-gradient" x="0" y="0" width="1200" height="1200" fill="url(#gradient)" />
+        <rect id="complete-gradient" x="0" y="0" width="100%" height="100%" fill="url(#gradient)" />
+        
         <filter id="overlayFilter">
           <feImage href="#complete-gradient" result="gradient" />          
           <feBlend in2="SourceGraphic" in="gradient" mode="hue" result="blend"/>
           
           <feComposite in="blended-gradient" in2="SourceAlpha" operator="atop"/>
-          <!--<feColorMatrix type="saturate" in="masked" values="0.6"/>-->
+          <feColorMatrix type="saturate" in="masked" values="0.9"/>
         </filter>
         
         <filter id="desaturate">
@@ -121,6 +150,9 @@
         href="{{(card) => card.Artwork}}"
     />
     
+    <!-- Opacity Filter over Textbox -->
+    <rect x="-15" y="675" opacity="0.52" width="800" height="400" fill="black"/>
+    
     <!-- In-Border-Texture -->
     <image
         x="0"
@@ -160,8 +192,20 @@
         href="{{(templates, card) => templates.get(`Galaxy (${(card.RandomValue % 4) + 1}).png`)}}"
         clip-path="url(#bottomtriangle)"
         mask="url(#fade)"
+        filter="url(#sprayGalaxy)"
     />
     
+    <!-- Subtle Inner Card Layout border Glow -->
+    <rect
+        x="37"
+        y="35"
+        width="676"
+        height="928"
+        fill="none"
+        stroke="{{(card) => card.RarityColor}}"
+        stroke-width="4"
+        filter="url(#blur)"
+    />
     <!-- Subtle Inner Card Layout border -->
     <rect
         x="37"
@@ -169,7 +213,7 @@
         width="676"
         height="928"
         fill="none"
-        stroke="black"
+        stroke="{{(card) => card.RarityColor}}"
         stroke-width="4"
     />
     
@@ -197,7 +241,7 @@
     <!-- Black name + smooth filter -->
     <text 
         x="50%" 
-        y="110"
+        y="112"
         {{(card) => card.Name.length > 15 ? 'textLength="598px"' : ''}}
         lengthAdjust="spacingAndGlyphs"
         fill="white"
@@ -209,8 +253,6 @@
     >
         {{(card) => card.Name}}
     </text>
-    
-    <rect x="-15" y="675" opacity="0.52" width="800" height="400" fill="black"/>
     
     <!-- Center Banner -->
     <!-- Base Box -->
@@ -235,82 +277,45 @@
     />
 
     <!-- Type -->
-    <!-- Shadow -->
-    <foreignObject 
-        x="70" 
-        y="598" 
+    <text
+        x="125" 
+        y="587" 
         width="655" 
         height="255"
+        fill="white"
+        style="
+            font-family:'Palatino Linotype', serif;
+            font-weight: bold;
+            font-size:38px;
+            line-height:40px;
+            text-shadow: 2px 2px 4px black;
+        "
     >
-        <div xmlns="http://www.w3.org/1999/xhtml" x="50">
-            <div style="
-                color: black;
-                text-shadow: 2px 2px 4px black;
-                font-family:'Palatino Linotype', serif;
-                font-weight: bold;
-                font-size:38px;
-                line-height:40px;
-            ">
-                {{(card) => {
-                    // Split all Types into the best combination of Line 1 and 2 (space-wise)
-                    const types = card.Types.map((typ) => typ.trim());
-                    
-                    const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
-                    
-                    let line1 = [];
-                    let line2 = [];
-                    
-                    sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
-                    
-                    return line1.join(' - ') + '</br>' + line2.join(' - ');
-                }}}
-            </div>
-        </div>
-    </foreignObject>
-    
-    <!-- real Type -->
-    <foreignObject 
-        x="70" 
-        y="598" 
-        width="655" 
-        height="255"
-    >
-        <div xmlns="http://www.w3.org/1999/xhtml" x="50">
-            <div style="
-                color:white;
-                font-family:'Palatino Linotype', serif;
-                font-weight: bold;
-                font-size:38px;
-                line-height:40px;
-            ">
-                {{(card) => {
-                    // Split all Types into the best combination of Line 1 and 2 (space-wise)
-                    const types = card.Types.map((typ) => typ.trim());
-                    
-                    const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
-                    
-                    let line1 = [];
-                    let line2 = [];
-                    
-                    sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
-                    
-                    return line1.join(' - ') + '</br>' + line2.join(' - ');
-                }}}
-            </div>
-        </div>
-    </foreignObject>
+        {{(card) => {
+            // Split all Types into the best combination of Line 1 and 2 (space-wise)
+            const types = card.Types.map((typ) => typ.trim());
+            
+            const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
+            
+            let line1 = [];
+            let line2 = [];
+            
+            sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
+            
+            return `<tspan x="75" dy="37">${line1.join(' - ')}</tspan>` +
+                `<tspan x="75" dy="37">${line2.join(' - ')}</tspan>`;
+        }}}
+    </text>
 	
 	<!-- Realm Text -->
     <text 
-        x="650" 
+        x="465" 
         y="587"
         fill="white"
-        text-anchor="end"
         style="font-family:'Palatino Linotype', serif;
             font-weight: bold;
             font-size: 38px;
-            line-height: 40px;
-            text-shadow: 2px 2px 4px black;"
+            line-height: 40px;"
     >
         {{(card) => {
             const colors = {
@@ -322,17 +327,17 @@
             };
             
             return card.Realms
-                .map((realm) => `<tspan x="650" dy="42" style="fill: ${colors[realm]}">${realm}</tspan>`)
+                .map((realm) => `<tspan x="465" dy="37" style="text-shadow: 2px 2px 4px ${colors[realm]};">${realm}</tspan>`)
                 .join('');
         }}}
     </text>
     
     <!-- Text of Textbox -->
     <foreignObject 
-            x="49" 
-            y="690" 
-            width="656" 
-            height="253"
+        x="49" 
+        y="690" 
+        width="656" 
+        height="253"
     >
         <div xmlns="http://www.w3.org/1999/xhtml" style="
             color:white;
@@ -428,7 +433,7 @@
     <!-- Flavortext -->
     <foreignObject 
             x="46" 
-            y="830" 
+            y="826" 
             width="656" 
             height="140"
     >
@@ -453,30 +458,35 @@
         </div>
     </foreignObject>
                 
-    <!-- Rarity Gem Power -->
+    <!-- Power Gem -->
     <!-- Shadow -->
     <image
-        x="306"
-        y="545"
-        width="164"
-        height="164"
+        x="309"
+        y="548"
+        width="158"
+        height="158"
         preserveAspectRatio="xMidYMid"
-        href="{{(card, templates) => templates.get(`Rarity_${card.Rarity}.png`)}}"
-        filter="url(#shadow)"
+        href="{{(card, templates) => templates.get(`Rarity_Uncommon.png`)}}"
+        filter="url(#rarityShadow)"
     />
     <!-- Real Render -->
     <image
-        x="306"
-        y="545"
-        width="164"
-        height="164"
+        x="312"
+        y="551"
+        width="152"
+        height="152"
         preserveAspectRatio="xMidYMid"
-        href="{{(card, templates) => templates.get(`Rarity_${card.Rarity}.png`)}}"
+        href="{{(card, templates) => templates.get(`Rarity_Uncommon.png`)}}"
     />
     
     <!-- Power -->
     <text
-        x="{{(card) => card.Power === 4 ? '51%' : '52%'}}"
+        x="{{(card) => {
+            if(card.Power === 4) return '51%';
+            if(card.Power === 1) return '50%';
+            
+            return '52%';
+        }}}"
         y="685"
         font-size="185"
         text-anchor="middle"
@@ -492,31 +502,6 @@
             {{(card) => card.Power}}
         </tspan>
     </text>
-    
-    <!-- Textured Power?
-        <foreignObject
-            x="0"
-            y="685"
-            width="750"
-            height="500"
-        >
-            <div xmlns="http://www.w3.org/1999/xhtml" x="0">
-                <div style="
-                    border-style: solid;
-                    border-color: red;
-                    font-size: 185px;
-                    color: transparent;
-                    background: url({{(templates) => templates.get('Background.png')}}), black;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    font-family: GRECOromanLubedJudo Medium;
-                    font-weight: bold;"
-                >
-                    {{(card) => card.Power}}
-                </div>
-            </div>
-        </foreignObject>
-    -->
     
     <!-- Crystals -->        
     {{(card, templates) => {
@@ -554,7 +539,7 @@
             return `
             <image 
                 x="${715-(index+1)*60}"
-                y="967"
+                y="968"
                 width="60"
                 height="60"
                 filter="url(#shadow)"
@@ -563,7 +548,7 @@
             />
             <image
                 x="${715-(index+1)*60}"
-                y="967"
+                y="968"
                 width="60"
                 height="60"
                 style="filter: ${filter};"
@@ -588,7 +573,7 @@
                 color:white;
                 font-size:20px;
                 font-weight:lighter;
-                opacity:0.5"
+                opacity:0.55"
             >
                 <b>Beyond</b> Set {{(card) => {
                         if(card.CardID === 0) return '';
@@ -603,13 +588,13 @@
     
     <!-- Black Border + Bleed -->
     <rect
-        x="0"
-        y="0"
-        width="750"
-        height="1050"
+        x="-10"
+        y="-10"
+        width="770"
+        height="1070"
         fill="none"
         stroke="black"
-        stroke-width="35"
+        stroke-width="55"
         rx="35"
         filter="url(#distort)"
     />

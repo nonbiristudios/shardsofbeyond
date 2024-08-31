@@ -5,6 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import svgConvert from 'convert-svg-to-png';
 import csv from 'csv-parser';
+import { createCanvas, loadImage } from 'canvas';
 
 const { createConverter } = svgConvert;
 
@@ -16,7 +17,9 @@ const requiredParameters = [
     'CARD_RENDER_TEMPLATE',
     'DATA_FOLDER',
     'VOTED_ARTWORKS',
-    'EXPORT_IMAGE_FOLDER'
+    'EXPORT_IMAGE_FOLDER',
+    'EXPORT_TABLETOP_FOLDER',
+    'SETS_TO_RENDER'
 ];
 
 requiredParameters.forEach((parameter) => {
@@ -30,8 +33,10 @@ const votedArtworkFile = process.env.VOTED_ARTWORKS
 const cardFilePath = process.env.CARDS_FILE
 const artworkFolder = process.env.ARTWORKS_FOLDER
 const templateFolder = process.env.TEMPLATE_FOLDER
-const exportFolder = process.env.EXPORT_FOLDER
 const cardLayout = process.env.CARD_RENDER_TEMPLATE
+const setsToRender = process.env.SETS_TO_RENDER.split(',')
+
+console.log(`Going to Render the following Sets: ${setsToRender}`);
 
 const createFolderIfNotExists = (dir) => {
     if (!fs.existsSync(dir)){
@@ -170,8 +175,19 @@ cards = cards.map((card) => {return {
 
 const converter = createConverter();
 
+let skippedCards = 0;
+let renderedCards = 0;
 for(let card of cards) {
-    console.log(`Creating ${card.Name}...`);
+    if(!setsToRender.includes(card.Set)) {
+        skippedCards++;
+        continue;
+    }
+
+    renderedCards++;
+    if(renderedCards % 10 === 0) {
+        console.log(`Rendering card #${renderedCards}: ${card.Name}...`);
+    }
+
     const template = generateSVGTemplate(card, svgjsFile, templates);
     const baseUrl = `file:///${path.resolve('./')}/`;
 
@@ -180,11 +196,109 @@ for(let card of cards) {
         baseUrl: baseUrl
     });
 
-    cards[card].Artwork = image;
+    card.Artwork = image;
 
     createFolderIfNotExists(process.env.EXPORT_IMAGE_FOLDER);
     fs.writeFileSync(`${process.env.EXPORT_IMAGE_FOLDER}/${card.Name}.png`, image);
 }
 await converter.destroy();
+console.log(`Rendered a total of ${renderedCards} cards.`);
+console.log(`Skipped ${skippedCards} cards, since their sets were not rendered.`);
 
-// Create Tabletop Sheets (sorted by rarity);
+// Export Tabletop "Sheets" with all cards, organized by rarity.
+const cardsBySet = cards.reduce(
+    (prev, current) => {
+        if(!setsToRender.includes(current.Set)) return prev;
+
+        if(!(current.Set in prev)) {
+            prev[current.Set] = [];
+        }
+
+        prev[current.Set].push(current);
+
+        return prev;
+    },
+    {}
+);
+
+// Create canvases of 69 cards each.
+const numberColumns = 10;
+const numberRows = 7;
+const imageWidth = 750;
+const imageHeight = 1050;
+const entryCount = (numberRows * numberColumns) - 1;
+
+const canvasWidth = imageWidth * numberColumns;
+const canvasHeight = imageHeight * numberRows;
+
+const spawnCanvas = () => {
+    let canvas = createCanvas(canvasWidth, canvasHeight);
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    return canvas;
+};
+
+const executions = Object.entries(cardsBySet).map(async ([set, cards]) => {
+    let executionByRarity = cards
+        .reduce(
+            (prev, current) => {
+                if(!(current.Rarity in prev)) return prev;
+                prev[current.Rarity].push(current);
+        
+                return prev;
+            },
+            {Common: [], Uncommon: [], Rare: []}
+        );
+
+    console.log(`Starting to render all Set ${set} cards...`);
+
+    executionByRarity = Object.entries(executionByRarity).map(async ([rarity, cards]) => {
+        const canvases = [spawnCanvas()];
+        let targetCanvas = 0;
+
+        console.log(`Set ${set}'s ${rarity}s includes a total of ${cards.length} cards!`);
+    
+        for(let i = 0; i < cards.length; i++) {
+            const number = i % entryCount;
+    
+            targetCanvas = Math.floor(i / entryCount);
+            const targetY = Math.floor(number / numberColumns);
+            const targetX = number % numberColumns;
+    
+            if(targetCanvas >= canvases.length) {
+                canvases.push(spawnCanvas());
+            }
+    
+            // console.log(`Including ${card.Name} in ${set} Buffer #${targetCanvas}`);
+    
+            const image = await loadImage(cards[i].Artwork);
+            // console.log(`Rendering ${cards[i].Name} into Buffer #${targetCanvas} (${set}-${rarity})...`);
+            // Free buffer!
+            delete cards[i].Artwork;
+    
+            canvases[targetCanvas].getContext('2d').drawImage(image, targetX * imageWidth, targetY * imageHeight, imageWidth, imageHeight);
+        }
+
+        console.log(`Set ${set}'s ${rarity}s result in ${canvases.length} buffers.`);
+        const buffers = canvases.map((canvas) => canvas.toBuffer());
+        
+        if(!fs.existsSync(process.env.EXPORT_TABLETOP_FOLDER)) {
+            fs.mkdirSync(process.env.EXPORT_TABLETOP_FOLDER);
+        }
+
+        buffers.forEach((buffer, i) => fs.writeFileSync(`${process.env.EXPORT_TABLETOP_FOLDER}/Set-${set}-${rarity}-${i}.png`, buffer));
+        
+        console.log(`Finished rendering all ${rarity} ${set} cards!`);
+    });
+
+    const results = await Promise.all(executionByRarity);
+
+    console.log(`Finished rendering all ${set} cards!`);
+    
+    return results;
+});
+
+const results = await Promise.all(executions);
+console.log('Finished rendering.');

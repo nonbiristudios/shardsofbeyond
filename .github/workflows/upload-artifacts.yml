@@ -1,0 +1,29 @@
+name: Update Workspace
+
+on:
+  workflow_dispatch:
+  workflow_call:
+  workflow_run:
+    workflows: [Provision Infrastructure]
+    types:
+      - completed
+
+jobs:
+  update-workspace:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Use NodeJS
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        check-latest: true
+    
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install Node dependencies
+      run: npm install
+        
+    - name: Update Artifacts
+      run: node --env-file=.env ./scripts/upload-render-artifacts.mjs

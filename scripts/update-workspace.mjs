@@ -105,7 +105,6 @@ fs.copyFileSync(process.env.ARTWORK_FILE, `${process.env.ARTWORK_VOTING_TOOL_FOL
 
 // Export artwork votes of each user.
 const votes = XLSX.utils.sheet_to_json(workbook.Sheets[sheetsToExport[1]]);
-console.log(votes);
 votes.forEach((vote) => {
     const info = Buffer.from(vote['Voting Code'] ?? '', 'base64');
     if(info.length === 0) return;
@@ -131,7 +130,6 @@ const voteFiles = fs.readdirSync(process.env.VOTES_FOLDER);
                     // Only the "rankings" are important here, not the checksum or something else
                     .filter(([key, value]) => !isNaN(parseFloat(key)))
                     .forEach(([key, value]) => {
-                        console.log(cardhash, key, value);
                         allRatings[cardhash] = allRatings[cardhash] ?? {};
                         // 3 - key because we invertedly weight the medals
                         allRatings[cardhash][value] = (allRatings[cardhash][value] ?? 0) + (3-key)
@@ -149,7 +147,6 @@ Object.entries(allRatings)
         // Calculate the artwork with the highest ratings.
         finalizedRatings[currentCard] = Object.entries(ratings)
             .reduce((prev, curr) => {
-                console.log(prev, curr);
                 if(curr[1] >= prev.votes) {
                     return {
                         votes: curr[1],

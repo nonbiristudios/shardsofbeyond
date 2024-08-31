@@ -1,0 +1,37 @@
+name: Provision Infrastructure
+
+on:
+  workflow_dispatch:
+  workflow_call:
+  workflow_run:
+    workflows: [Update Workspace]
+    types:
+      - completed
+
+jobs:
+  update-workspace:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Install OpenTofu
+      uses: opentofu/setup-opentofu@v1
+      
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Apply env variables
+      run: . apply-env.sh .env
+      
+    - name: Install Node dependencies
+      run: npm install
+    
+    - name: Initialize OpenTofu
+      run: |
+        cd opentofu
+        tofu init
+        
+    - name: Plan provision
+      run: tofu plan -no-color
+      
+    - name: Apply provision
+      run: tofu apply -auto-approve
