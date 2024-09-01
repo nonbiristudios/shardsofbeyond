@@ -109,6 +109,10 @@ votes.forEach((vote) => {
     const info = Buffer.from(vote['Voting Code'] ?? '', 'base64');
     if(info.length === 0) return;
 
+    if(!fs.existsSync(process.env.VOTES_FOLDER)) {
+        fs.mkdirSync(process.env.VOTES_FOLDER);
+    }
+
     const path = `${process.env.VOTES_FOLDER}/${vote['Name']}.generated.json`;
 
     console.log(`Writing votes of user "${vote['Name']}" to "${path}"...`);

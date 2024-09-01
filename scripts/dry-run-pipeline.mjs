@@ -4,6 +4,7 @@ import { execSync } from "child_process";
 
 const executeCommand = (command, mayFail = false) => {
     console.log(`Starting to execute "${command}"...`);
+    
     execSync(command, {env: process.env}, (error, stdout, stderr) => {
       if(error && !mayFail) {
           throw new Error(`Exception occured during executing "${command}":
