@@ -9,8 +9,8 @@ on:
       - completed
       
 env:
-  SPACES_ACCESS_KEY_ID: {{ secrets.SPACES_ACCESS_KEY_ID }}
-  SPACES_SECRET_ACCESS_KEY: {{ secrets.SPACES_SECRET_ACCESS_KEY }}
+  SPACES_ACCESS_KEY_ID: ${{ secrets.SPACES_ACCESS_KEY_ID }}
+  SPACES_SECRET_ACCESS_KEY: ${{ secrets.SPACES_SECRET_ACCESS_KEY }}
   
 jobs:
   update-workspace:
