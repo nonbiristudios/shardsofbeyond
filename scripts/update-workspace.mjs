@@ -37,7 +37,7 @@ const exportedSheets = [];
 workbook.SheetNames.forEach((name) => {
     if(!sheetsToExport.includes(name)) return;
 
-    const csvPath = `${process.env.CSV_FOLDER}/${name}.generated.csv`;
+    const csvPath = `${process.env.CSV_FOLDER}/${name}.csv`;
     
     fs.writeFileSync(csvPath, XLSX.utils.sheet_to_csv(workbook.Sheets[name]));
     

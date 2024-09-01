@@ -14,7 +14,7 @@ env:
   SPACES_SECRET_ACCESS_KEY: ${{ secrets.SPACES_SECRET_ACCESS_KEY }}
   
 jobs:
-  update-workspace:
+  provision-infrastructure:
     runs-on: ubuntu-latest
     
     steps:
@@ -26,13 +26,11 @@ jobs:
       
     - name: Apply env variables
       run: . apply-env.sh .env
-      
-    - name: Install Node dependencies
-      run: npm install
     
     - name: Initialize OpenTofu
       run: |
         cd opentofu
+        ls
         tofu init
         
     - name: Plan provision
