@@ -30,6 +30,7 @@ jobs:
     - name: Initialize OpenTofu
       run: |
         cd opentofu
+        printenv
         ls
         tofu init
         

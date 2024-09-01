@@ -30,6 +30,6 @@ jobs:
       run: npm install
         
     - name: Update Artifacts
-      run: node --env-file=.env ./scripts/upload-render-artifacts.mjs
+      run: node --env-file=.env ./scripts/upload-artifacts.mjs
       env:
         TF_VAR_bucket_name: ${{ secrets.GOOGLE_SHEET_URL }}
