@@ -4,3 +4,9 @@ coverage/
 git-filter-repo.py
 confidential.env
 opentofu/.terraform/
+*/sheets/
+
+# Generated Files
+
+*.generated.*
+**/*.generated.*

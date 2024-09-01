@@ -1,11 +1,6 @@
 name: Update Card Renders
 
 on:
-  # push: 
-  #   paths:
-  #     - 'templates/**'
-  #     - 'card-data/cards.csv'
-
   workflow_dispatch:
   workflow_call:
 
@@ -18,29 +13,13 @@ jobs:
         
       - name: Set up Node.js
         uses: actions/setup-node@v4
-                    
-      - name: Apply .env variables
-        uses: ./workspace/scripts/apply-env.sh
           
       - name: Install necessary fonts
         run: |
           ./scripts/install-fonts.sh
 
-      - name: Initialize npm project
-        run: npm init -y
-        
-      - name: Create export folders
-        run: |
-          mkdir -p {{ EXPORT_FOLDER }}
+      - name: Install npm dependencies
+        run: npm install
 
       - name: Render cards
-        run: node scripts/create-cards.mjs
-
-      - name: Commit Changes and Push
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add ./export/*
-          git add ./tabletop/*
-          git commit -m "Rendered cards. [skip ci]"
-          git push
+        run: "node --env-file=.env ./scripts/render-cards.mjs"

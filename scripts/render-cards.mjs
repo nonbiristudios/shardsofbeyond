@@ -29,12 +29,12 @@ requiredParameters.forEach((parameter) => {
 });
 
 // Folder definitions.
-const votedArtworkFile = process.env.VOTED_ARTWORKS
-const cardFilePath = process.env.CARDS_FILE
-const artworkFolder = process.env.ARTWORKS_FOLDER
-const templateFolder = process.env.TEMPLATE_FOLDER
-const cardLayout = process.env.CARD_RENDER_TEMPLATE
-const setsToRender = process.env.SETS_TO_RENDER.split(',')
+const votedArtworkFile = process.env.VOTED_ARTWORKS;
+const cardFilePath = process.env.CARDS_FILE;
+const artworkFolder = process.env.ARTWORKS_FOLDER;
+const templateFolder = process.env.TEMPLATE_FOLDER;
+const cardLayout = process.env.CARD_RENDER_TEMPLATE;
+const setsToRender = process.env.SETS_TO_RENDER.split(',').trim();
 
 console.log(`Going to Render the following Sets: ${setsToRender}`);
 

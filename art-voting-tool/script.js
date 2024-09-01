@@ -31,7 +31,7 @@ let votes = {};
 let codeField;
 
 document.addEventListener('DOMContentLoaded', async () => {
-  data = await fetch('artworks.generated.json');
+  data = await fetch('artworks.json');
   artworks = await data.json();
   table = document.getElementById('entries');
   codeField  = document.getElementById('codeInput');

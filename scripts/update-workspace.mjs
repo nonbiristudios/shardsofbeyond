@@ -101,7 +101,7 @@ console.log(`Saving extracted artwork information to "${process.env.ARTWORK_FILE
 fs.writeFileSync(process.env.ARTWORK_FILE, JSON.stringify(artworks));
 
 // Copy artworks to artwork-voting-tool.
-fs.copyFileSync(process.env.ARTWORK_FILE, `${process.env.ARTWORK_VOTING_TOOL_FOLDER}/artworks.generated.json`);
+fs.copyFileSync(process.env.ARTWORK_FILE, `${process.env.ARTWORK_VOTING_TOOL_FOLDER}/artworks.json`);
 
 // Export artwork votes of each user.
 const votes = XLSX.utils.sheet_to_json(workbook.Sheets[sheetsToExport[1]]);
