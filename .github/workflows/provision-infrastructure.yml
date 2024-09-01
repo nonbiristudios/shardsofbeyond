@@ -20,6 +20,8 @@ jobs:
     steps:
     - name: Install OpenTofu
       uses: opentofu/setup-opentofu@v1
+      with:
+        tofu_wrapper: false
       
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -29,7 +31,7 @@ jobs:
     
     - name: Initialize OpenTofu
       run: |
-        cd opentofu
+        cd ./opentofu
         printenv
         ls
         tofu init
