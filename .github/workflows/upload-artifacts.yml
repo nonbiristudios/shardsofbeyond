@@ -1,4 +1,4 @@
-name: Update Workspace
+name: Upload artifacts
 
 on:
   workflow_dispatch:
@@ -7,7 +7,11 @@ on:
     workflows: [Provision Infrastructure]
     types:
       - completed
-
+      
+env:
+  SPACES_ACCESS_KEY_ID: {{ secrets.SPACES_ACCESS_KEY_ID }}
+  SPACES_SECRET_ACCESS_KEY: {{ secrets.SPACES_SECRET_ACCESS_KEY }}
+  
 jobs:
   update-workspace:
     runs-on: ubuntu-latest
@@ -27,3 +31,5 @@ jobs:
         
     - name: Update Artifacts
       run: node --env-file=.env ./scripts/upload-render-artifacts.mjs
+      env:
+        TF_VAR_bucket_name: ${{ secrets.GOOGLE_SHEET_URL }}

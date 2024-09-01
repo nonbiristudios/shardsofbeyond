@@ -7,7 +7,12 @@ on:
     workflows: [Update Workspace]
     types:
       - completed
-
+      
+env:
+  TF_VAR_do_token: {{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  SPACES_ACCESS_KEY_ID: {{ secrets.SPACES_ACCESS_KEY_ID }}
+  SPACES_SECRET_ACCESS_KEY: {{ secrets.SPACES_SECRET_ACCESS_KEY }}
+  
 jobs:
   update-workspace:
     runs-on: ubuntu-latest
