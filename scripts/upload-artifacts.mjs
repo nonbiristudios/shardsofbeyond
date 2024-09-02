@@ -12,8 +12,10 @@ const requiredParameters = [
   'TF_VAR_bucket_name',
   'TF_VAR_bucket_region',
   'SPACES_ACCESS_KEY_ID',
+  'CARDS_TO_MAKE_PUBLIC_FILE',
   'SPACES_SECRET_ACCESS_KEY',
-  'EXPORT_FOLDER'
+  'EXPORT_FOLDER',
+  'SETS_TO_MAKE_PUBLIC'
 ];
 
 requiredParameters.forEach((parameter) => {
@@ -38,6 +40,8 @@ const s3 = new S3Client({
   })
 });
 
+const setsToMakePublic = process.env.SETS_TO_MAKE_PUBLIC.split(',').map((set) => set.trim());
+console.log(`Making artifacts of the following set public: ${setsToMakePublic.join(', ')}`);
 console.log(`Targeting "${target}..."`);
 
 // Main Uploading Function.
@@ -76,14 +80,20 @@ const uploadToS3 = async (folderPath, fileName, key, publicVisible) => {
   }).done();
 };
 
+// Read all exported images so far.
+const generatedRenders = fs.readFileSync(process.env.CARDS_TO_MAKE_PUBLIC_FILE, {encoding: "ascii"}).split('\n');
+console.log(`Checking: ${generatedRenders.length} cards (Set ${setsToMakePublic.join(', ')}) should be make public.`);
+
 // Read all single image files to be uploaded
 const folderPath = `${process.env.EXPORT_FOLDER}/images/`;
 const singleImageUploads = fs.readdirSync(folderPath, {withFileTypes: false})
   .map(async (imageFileName, i) => {
     const modifiedName = imageFileName.replaceAll(/[^A-Za-z]/g, '').replaceAll(/png$/g, '').toLowerCase();
+
     const key = `card-${modifiedName}.png`;
 
-    return uploadToS3(folderPath, imageFileName, key, true);
+    // Decide whether we will upload the single card privately or publicly.
+    return uploadToS3(folderPath, imageFileName, key, generatedRenders.includes(modifiedName));
   });
 
 await Promise.all(singleImageUploads);
@@ -94,9 +104,11 @@ const folderPathTabletop = `${process.env.EXPORT_FOLDER}/tabletop/`;
 const tabletopImageUploads = fs.readdirSync(folderPathTabletop, {withFileTypes: false})
   .map((imageFileName, i) => {
     const modifiedName = imageFileName.replaceAll(/png$/g, '').toLowerCase();
+    const set = modifiedName.matchAll(`set-(\d)`)[1];
     const key = `tabletop-${modifiedName}.png`;
 
-    return uploadToS3(folderPathTabletop, imageFileName, key, false);
+    // Decide whether we will upload the templates privately or publicly.
+    return uploadToS3(folderPathTabletop, imageFileName, key, setsToMakePublic.includes(set));
   });
 
 await Promise.all(tabletopImageUploads);

@@ -1,0 +1,32 @@
+name: Update Card Renders
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+env:
+  SPACES_ACCESS_KEY_ID: ${{ secrets.SPACES_ACCESS_KEY_ID }}
+  SPACES_SECRET_ACCESS_KEY: ${{ secrets.SPACES_SECRET_ACCESS_KEY }}
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+          
+      - name: Install necessary fonts
+        run: |
+          ./scripts/install-fonts.sh
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Render cards
+        run: "node --env-file=.env ./scripts/render-cards.mjs"
+        
+      - name: Update Artifacts
+        run: node --env-file=.env ./scripts/upload-artifacts.mjs

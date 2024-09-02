@@ -19,7 +19,9 @@ const requiredParameters = [
     'VOTED_ARTWORKS',
     'EXPORT_IMAGE_FOLDER',
     'EXPORT_TABLETOP_FOLDER',
-    'SETS_TO_RENDER'
+    'SETS_TO_RENDER',
+    'SETS_TO_MAKE_PUBLIC',
+    'CARDS_TO_MAKE_PUBLIC_FILE'
 ];
 
 requiredParameters.forEach((parameter) => {
@@ -34,9 +36,12 @@ const cardFilePath = process.env.CARDS_FILE;
 const artworkFolder = process.env.ARTWORKS_FOLDER;
 const templateFolder = process.env.TEMPLATE_FOLDER;
 const cardLayout = process.env.CARD_RENDER_TEMPLATE;
-const setsToRender = process.env.SETS_TO_RENDER.split(',').trim();
+const setsToRender = process.env.SETS_TO_RENDER.split(',').map((set) => set.trim());
+const setsToMakePublic = process.env.SETS_TO_MAKE_PUBLIC.split(',').map((set) => set.trim());
 
 console.log(`Going to Render the following Sets: ${setsToRender}`);
+
+const processCardName = (name) => name.replaceAll(/[^A-Za-z]/gi, '').toLowerCase();
 
 const createFolderIfNotExists = (dir) => {
     if (!fs.existsSync(dir)){
@@ -142,7 +147,7 @@ const artworks = new Map();
 const noArtworkString = 'data:image/png;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
 fs.readdirSync(artworkFolder, {withFileTypes: true})
     .filter((found) => found.isFile())
-    .forEach((found) => artworks.set(found.name.replace(/\.png/i, '').toLowerCase(), found.path + '/' + found.name));
+    .forEach((found) => artworks.set(processCardName(found.name), found.path + '/' + found.name));
 
 // Next, possible Artworks that were voted for.
 Object.entries(JSON.parse(fs.readFileSync(votedArtworkFile).toString()))
@@ -170,22 +175,22 @@ fs.readdirSync(templateFolder, {withFileTypes: true})
 const svgjsFile = fs.readFileSync(cardLayout).toString();
 cards = cards.map((card) => {return {
     ...card,
-    Artwork: artworks.get(card.Name.replaceAll(/[^A-Za-z]/g, '').toLowerCase()) ?? noArtworkString}})
+    Artwork: artworks.get(processCardName(card.Name)) ?? noArtworkString}})
 
 
 const converter = createConverter();
 
+// Create single artworks.
 let skippedCards = 0;
-let renderedCards = 0;
+let renderedCards = [];
 for(let card of cards) {
     if(!setsToRender.includes(card.Set)) {
         skippedCards++;
         continue;
     }
 
-    renderedCards++;
-    if(renderedCards % 10 === 0) {
-        console.log(`Rendering card #${renderedCards}: ${card.Name}...`);
+    if(renderedCards.length % 10 === 0) {
+        console.log(`Rendering card #${renderedCards.length}: ${card.Name}...`);
     }
 
     const template = generateSVGTemplate(card, svgjsFile, templates);
@@ -200,9 +205,19 @@ for(let card of cards) {
 
     createFolderIfNotExists(process.env.EXPORT_IMAGE_FOLDER);
     fs.writeFileSync(`${process.env.EXPORT_IMAGE_FOLDER}/${card.Name}.png`, image);
+
+    // If we want to make the file public
+    if(setsToMakePublic.includes(card.Set)) {
+        renderedCards.push(processCardName(card.Name));
+    }
 }
+
 await converter.destroy();
-console.log(`Rendered a total of ${renderedCards} cards.`);
+
+// Export list of all rendered cards.
+fs.writeFileSync(process.env.CARDS_TO_MAKE_PUBLIC_FILE, renderedCards.join('\n'));
+
+console.log(`Rendered a total of ${renderedCards.length} cards.`);
 console.log(`Skipped ${skippedCards} cards, since their sets were not rendered.`);
 
 // Export Tabletop "Sheets" with all cards, organized by rarity.
@@ -270,11 +285,9 @@ const executions = Object.entries(cardsBySet).map(async ([set, cards]) => {
             if(targetCanvas >= canvases.length) {
                 canvases.push(spawnCanvas());
             }
-    
-            // console.log(`Including ${card.Name} in ${set} Buffer #${targetCanvas}`);
+
     
             const image = await loadImage(cards[i].Artwork);
-            // console.log(`Rendering ${cards[i].Name} into Buffer #${targetCanvas} (${set}-${rarity})...`);
             // Free buffer!
             delete cards[i].Artwork;
     
@@ -288,7 +301,7 @@ const executions = Object.entries(cardsBySet).map(async ([set, cards]) => {
             fs.mkdirSync(process.env.EXPORT_TABLETOP_FOLDER);
         }
 
-        buffers.forEach((buffer, i) => fs.writeFileSync(`${process.env.EXPORT_TABLETOP_FOLDER}/Set-${set}-${rarity}-${i}.png`, buffer));
+        buffers.forEach((buffer, i) => fs.writeFileSync(`${process.env.EXPORT_TABLETOP_FOLDER}/set-${set}-${rarity}s-${i}.png`, buffer));
         
         console.log(`Finished rendering all ${rarity} ${set} cards!`);
     });

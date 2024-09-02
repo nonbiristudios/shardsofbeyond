@@ -3,10 +3,6 @@ name: Provision Infrastructure
 on:
   workflow_dispatch:
   workflow_call:
-  workflow_run:
-    workflows: [Update Workspace]
-    types:
-      - completed
       
 env:
   TF_VAR_do_token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
