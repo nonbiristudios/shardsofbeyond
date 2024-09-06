@@ -156,7 +156,7 @@ const codeChanged = () => {
 
   codeField.classList.remove('wrong');
 
-  votes = obj;
+  votes = {...votes, ...obj};
   // Populate all fields
   Object.entries(obj).forEach(([name, artworks]) => {
     Object.entries(artworks).forEach(([medal, image]) => {
@@ -177,6 +177,7 @@ const updateCorrectness = async (cardHash) => {
 
   const givenMedals = Object.entries(votes[cardHash] ?? {}).length-1;
 
+  console.log(referencedCard, givenMedals);
   if(votes[cardHash].c !== artworks[referencedCard].checksum) {
     el.classList.remove('done');
     el.classList.add('wrong');
