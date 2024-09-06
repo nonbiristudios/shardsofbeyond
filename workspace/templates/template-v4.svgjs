@@ -22,7 +22,10 @@
             .replaceAll(' ', '')
             .split(',')
             .filter((cost) => cost != '');
-        card.RandomValue = Math.floor(Math.random() * 100000);
+            
+        card.RandomValue = [...card.Name]
+            .map((character) => character.charCodeAt(0) + 3)
+            .reduce((prev, current) => ((prev * current) % 100001), 2);
         
         return '';
     }}};

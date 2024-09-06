@@ -10,3 +10,4 @@ opentofu/.terraform/
 
 *.generated.*
 **/*.generated.*
+dev-tool-webpage/

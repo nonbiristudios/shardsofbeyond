@@ -73,9 +73,9 @@ const uploadToS3 = async (folderPath, fileName, key, publicVisible) => {
       Bucket: process.env.TF_VAR_bucket_name,
       Body: fs.createReadStream(`${folderPath}/${fileName}`),
       Key: key,
-      ContentType: 'image/pdf',
+      ContentType: 'image/png',
       ACL: publicVisible ? 'public-read' : 'private',
-      CacheControl: 'max-age=31536000'
+      CacheControl: 'public, max-age=31536000'
     }
   }).done();
 };
