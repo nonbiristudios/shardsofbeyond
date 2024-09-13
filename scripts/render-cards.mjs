@@ -21,7 +21,10 @@ const requiredParameters = [
     'EXPORT_TABLETOP_FOLDER',
     'SETS_TO_RENDER',
     'SETS_TO_MAKE_PUBLIC',
-    'CARDS_TO_MAKE_PUBLIC_FILE'
+    'CARDS_TO_MAKE_PUBLIC_FILE',
+    'STARTER_DECKS_FILE',
+    'EXPORT_TABLETOP_SETS_FOLDER',
+    'EXPORT_TABLETOP_STARTERDECKS_FOLDER'
 ];
 
 requiredParameters.forEach((parameter) => {
@@ -30,6 +33,7 @@ requiredParameters.forEach((parameter) => {
     }
 });
 
+// VARIABLES.
 // Folder definitions.
 const votedArtworkFile = process.env.VOTED_ARTWORKS;
 const cardFilePath = process.env.CARDS_FILE;
@@ -41,12 +45,55 @@ const setsToMakePublic = process.env.SETS_TO_MAKE_PUBLIC.split(',').map((set) =>
 
 console.log(`Going to Render the following Sets: ${setsToRender}`);
 
+if(!fs.existsSync(process.env.EXPORT_TABLETOP_FOLDER)) {
+    fs.mkdirSync(process.env.EXPORT_TABLETOP_FOLDER)
+}
+
+// FUNCTIONS.
 const processCardName = (name) => name.replaceAll(/[^A-Za-z]/gi, '').toLowerCase();
 
 const createFolderIfNotExists = (dir) => {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
     }
+};
+
+const renderTabletopSheet = async (name, cards, folder, filename) => {
+    const canvases = [spawnCanvas()];
+    let targetCanvas = 0;
+
+    console.log(`Starting tabletop render of "${name}": Expecting ${cards.length} cards...`);
+
+    for(let i = 0; i < cards.length; i++) {
+        const number = i % entryCount;
+
+        targetCanvas = Math.floor(i / entryCount);
+        const targetY = Math.floor(number / numberColumns);
+        const targetX = number % numberColumns;
+
+        if(targetCanvas >= canvases.length) {
+            canvases.push(spawnCanvas());
+        }
+
+        if((cards[i].Artwork ?? '').length === 0) throw new Error(`Artwork for "${name}" not defined or found!`);
+
+        const image = await loadImage(cards[i].Artwork);
+        canvases[targetCanvas].getContext('2d').drawImage(image, targetX * imageWidth, targetY * imageHeight, imageWidth, imageHeight);
+    }
+
+    console.log(`"${name}" results in ${canvases.length} buffers.`);
+    const buffers = canvases.map((canvas) => canvas.toBuffer());
+    
+    if(!fs.existsSync(folder)) {
+        fs.mkdirSync(folder);
+    }
+
+    buffers.forEach((buffer, i) => {
+        console.log(`Exporting to ${folder}/${filename}-${i}.png`);
+        fs.writeFileSync(`${folder}/${filename}-${i}.png`, buffer);
+    });
+    
+    console.log(`Finished rendering all "${name}" cards!`);
 };
 
 const loadCSVData = async (filePath) => {
@@ -110,8 +157,8 @@ const generateSVGTemplate = (card, svgCode, templates) => {
 };
 
 const explanations = {
-    Ally: (type) => `When this gets deployed, put an Ally Token on this. Whenever a ${type} is deployed adjacently or this is deployed adjacently to a friendly ${type}, do something and remove this Token.`,
-    Ambush: "You may deploy this face-down. At the end of each Turn, if the Condition got fulfilled and you fulfil the Crystal Requirements, you may unearth this.",
+    Ally: (type) => `When this is deployed, put an Ally Token on this. Whenever a ${type} is deployed adjacently or this is deployed adjacently to a friendly ${type}, remove this Token to do something.`,
+    Ambush: "You may deploy this face-down. At the end of each Turn, if the condition is true and your Crystals meet this Card's Requirements, you may unearth this.",
     Bury: null,
     Choose_one: null,
     Cleanse: "Remove all Tokens and the Card Text from a Unit.",
@@ -123,14 +170,15 @@ const explanations = {
     Taunt: "Your Opponent has to deploy Units adjacently, if possible. Start of your Turn: Remove this Token.",
     Unearth: null,
     Unleash: "If you meet these Crystals Requirements, do something.",
-    Ward: "If a Unit with Ward would be buried, moved, or leave the current Zone because of an Opponent's Effect, instead remove a Ward Token from it.",
+    Ward: "If a Unit with Ward would be buried, moved, or leave the current Zone because of an Opponent's Effect, instead remove this Token from it.",
     Deploy: null,
     Start_of_your_Turn: null,
-    Crystalborn: "When you crystallize this, put a Crystalborn Token on it.",
+    Crystalborn: "You may play it from your Crystal Zone and remove this Token.",
     Conquer: "If you win a Lane, if this Unit is inside it, do something.",
     Ascend: (type) => `You may deploy a${type !== null && (type.toString().startsWith('a') || type.toString().startsWith('e') || type.toString().startsWith('i') || type.toString().startsWith('o') || type.toString().startsWith('u')) ? 'n' : ''} ${type !== null ? type.toString() : 'Unit'} on top of this. It retains all Buffs.`
 };
 
+// PROCESS.
 // Load all .csvs
 const allCsvFiles = await loadCSVData(cardFilePath);
 
@@ -204,7 +252,7 @@ for(let card of cards) {
     card.Artwork = image;
 
     createFolderIfNotExists(process.env.EXPORT_IMAGE_FOLDER);
-    fs.writeFileSync(`${process.env.EXPORT_IMAGE_FOLDER}/${card.Name}.png`, image);
+    fs.writeFileSync(`${process.env.EXPORT_IMAGE_FOLDER}/${processCardName(card.Name)}.png`, image);
 
     // If we want to make the file public
     if(setsToMakePublic.includes(card.Set)) {
@@ -264,48 +312,12 @@ const executions = Object.entries(cardsBySet).map(async ([set, cards]) => {
         
                 return prev;
             },
-            {Common: [], Uncommon: [], Rare: []}
+            {Common: [], Uncommon: [], Rare: [], Terrain: []}
         );
 
     console.log(`Starting to render all Set ${set} cards...`);
 
-    executionByRarity = Object.entries(executionByRarity).map(async ([rarity, cards]) => {
-        const canvases = [spawnCanvas()];
-        let targetCanvas = 0;
-
-        console.log(`Set ${set}'s ${rarity}s includes a total of ${cards.length} cards!`);
-    
-        for(let i = 0; i < cards.length; i++) {
-            const number = i % entryCount;
-    
-            targetCanvas = Math.floor(i / entryCount);
-            const targetY = Math.floor(number / numberColumns);
-            const targetX = number % numberColumns;
-    
-            if(targetCanvas >= canvases.length) {
-                canvases.push(spawnCanvas());
-            }
-
-    
-            const image = await loadImage(cards[i].Artwork);
-            // Free buffer!
-            delete cards[i].Artwork;
-    
-            canvases[targetCanvas].getContext('2d').drawImage(image, targetX * imageWidth, targetY * imageHeight, imageWidth, imageHeight);
-        }
-
-        console.log(`Set ${set}'s ${rarity}s result in ${canvases.length} buffers.`);
-        const buffers = canvases.map((canvas) => canvas.toBuffer());
-        
-        if(!fs.existsSync(process.env.EXPORT_TABLETOP_FOLDER)) {
-            fs.mkdirSync(process.env.EXPORT_TABLETOP_FOLDER);
-        }
-
-        buffers.forEach((buffer, i) => fs.writeFileSync(`${process.env.EXPORT_TABLETOP_FOLDER}/set-${set}-${rarity}s-${i}.png`, buffer));
-        
-        console.log(`Finished rendering all ${rarity} ${set} cards!`);
-    });
-
+    executionByRarity = Object.entries(executionByRarity).map(async ([rarity, cards]) => renderTabletopSheet(`Set ${set} ${rarity}`, cards, process.env.EXPORT_TABLETOP_SETS_FOLDER, `set-${set}-${rarity.toLowerCase()}`));
     const results = await Promise.all(executionByRarity);
 
     console.log(`Finished rendering all ${set} cards!`);
@@ -315,3 +327,32 @@ const executions = Object.entries(cardsBySet).map(async ([set, cards]) => {
 
 const results = await Promise.all(executions);
 console.log('Finished rendering.');
+
+// Render individual Starter Decks.
+// Fetch Starter Deck Data.
+const starterDecks = (await loadCSVData(process.env.STARTER_DECKS_FILE))
+    .filter((entry) => entry['Card List']?.length > 0)
+    .reduce((prev, current) => {
+        let starterDeck = current['Starter Deck'];
+        if(starterDeck?.length === 0) return;
+
+        // Simplify Starter Deck name.
+        starterDeck = starterDeck.replaceAll(/[^a-zA-Z]+/g, '_').toLowerCase();
+
+        if(!(starterDeck in prev)) prev[starterDeck] = [];
+
+        // Find Artwork for this card.
+        current.Artwork = cards.find((card) => card.Name === current['Card List'])?.Artwork;
+
+        // Duplicate Card according to its Quantity in the Deck.
+        for(let i = 0; i < current.Copies; i++) {
+            prev[starterDeck].push(current);
+        }
+
+        return prev;
+    }, {});
+
+const starterDeckRenderExecutions = Object.entries(starterDecks)
+    .map(async ([starterDeckName, cards]) => renderTabletopSheet(`Starter Deck (${starterDeckName})`, cards, process.env.EXPORT_TABLETOP_STARTERDECKS_FOLDER, starterDeckName));
+
+await Promise.all(starterDeckRenderExecutions);

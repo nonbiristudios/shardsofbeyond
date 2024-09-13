@@ -1,0 +1,50 @@
+[Variables]
+Mulligan Cards: 6
+ConqueredLanesToWin: 4
+
+[Info]
+Game: Shards of Beyond
+Player: 2 Players
+Length: 30min
+Age: 13+
+
+[Components]
+- 1 gameboard
+- 15 Terrain cards
+- 230 Unit cards
+- 9 coins
+- 6 keyword dice
+- 6 regular dice
+
+[Setup]
+- Put all Terrain cards separately.
+- Divide all Unit cards into three piles, one for each of the card rarities; "Common", "Uncommon" and "Rare".
+- Create 10 booster packs by shuffling 6 Common, 3 Uncommon and 1 Rare card into a single pack each. | Do so without looking at the cards.
+- Each player creates their initial Starting Deck by shuffling up 3 booster packs. | You may look at the cards now!
+- Place a random Terrain card next to each Lane.
+
+[Game Goal]
+- Be the first player to conquer {ConqueredLanesToWin} Lanes!
+
+[Game Start]
+- Players decide on who goes first by tossing a coin.
+- Each player draws {MulliganCards} cards from their deck. Once, each player may shuffle any number of cards from their hand to their deck and draw that many new ones.
+- Players take turns. At the start of your turn, you draw a card.
+
+During your turn, you do the following:
+- You may crystallize a card from your hand.
+-- You may play a card from your hand ("face-up") or
+-- You may play a card from your hand buried ("face-down").
+
+At the end of each turn, you take conquer ("take control of") any Lanes where | You can't conquer a Lane that you currently already conquered!
+- each of its Slots is not empty
+- your Units have the greatest total sum of their Power in that Lane
+
+If you then control atleast {ConqueredLanesToWin} Lanes and your Opponent controls less Lanes, you win the game.
+If you and your Opponent then both control {ConqueredLanesToWin} Lanes, the player who controls Units with the least total Power wins the game, because they outsmarted their Opponent with less Ressources.
+If there then are no more free Slots, the player who controls the most Lanes wins the game.
+If each player then controls the same number of Lanes, the player who controls Units with the least total Power wins the game.
+If there then is still no winning player, the player who went second wins the game.
+
+
+When you play a card, you need to be able to pay its Cost.

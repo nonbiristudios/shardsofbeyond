@@ -1,1 +1,1 @@
-export $(grep -v '^#' $1 | xargs)
+export $(grep -v '^#' $1 | xargs -d '\n')

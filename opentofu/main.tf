@@ -9,6 +9,8 @@ terraform {
 
 provider "digitalocean" {
   token = var.do_token
+  spaces_access_id = var.spaces_access_id
+  spaces_secret_key = var.spaces_secret_key
 }
 
 resource "digitalocean_project" "shardsofbeyond" {
@@ -19,26 +21,27 @@ resource "digitalocean_project" "shardsofbeyond" {
   is_default  = "true"
 }
 
-resource "digitalocean_spaces_bucket" "static-assets" {
+resource "digitalocean_spaces_bucket" "assets" {
   name   = var.bucket_name
   region = var.bucket_region
   acl    = "public-read"
+  force_destroy = true
 }
 
 resource "digitalocean_project_resources" "resources" {
   project = digitalocean_project.shardsofbeyond.id
   resources = [
-    digitalocean_spaces_bucket.static-assets.urn
+    digitalocean_spaces_bucket.assets.urn
   ]
 }
 
-resource "digitalocean_cdn" "static-assets-cdn" {
-  origin = digitalocean_spaces_bucket.static-assets.bucket_domain_name
+resource "digitalocean_cdn" "assets-cdn" {
+  origin = digitalocean_spaces_bucket.assets.bucket_domain_name
 }
 
-resource "digitalocean_spaces_bucket_cors_configuration" "static-assets-cors" {
-  bucket = digitalocean_spaces_bucket.static-assets.id
-  region = digitalocean_spaces_bucket.static-assets.region
+resource "digitalocean_spaces_bucket_cors_configuration" "assets-cors" {
+  bucket = digitalocean_spaces_bucket.assets.id
+  region = digitalocean_spaces_bucket.assets.region
 
   cors_rule {
     allowed_headers = ["*"]

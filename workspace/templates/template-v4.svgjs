@@ -34,7 +34,8 @@
         card.RarityColor = {
             Common: '#75491c',
             Uncommon: 'silver',
-            Rare: '#ad8f2b'
+            Rare: '#dbb535',
+            Terrain: 'black'
         }[card.Rarity];
         
         return '';
@@ -116,7 +117,12 @@
         </filter>
         
         <filter id="desaturate">
-          <feColorMatrix type="saturate" in="SourceGraphic" values="0.1"/>
+            <feColorMatrix type="saturate" in="SourceGraphic" out="desaturated" values="0.1"/>
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="0.3" />
+                <feFuncG type="linear" slope="0.3" />
+                <feFuncB type="linear" slope="0.3" />
+            </feComponentTransfer>
         </filter>
         
         <filter id="distort">
@@ -154,7 +160,15 @@
     />
     
     <!-- Opacity Filter over Textbox -->
-    <rect x="-15" y="675" opacity="0.52" width="800" height="400" fill="black"/>
+    <rect
+        visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
+        x="-15"
+        y="675"
+        opacity="0.52"
+        width="800"
+        height="400"
+        fill="black"
+    />
     
     <!-- In-Border-Texture -->
     <image
@@ -279,64 +293,69 @@
         filter="url(#overlayFilter) drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 4px black)"
     />
 
-    <!-- Type -->
-    <text
-        x="125" 
-        y="587" 
-        width="655" 
-        height="255"
-        fill="white"
-        style="
-            font-family:'Palatino Linotype', serif;
-            font-weight: bold;
-            font-size:38px;
-            line-height:40px;
-            text-shadow: 2px 2px 4px black;
-        "
-    >
-        {{(card) => {
-            // Split all Types into the best combination of Line 1 and 2 (space-wise)
-            const types = card.Types.map((typ) => typ.trim());
-            
-            const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
-            
-            let line1 = [];
-            let line2 = [];
-            
-            sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
-            
-            return `<tspan x="75" dy="37">${line1.join(' - ')}</tspan>` +
-                `<tspan x="75" dy="37">${line2.join(' - ')}</tspan>`;
-        }}}
-    </text>
-	
-	<!-- Realm Text -->
-    <text 
-        x="465" 
-        y="587"
-        fill="white"
-        style="font-family:'Palatino Linotype', serif;
-            font-weight: bold;
-            font-size: 38px;
-            line-height: 40px;"
-    >
-        {{(card) => {
-            const colors = {
-                'Divine': '#FCE79C',
-                'Elemental': '#FF7344',
-                'Mortal': '#287CC4',
-                'Nature': '#408C2F',
-                'Void': '#3B2055'
-            };
-            
-            return card.Realms
-                .map((realm) => `<tspan x="465" dy="37" style="text-shadow: 2px 2px 4px ${colors[realm]};">${realm}</tspan>`)
-                .join('');
-        }}}
-    </text>
+    <g visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}">
+        <!-- Type -->
+        <text
+            visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
+            x="125" 
+            y="591" 
+            width="655" 
+            height="255"
+            fill="white"
+            style="
+                font-family:'Palatino Linotype', serif;
+                font-weight: bold;
+                font-size:38px;
+                line-height:40px;
+                text-shadow: 2px 2px 4px black;
+            "
+        >
+            {{(card) => {
+                // Split all Types into the best combination of Line 1 and 2 (space-wise)
+                const types = card.Types.map((typ) => typ.trim());
+                
+                const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
+                
+                let line1 = [];
+                let line2 = [];
+                
+                sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
+                
+                return `<tspan x="75" dy="37">${line1.join(' - ')}</tspan>` +
+                    `<tspan x="75" dy="37">${line2.join(' - ')}</tspan>`;
+            }}}
+        </text>
+        
+        <!-- Realm Text -->
+        <text 
+            visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
+            x="465" 
+            y="591"
+            fill="white"
+            style="font-family:'Palatino Linotype', serif;
+                font-weight: bold;
+                font-size: 38px;
+                line-height: 40px;"
+        >
+            {{(card) => {
+                const colors = {
+                    'Divine': '#FCE79C',
+                    'Elemental': '#FF7344',
+                    'Mortal': '#287CC4',
+                    'Nature': '#408C2F',
+                    'Void': '#3B2055'
+                };
+                
+                return card.Realms
+                    .map((realm) => `<tspan x="465" dy="37" style="text-shadow: 2px 2px 4px ${colors[realm]};">${realm}</tspan>`)
+                    .join('');
+            }}}
+        </text>
+    </g>
     
     <!-- Text of Textbox -->
-    <foreignObject 
+    <foreignObject
+        visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
         x="49" 
         y="690" 
         width="656" 
@@ -461,108 +480,110 @@
         </div>
     </foreignObject>
                 
-    <!-- Power Gem -->
-    <!-- Shadow -->
-    <image
-        x="309"
-        y="548"
-        width="158"
-        height="158"
-        preserveAspectRatio="xMidYMid"
-        href="{{(card, templates) => templates.get(`Rarity_Uncommon.png`)}}"
-        filter="url(#rarityShadow)"
-    />
-    <!-- Real Render -->
-    <image
-        x="312"
-        y="551"
-        width="152"
-        height="152"
-        preserveAspectRatio="xMidYMid"
-        href="{{(card, templates) => templates.get(`Rarity_Uncommon.png`)}}"
-    />
-    
-    <!-- Power -->
-    <text
-        x="{{(card) => {
-            if(card.Power === 4) return '51%';
-            if(card.Power === 1) return '50%';
-            
-            return '52%';
-        }}}"
-        y="685"
-        font-size="185"
-        text-anchor="middle"
-        filter="drop-shadow(0px 0px 4px black) drop-shadow(0px 0px 4px black)"
-        font-family="GRECOromanLubedJudo Medium"
-        stroke="black"
-        stroke-width="10"
-        paint-order="stroke"
-        font-weight="bold"
-        fill="white"
-    >
-        <tspan>
-            {{(card) => card.Power}}
-        </tspan>
-    </text>
-    
-    <!-- Crystals -->        
-    {{(card, templates) => {
-    
-        if(card.Costs.length == 0) return '';
+    <g visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}">
+        <!-- Power Gem -->
+        <!-- Shadow -->
+        <image
+            x="309"
+            y="548"
+            width="158"
+            height="158"
+            preserveAspectRatio="xMidYMid"
+            href="{{(card, templates) => templates.get(`Rarity_Uncommon.png`)}}"
+            filter="url(#rarityShadow)"
+        />
+        <!-- Real Render -->
+        <image
+            x="312"
+            y="551"
+            width="152"
+            height="152"
+            preserveAspectRatio="xMidYMid"
+            href="{{(card, templates) => templates.get(`Rarity_Uncommon.png`)}}"
+        />
         
-        const numberQuestionMarks = card.Costs.filter((cost) => cost === '?').length;
-        const arrangedCosts = card.Costs.filter((cost) => cost !== '?').reverse();
-        for(let i=0;i < numberQuestionMarks; i++) arrangedCosts.push('?');
+        <!-- Power -->
+        <text
+            x="{{(card) => {
+                if(card.Power === 4) return '51%';
+                if(card.Power === 1) return '49%';
+                
+                return '52%';
+            }}}"
+            y="685"
+            font-size="185"
+            text-anchor="middle"
+            filter="drop-shadow(0px 0px 4px black) drop-shadow(0px 0px 4px black)"
+            font-family="GRECOromanLubedJudo Medium"
+            stroke="black"
+            stroke-width="10"
+            paint-order="stroke"
+            font-weight="bold"
+            fill="white"
+        >
+            <tspan>
+                {{(card) => card.Power}}
+            </tspan>
+        </text>
         
-        return arrangedCosts.map((crystal, index) => {
-            let filter = '';
+        <!-- Crystals -->
+        {{(card, templates) => {
+        
+            if(card.Costs.length == 0) return '';
             
-            switch(crystal.trim().toLowerCase()) {
-                case 'd':
-                    filter = 'saturate(70%) brightness(0.95) hue-rotate(-60deg)';
-                    break;
-                case 'e':
-                    filter = 'hue-rotate(260deg) brightness(1.1) saturate(90%)';
-                    break;
-                case 'm':
-                    filter = 'saturate(70%) brightness(90%) hue-rotate(100deg)';
-                    break;
-                case 'n':
-                    filter = 'hue-rotate(20deg) saturate(90%)';
-                    break;
-                case 'v':   
-                    filter = 'saturate(70%) brightness(80%) hue-rotate(172deg)';
-                    break;
-                default:
-                    filter = 'grayscale(1)';
-                    break;
-            }
+            const numberQuestionMarks = card.Costs.filter((cost) => cost === '?').length;
+            const arrangedCosts = card.Costs.filter((cost) => cost !== '?').reverse();
+            for(let i=0;i < numberQuestionMarks; i++) arrangedCosts.push('?');
             
-            return `
-            <image 
-                x="${715-(index+1)*60}"
-                y="968"
-                width="60"
-                height="60"
-                filter="url(#shadow)"
-                preserveAspectRatio="xMidYMid"
-                href="${templates.get('Crystal_gruen.png')}"
-            />
-            <image
-                x="${715-(index+1)*60}"
-                y="968"
-                width="60"
-                height="60"
-                style="filter: ${filter};"
-                preserveAspectRatio="xMidYMid"
-                href="${templates.get('Crystal_gruen.png')}"
-            />
-            `;
-        })
-        .join('');
-    }
-    }}
+            return arrangedCosts.map((crystal, index) => {
+                let filter = '';
+                
+                switch(crystal.trim().toLowerCase()) {
+                    case 'd':
+                        filter = 'saturate(70%) brightness(0.95) hue-rotate(-60deg)';
+                        break;
+                    case 'e':
+                        filter = 'hue-rotate(260deg) brightness(1.1) saturate(90%)';
+                        break;
+                    case 'm':
+                        filter = 'saturate(70%) brightness(90%) hue-rotate(100deg)';
+                        break;
+                    case 'n':
+                        filter = 'hue-rotate(20deg) saturate(90%)';
+                        break;
+                    case 'v':   
+                        filter = 'saturate(70%) brightness(80%) hue-rotate(172deg)';
+                        break;
+                    default:
+                        filter = 'grayscale(1)';
+                        break;
+                }
+                
+                return `
+                <image 
+                    x="${715-(index+1)*60}"
+                    y="968"
+                    width="60"
+                    height="60"
+                    filter="url(#shadow)"
+                    preserveAspectRatio="xMidYMid"
+                    href="${templates.get('Crystal_gruen.png')}"
+                />
+                <image
+                    x="${715-(index+1)*60}"
+                    y="968"
+                    width="60"
+                    height="60"
+                    style="filter: ${filter};"
+                    preserveAspectRatio="xMidYMid"
+                    href="${templates.get('Crystal_gruen.png')}"
+                />
+                `;
+            })
+            .join('');
+        }
+        }}
+    </g>
     
     <!-- Copyright + Set Name-->
     <foreignObject 

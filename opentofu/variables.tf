@@ -10,3 +10,13 @@ variable "bucket_name" {
 variable "bucket_region" {
   type = string
 }
+
+variable "spaces_access_id" {
+  type = string
+  sensitive = true
+}
+
+variable "spaces_secret_key" {
+  type = string
+  sensitive = true
+}

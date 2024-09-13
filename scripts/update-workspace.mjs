@@ -16,7 +16,8 @@ const requiredParameters = [
 
 const sheetsToExport = [
     'Cards',
-    'Artworks'
+    'Artworks',
+    'Starter Decks'
 ]
 
 requiredParameters.forEach((parameter) => {
@@ -37,7 +38,8 @@ const exportedSheets = [];
 workbook.SheetNames.forEach((name) => {
     if(!sheetsToExport.includes(name)) return;
 
-    const csvPath = `${process.env.CSV_FOLDER}/${name}.csv`;
+    // To fight whitespaces, since they are difficult to handle in the environment variables.
+    const csvPath = `${process.env.CSV_FOLDER}/${name.replaceAll(/[^a-zA-Z]/g, '_')}.csv`;
     
     fs.writeFileSync(csvPath, XLSX.utils.sheet_to_csv(workbook.Sheets[name]));
     
@@ -172,15 +174,15 @@ Object.entries(allRatings)
 
 fs.writeFileSync(process.env.VOTED_ARTWORKS_FILE, JSON.stringify(finalizedRatings));
 
-// Export a list of all artworks that have not been downloaded yet.
+// Export a list of all artworks that have not been downloaded yet, but are voted for.
 const nonExistingArtworks = [];
-Object.values(artworks).forEach((artwork) => artwork.artworks.forEach((artwork) => {
-    const combinedUrl = `${artwork.id}_${artwork.index}.png`;
-    
-    if(!fs.existsSync(`${process.env.ARTWORKS_FOLDER}/all/${combinedUrl}`)) {
-        nonExistingArtworks.push({url: `https://cdn.midjourney.com/${artwork.id}/0_${artwork.index}.png`, path: combinedUrl});
+Object.values(finalizedRatings).forEach((artwork) => {    
+    if(!fs.existsSync(`${process.env.ARTWORKS_FOLDER}/all/${artwork}`)) {
+        const groups = /(?<id>.+)_(?<index>[^.]+).png/.exec(artwork).groups;
+
+        nonExistingArtworks.push({url: `https://cdn.midjourney.com/${groups.id}/0_${groups.index}.png`, path: artwork});
     }
-}))
+});
 
 fs.writeFileSync(process.env.NON_EXISTING_ARTWORKS_INFO_FILE, nonExistingArtworks
     .map((info) => `${info.url} --save as--> ${info.path}`)

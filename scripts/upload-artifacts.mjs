@@ -88,9 +88,9 @@ console.log(`Checking: ${generatedRenders.length} cards (Set ${setsToMakePublic.
 const folderPath = `${process.env.EXPORT_FOLDER}/images/`;
 const singleImageUploads = fs.readdirSync(folderPath, {withFileTypes: false})
   .map(async (imageFileName, i) => {
-    const modifiedName = imageFileName.replaceAll(/[^A-Za-z]/g, '').replaceAll(/png$/g, '').toLowerCase();
+    const modifiedName = imageFileName;
 
-    const key = `card-${modifiedName}.png`;
+    const key = `cards/${modifiedName}`;
 
     // Decide whether we will upload the single card privately or publicly.
     return uploadToS3(folderPath, imageFileName, key, generatedRenders.includes(modifiedName));
@@ -101,14 +101,18 @@ console.log('All single files uploaded!');
 
 // Read all tabletop files to be uploaded
 const folderPathTabletop = `${process.env.EXPORT_FOLDER}/tabletop/`;
-const tabletopImageUploads = fs.readdirSync(folderPathTabletop, {withFileTypes: false})
+const tabletopImageUploads = fs.readdirSync(folderPathTabletop, {withFileTypes: false, recursive: true})
   .map((imageFileName, i) => {
-    const modifiedName = imageFileName.replaceAll(/png$/g, '').toLowerCase();
-    const set = modifiedName.matchAll(`set-(\d)`)[1];
-    const key = `tabletop-${modifiedName}.png`;
+    if(!imageFileName.includes('.png')) return;
+
+    const modifiedName = imageFileName.replaceAll(/\.png$/g, '').replaceAll(/\\/g, '/').toLowerCase();
+    let set = modifiedName.match(/set-(\d+)/);
+    const makePublic = (set === null) ? true : setsToMakePublic.includes(set[1]);
+
+    const key = `tabletop/${modifiedName}.png`;
 
     // Decide whether we will upload the templates privately or publicly.
-    return uploadToS3(folderPathTabletop, imageFileName, key, setsToMakePublic.includes(set));
+    return uploadToS3(folderPathTabletop, imageFileName, key, makePublic);
   });
 
 await Promise.all(tabletopImageUploads);
