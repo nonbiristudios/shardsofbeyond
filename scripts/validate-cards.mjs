@@ -89,7 +89,7 @@ const rules = [
       return correct;
     }
   },
-  {text: `Every card has sensible flavor text`, check: (card) => card.Flavortext.split(' ').length >= 3},
+  {text: `Every card has a sensible flavor text`, check: (card) => card.Flavortext.split(' ').length >= 3},
   {text: `Every card's Realm appears in the costs, too`, check: (card) => {
       if(card.Cardtype === 'Terrain') return true;
       if(card.Realms.trim().length === 0) return true;
@@ -116,12 +116,47 @@ const rules = [
       return artworkColumns.filter((column) => (card[column] ?? '').trim().length > 0).length > 0;
     }
   },
-  {text: 'No silly symbols in costs', check: (card) => {
+  {text: 'Right order of costs', check: (card) => {
       if(card.Cardtype === 'Terrain') return true;
       
       return /^(?:[DEVMN](?:, [DEVMN])*|\?)(?:, \?)*$/.test(card.Costs);
     }
-  }
+  },
+  {text: 'Each Realm has atleast one (mono-color-)card with each possible Power', multiCheck: (cards) => {
+    const stats = cards.reduce((prev, current) => {
+      if(current.Cardtype === 'Terrain') return prev;
+
+      const realms = current.Realms.split(' ');
+      
+      // Ignore multi-color cards
+      if(realms.length > 1) return prev;
+      if(!(current.Realms in prev)) prev[current.Realms] = [];
+
+      if(!(prev[current.Realms].includes(current.Power))) prev[current.Realms].push(current.Power);
+
+      return prev;
+    }, {});
+
+    // Powers need to be: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    console.log(stats);
+    return REALMS.filter((realm) => stats[realm].length < 10);
+  }},
+  {text: 'Each Realm has atleast one (mono-color-)card with each possible total Cost', multiCheck: (cards) => {
+    const stats = cards.reduce((prev, current) => {
+      const totalCosts = current.Costs.replaceAll(/[^A-Z?]/g, '').length;
+      const realms = current.Realms.split(' ');
+      
+      // Ignore multi-color cards
+      if(realms.length > 1) return prev;
+      if(!(current.Realms in prev)) prev[current.Realms] = [];
+
+      if(!(prev[current.Realms].includes(current.totalCosts))) prev[current.Realms].push(current.totalCosts);
+
+      return prev;
+    }, {});
+    
+    return REALMS.filter((realm) => stats[realm].length < 7);
+  }}
 ];
 
 const cards = (await loadCSVData(process.env.CARDS_FILE))
@@ -130,12 +165,12 @@ const cards = (await loadCSVData(process.env.CARDS_FILE))
 
 const failedRules = [];
 rules.forEach((rule) => {
-  const errors = cards.filter((card) => !rule.check(card));
+  const errors = (rule.check !== undefined) ? cards.filter((card) => !rule.check(card)) : rule.multiCheck(cards);
   const colorize = (errors.length === 0) ? (text) => `\x1b[32m${text}\x1b[0m` : (text) => `\x1b[31m${text}\x1b[0m`;
 
   console.info(colorize(`${rule.text}.`));
   if(errors.length > 0) {
-    errors.forEach((card) => console.error(colorize(`\t--- Card "${card.Name}" violates this rule.`)));
+    errors.forEach((card) => console.error(colorize((rule.check !== undefined) ? `\t--- Card "${card.Name}" violates this rule.` : `\t --- "${card}" violates this rule.`)));
   }
   if(errors.length === 0) return;
 
