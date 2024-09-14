@@ -3,14 +3,14 @@ Starter Decks,,,Card List,Starter Deck,Copies,Alt Arts,Set,Realm,Type,Ability,Po
 ,,,Cinderguard Scribe,SD1: Cinderguard,1,Default,1,Elemental,Human,Deploy: Choose one: - Glimpse 1. - Gain +1 Power.,1,E,Common,1
 Quantity,30,,Ambrosia Bee,SD1: Cinderguard,1,Alternative,1,Mortal,Insect,"Whenever a friendly Mortal Unit is deployed adjacently, gain +2 Power.",1,"M, ?",Common,1
 Alternative Art Cards,7,,Filthy Peasant,SD1: Cinderguard,1,Default,1,Mortal,Human,Deploy: Gain Taunt.,1,M,Common,1
-Average Power,2.9,,Caring Mother,SD1: Cinderguard,1,Alternative,1,Mortal,Human,Crystallize and Deploy: Another friendly Human Unit gains +2 Power.,1,"M, ?",Uncommon,1
+Average Power,2.8,,Caring Mother,SD1: Cinderguard,1,Alternative,1,Mortal,Human,Crystallize and Deploy: Another friendly Human Unit gains +2 Power.,1,"M, ?",Uncommon,1
 Realms,,,Cinderguard Flamebearer,SD1: Cinderguard,2,Alternative,1,Elemental Mortal,Bannerbearer Warrior,,2,"E, M",Common,4
 Divine Void,2,,Pocket Dragon,SD1: Cinderguard,2,Default,1,Mortal,Dragon,Deploy: Choose one: - You may move an adjacent friendly Unit. - Draw a Card.,2,"M, M, ?, ?",Common,4
 Divine,12,,Dragon Rider,SD1: Cinderguard,1,Alternative,1,Elemental Mortal,Human Dragon,Deploy: Copy the Ability of an adjacent Dragon Unit or Human Unit.,2,"E, M, ?, ?",Uncommon,2
-Void,7,,Cinderguard Irregulars,SD1: Cinderguard,2,Default,1,Elemental,Human Warrior,,3,"E, ?",Common,6
-,,,Featherfrost Harpy,SD1: Cinderguard,2,Default,1,Elemental,Human Spirit,,4,"E, ?, ?, ?",Common,8
-,,,Ironstride Courser,SD1: Cinderguard,1,Default,1,Mortal,Animal Construct,Deploy: Choose one: - Each other friendly Unit in this Lane gets +1 Power. - Gain +3 Power.,3,"M, M, ?, ?, ?, ?",Common,3
-,,,Oasisdweller,SD1: Cinderguard,1,Default,1,Elemental,Dragon Spirit,"Deploy: You may return a friendly Spirit or Warrior to your hand. If you do, draw a Card.",3,"E, ?, ?, ?",Uncommon,3
+Void,6,,Cinderguard Irregulars,SD1: Cinderguard,2,Default,1,Elemental,Human Warrior,,3,"E, ?",Common,6
+,1,,Featherfrost Harpy,SD1: Cinderguard,2,Default,1,Elemental,Human Spirit,,4,"E, ?, ?, ?",Common,8
+,1,,Ironstride Courser,SD1: Cinderguard,1,Default,1,Mortal,Animal Construct,Deploy: Choose one: - Each other friendly Unit in this Lane gets +1 Power. - Gain +3 Power.,3,"M, M, ?, ?, ?, ?",Common,3
+,1,,Oasisdweller,SD1: Cinderguard,1,Default,1,Elemental,Dragon Spirit,"Deploy: You may return a friendly Spirit or Warrior to your hand. If you do, draw a Card.",3,"E, ?, ?, ?",Uncommon,3
 ,,,Cinderguard Saboteur,SD1: Cinderguard,2,Default,1,Mortal,Human Hunter,,4,"M, ?, ?, ?",Common,8
 - 2 ambusher pro deck!,,,Greedy Senator,SD1: Cinderguard,1,Default,1,Mortal,Demon Human,Deploy: Bury each friendly Unit in this Lane to gain its Power.,4,"M, M, ?, ?",Rare,4
 - ivoryscar: weniger void-support,,,Skulloath Lootclaimer,SD1: Cinderguard,1,Default,1,Elemental,Human Hunter,Deploy: Bury a Crystal.,4,"E, E, ?, ?, ?",Uncommon,4
@@ -61,7 +61,7 @@ Void,7,,Cinderguard Irregulars,SD1: Cinderguard,2,Default,1,Elemental,Human Warr
 ,,,Ghoulflesh Devourer,SD3: Ivoryscar,2,Alternative,1,Void,Dinosaur Undead,"Whenever an enemy Unit with less Power is deployed adjacently, gain +1 Power.",4,"V, ?, ?, ?",Common,8
 ,,,Hellblade,SD3: Ivoryscar,1,Alternative,1,Void,Demon Warrior,,6,"V, V, ?, ?, ?",Common,6
 ,,,Forsaken Chronicler,SD3: Ivoryscar,2,Default,1,Void,Undead,Bury: draw a Card.,3,"V, ?, ?",Common,6
-,,,Forsaken Serenader,SD3: Ivoryscar,1,Default,1,Void,Undead,Deploy: Glimpse twice for each adjacent Void Unit.,3,"V, ?, ?",Common,3
+,,,Forsaken Serenader,SD3: Ivoryscar,1,Default,,,,,,,,0
 ,,,Crownfire Empress,SD4: Shardhorde,1,Alternative,1,Elemental,Dragon,Deploy: You may bury a friendly Dragon Unit to bury an enemy Unit.,4,"E, E, E, ?, ?",Rare,4
 ,,,Sovereign Spellwyrm,SD4: Shardhorde,1,Default,1,Elemental,Dragon,Deploy: Gain Taunt. Ally Wizard: Glimpse 2. Ally Dragon: Draw a Card.,4,"E, E, ?",Rare,4
 ,,,Bloodclaw,SD4: Shardhorde,1,Default,1,Nature,Demon Dinosaur,Deploy: Each Player crystallizes the top Card of their Deck.,6,"N, N, ?, ?",Rare,6
