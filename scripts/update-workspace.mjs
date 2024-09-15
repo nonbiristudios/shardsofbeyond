@@ -11,14 +11,19 @@ const requiredParameters = [
     'ARTWORK_VOTING_TOOL_FOLDER',
     'VOTED_ARTWORKS_FILE',
     'ARTWORKS_FOLDER',
-    'NON_EXISTING_ARTWORKS_INFO_FILE'
+    'NON_EXISTING_ARTWORKS_INFO_FILE',
+    'PUBLIC_CARDS_FILE',
+    'SETS_TO_MAKE_PUBLIC'
 ];
 
 const sheetsToExport = [
     'Cards',
     'Artworks',
     'Starter Decks'
-]
+];
+
+const mainSheet = sheetsToExport[0];
+const setsToMakePublic = process.env.SETS_TO_MAKE_PUBLIC.split(',').map((set) => +set.trim());
 
 requiredParameters.forEach((parameter) => {
     if(process.env[parameter] === undefined) {
@@ -33,6 +38,30 @@ if(!fs.existsSync(process.env.CSV_FOLDER)) {
 // Export singular sheets from workbook.
 XLSX.set_fs(fs);
 const workbook = XLSX.readFile(process.env.SPREADSHEET_FILE);
+
+// Export the main "Cards"-Sheet and convert that to a publicly available .JSON, with stripped dev columns.
+const publiclyAvailableCards = XLSX.utils.sheet_to_json(workbook.Sheets[mainSheet])
+    .filter((card) => card.Name !== undefined && card.Name.length > 0) // Discard "fake" cards.
+    .map((card) => {
+        console.info(card);
+        return card;
+    })
+    .filter((card) => setsToMakePublic.includes(card.Set)) // Only keep cards we want to make publicly available.
+    .map((card) => {
+        return {
+            name: card.Name,
+            set: card.Set,
+            realms: (card.Realms ?? '').split(' '),
+            types: (card.Types ?? '').split(' ') ?? [],
+            text: card.Text,
+            flavor: card.Flavortext,
+            costs: (card.Costs ?? '').split(',').map((cost) => cost.trim()),
+            rarity: card.Rarity
+        };
+    });
+
+fs.writeFileSync(process.env.PUBLIC_CARDS_FILE, JSON.stringify(publiclyAvailableCards));
+console.info(`Public card-file (JSON) created to "${process.env.PUBLIC_CARDS_FILE}".`);
 
 const exportedSheets = [];
 workbook.SheetNames.forEach((name) => {

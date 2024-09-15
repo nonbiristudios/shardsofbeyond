@@ -88,9 +88,9 @@ console.log(`Checking: ${generatedRenders.length} cards (Set ${setsToMakePublic.
 const folderPath = `${process.env.EXPORT_FOLDER}/images/`;
 const singleImageUploads = fs.readdirSync(folderPath, {withFileTypes: false})
   .map(async (imageFileName, i) => {
-    const modifiedName = imageFileName;
+    const modifiedName = imageFileName.replace(/\.png$/, '');
 
-    const key = `cards/${modifiedName}`;
+    const key = `cards/${modifiedName}.png`;
 
     // Decide whether we will upload the single card privately or publicly.
     return uploadToS3(folderPath, imageFileName, key, generatedRenders.includes(modifiedName));
