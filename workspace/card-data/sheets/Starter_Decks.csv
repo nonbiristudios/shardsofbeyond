@@ -40,7 +40,7 @@ Void,6,,Cinderguard Irregulars,SD1: Cinderguard,2,Default,1,Elemental,Human Warr
 ,,,Shadowpounce Panther,SD2: Tainted Jade,1,Default,1,Nature,Animal Hunter,Ambush: An enemy Unit was deployed adjacently this Turn. Unearth: You may move this.,5,"N, N, ?, ?, ?",Common,5
 ,,,Shroom Behemoth,SD2: Tainted Jade,2,Default,1,Void,Plant Undead,,5,"V, V, ?, ?",Common,10
 ,,,Mantis Queen,SD2: Tainted Jade,1,Default,1,Nature,Hunter Insect,Deploy: Unearth a friendly Unit with Ambush. Draw a Card for each other friendly Hunter Unit.,5,"N, N, ?, ?, ?",Rare,5
-,,,Gorgon Serpentress,SD2: Tainted Jade,1,Default,1,Void,Demon Hunter,"Deploy: Crystallize an adjacent Unit, its Owner may draw a Card. Gain Fear.",6,"V, V, ?, ?, ?, ?, ?",Rare,6
+,,,Gorgon Serpentress,SD2: Tainted Jade,1,Default,1,Void,Demon Hunter,"Deploy: Crystallize an adjacent Unit and if that Unit was a Human, draw two Cards. Gain Fear.",6,"V, V, ?, ?, ?, ?, ?",Rare,6
 ,,,Ivoryscar Eclipsion,SD3: Ivoryscar,2,Alternative,1,Divine Void,Angel Bannerbearer,,2,"D, V",Common,4
 ,,,Kois of Duality,SD3: Ivoryscar,1,Alternative,1,Divine Void,Animal Spirit,Deploy: Choose one: - Adjacent friendly Void Units gain +2 Power. - Adjacent friendly Divine Units gain +2 Power.,3,"D, V, ?",Uncommon,3
 ,,,Alabaster Exarch,SD3: Ivoryscar,1,Alternative,1,Divine,Angel,Deploy: Cleanse all Units in this Lane.,4,"D, D, ?, ?, ?",Rare,4
