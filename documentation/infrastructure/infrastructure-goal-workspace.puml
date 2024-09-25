@@ -1,0 +1,48 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/main/icons/devicons2
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/main/icons/font-awesome-6
+
+!include DEVICONS/google.puml
+!include DEVICONS/github_original.puml
+!include DEVICONS/terraform.puml
+!include DEVICONS/githubactions.puml
+!include DEVICONS/digitalocean_original.puml
+!include FONTAWESOME/gears.puml
+!include FONTAWESOME/digital_ocean.puml
+
+' LAYOUT_TOP_DOWN()
+' LAYOUT_AS_SKETCH()
+LAYOUT_WITH_LEGEND()
+AddRelTag("scheduled", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DashedLine())
+
+title Shards of Beyond (SOB): Game Repository - Target Architecture
+
+Person(game_designer, "Game Designer", "A non-technical Game-Designer")
+Person(game_developer, "Game Developer", "A technical Game-Developer")
+
+System_Ext(google_sheet, "Google Drive Sheet", "Contains all developer information, easily accessible for developers", "google")
+
+System_Boundary(githubrepo, "Shards of Beyond - Gam Repository") {
+  Container(config, "Stage Configuration", "JSON", "Stage-specific configuration (Alpha, Beta, Prod) for controlling & releasing content", "gears")
+  Container(opentofu, "OpenTofu", "OpenTofu", "IaC description of Object Storage for Game Assets", "terraform")
+  Container(gitactions, "Github Actions", "NodeJS, Shell", "Automatically updates, processes and transforms data", "github_original")
+  Container(webpage, "Static Local Developer Webpage", "HTML, JavaScript, CSS", "Provides simple interaction tools for Developers", "github_original")
+}
+
+System_Boundary(digitalocean, "Digital Ocean: Assets - Infrastructure") {
+  Container(s3, "S3-Object Storage + CDN", "S3", "Hosts all generated artifacts as static objects", "digital_ocean")
+}
+
+System_Ext(digitalocean_app, "Digital Ocean: App - Infrastructure", "The main Game App", "digital_ocean")
+
+Rel(game_designer, google_sheet, "Modifies", "GoogleSheets / WebSocket / HTTPS")
+Rel(game_developer, opentofu, "Executes")
+Rel(game_designer, webpage, "Operates")
+Rel(opentofu, digitalocean, "provisions")
+Rel(gitactions, s3, "Uploads Artifacts", "NodeJS, S3-Client")
+
+Rel_Back(google_sheet, gitactions, "Polls", "scheduled, HTTPS", $tags="scheduled")
+Rel_Back(workspace, gitactions, "Updates, populates and commits", "JavaScript", $tags="scheduled")
+Rel_Back(webpage, gitactions, "Hosts", "Github Pages", $tags="scheduled")
+@enduml

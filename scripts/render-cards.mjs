@@ -75,7 +75,7 @@ const renderTabletopSheet = async (name, cards, folder, filename) => {
             canvases.push(spawnCanvas());
         }
 
-        if((cards[i].Artwork ?? '').length === 0) throw new Error(`Artwork for "${name}" not defined or found!`);
+        if((cards[i].Artwork ?? '').length === 0) throw new Error(`Artwork for "${cards[i]}" not defined or found!`);
 
         const image = await loadImage(cards[i].Artwork);
         canvases[targetCanvas].getContext('2d').drawImage(image, targetX * imageWidth, targetY * imageHeight, imageWidth, imageHeight);
@@ -237,9 +237,7 @@ for(let card of cards) {
         continue;
     }
 
-    if(renderedCards.length % 10 === 0) {
-        console.log(`Rendering card #${renderedCards.length}: ${card.Name}...`);
-    }
+    console.log(`Rendering card #${renderedCards.length}: ${card.Name}...`);
 
     const template = generateSVGTemplate(card, svgjsFile, templates);
     const baseUrl = `file:///${path.resolve('./')}/`;
@@ -287,8 +285,8 @@ const cardsBySet = cards.reduce(
 // Create canvases of 69 cards each.
 const numberColumns = 10;
 const numberRows = 7;
-const imageWidth = 750;
-const imageHeight = 1050;
+const imageWidth = 1500;
+const imageHeight = 2100;
 const entryCount = (numberRows * numberColumns) - 1;
 
 const canvasWidth = imageWidth * numberColumns;
