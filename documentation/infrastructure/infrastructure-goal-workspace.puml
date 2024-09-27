@@ -23,26 +23,26 @@ Person(game_developer, "Game Developer", "A technical Game-Developer")
 
 System_Ext(google_sheet, "Google Drive Sheet", "Contains all developer information, easily accessible for developers", "google")
 
-System_Boundary(githubrepo, "Shards of Beyond - Gam Repository") {
+System_Boundary(githubrepo, "Shards of Beyond - Game Repository") {
   Container(config, "Stage Configuration", "JSON", "Stage-specific configuration (Alpha, Beta, Prod) for controlling & releasing content", "gears")
   Container(opentofu, "OpenTofu", "OpenTofu", "IaC description of Object Storage for Game Assets", "terraform")
   Container(gitactions, "Github Actions", "NodeJS, Shell", "Automatically updates, processes and transforms data", "github_original")
-  Container(webpage, "Static Local Developer Webpage", "HTML, JavaScript, CSS", "Provides simple interaction tools for Developers", "github_original")
 }
 
 System_Boundary(digitalocean, "Digital Ocean: Assets - Infrastructure") {
   Container(s3, "S3-Object Storage + CDN", "S3", "Hosts all generated artifacts as static objects", "digital_ocean")
 }
 
+System_Ext(webpage, "Shards of Beyond: Website", "The Website for all the content", "github")
 System_Ext(digitalocean_app, "Digital Ocean: App - Infrastructure", "The main Game App", "digital_ocean")
+
 
 Rel(game_designer, google_sheet, "Modifies", "GoogleSheets / WebSocket / HTTPS")
 Rel(game_developer, opentofu, "Executes")
-Rel(game_designer, webpage, "Operates")
 Rel(opentofu, digitalocean, "provisions")
 Rel(gitactions, s3, "Uploads Artifacts", "NodeJS, S3-Client")
 
 Rel_Back(google_sheet, gitactions, "Polls", "scheduled, HTTPS", $tags="scheduled")
-Rel_Back(workspace, gitactions, "Updates, populates and commits", "JavaScript", $tags="scheduled")
+Rel_Back(githubrepo, gitactions, "Updates, populates and commits", "JavaScript", $tags="scheduled")
 Rel_Back(webpage, gitactions, "Hosts", "Github Pages", $tags="scheduled")
 @enduml

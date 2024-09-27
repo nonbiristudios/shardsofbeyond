@@ -1,0 +1,80 @@
+html {
+  background-image: url('/assets/background.png');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-blend-mode: color;
+  background-color: rgba(255, 255, 255, 0.7)
+}
+
+.action, .entity {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+.divider {
+  margin: 5px;
+}
+
+.explanation {
+  position: absolute;
+}
+
+.rule-explanations, .right {
+  font-style: italic;
+  color: gray;
+}
+
+.left {
+  width: 80vw;
+}
+
+.right {
+  width: 20vw;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  text-indent: 15px;
+  margin-bottom: -5px;
+}
+
+blockquote {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'GRECOromanLubedJudo';
+  src: url('assets/GRECOromanLubedJudo.otf') format('.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title, .realm, .epic {
+  font-family: 'GRECOromanLubedJudo';
+  font-weight: bold;
+}
+
+section > h2 {
+  font-family: 'GRECOromanLubedJudo'
+}

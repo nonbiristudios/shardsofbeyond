@@ -151,7 +151,7 @@
     
     <!-- Artwork -->
     <image
-        x="0"
+        x="150"
         y="0"
         width="750"
         height="1050"
@@ -297,11 +297,12 @@
         <!-- Type -->
         <text
             visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
-            x="125" 
-            y="591" 
+            x="245" 
+            y="{{(card) => card.Types.length > 1 ? '589' : '545'}}"
             width="655" 
             height="255"
             fill="white"
+            text-anchor="end"
             style="
                 font-family:'Palatino Linotype', serif;
                 font-weight: bold;
@@ -330,7 +331,7 @@
         <text 
             visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
             x="465" 
-            y="591"
+            y="{{(card) => card.Types.length > 1 ? '589' : '545'}}"
             fill="white"
             style="font-family:'Palatino Linotype', serif;
                 font-weight: bold;
@@ -357,7 +358,7 @@
     <foreignObject
         visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
         x="49" 
-        y="690" 
+        y="692" 
         width="656" 
         height="253"
     >
