@@ -195,7 +195,7 @@ Object.entries(allRatings)
             .art;
 
         if(artworks[currentCard] === undefined) {
-            console.warn(`Hash ${cardhash} could not be found...!`);
+            console.info(`Hash ${cardhash} could not be found...!`);
             return;
         }
 
@@ -219,7 +219,7 @@ Object.values(finalizedRatings).forEach((artwork) => {
         const result = /(?<id>.+)_(?<index>[^.]+).png/.exec(artwork);
 
         if(result === null) {
-            console.warn(`A value was not mapped correctly to an URL. Probably the URL does not exist anymore for this hash: ${artwork}`);
+            console.info(`A value was not mapped correctly to an URL. Probably the URL does not exist anymore for this hash: ${artwork}`);
             return;
         }
 
