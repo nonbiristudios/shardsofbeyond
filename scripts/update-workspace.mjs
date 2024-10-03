@@ -195,7 +195,7 @@ Object.entries(allRatings)
             .art;
 
         if(artworks[currentCard] === undefined) {
-            console.error(`Hash ${cardhash} could not be found...!`);
+            console.warn(`Hash ${cardhash} could not be found...!`);
             return;
         }
 
@@ -222,7 +222,7 @@ Object.values(finalizedRatings).forEach((artwork) => {
             console.warn(`A value was not mapped correctly to an URL. Probably the URL does not exist anymore for this hash: ${artwork}`);
             return;
         }
-        
+
         const groups = result.groups;
 
         nonExistingArtworks.push({url: `https://cdn.midjourney.com/${groups.id}/0_${groups.index}.png`, path: artwork});
