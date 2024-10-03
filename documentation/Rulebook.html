@@ -11,7 +11,7 @@
 <body>
     <header>
         <h1 class="title">Shards of Beyond</h1>
-        <h2>Quick Rules</h2>
+        <h2 class="title">Quick Rules</h2>
     </header>
 
     <main>
@@ -21,7 +21,7 @@
                 <section>
                     <h2>Introduction</h2>
                     <p>
-                        Welcome to <b>Shards of Beyond</b> (SOB), where realms collide and strategy is key.
+                        Welcome to <b>Shards of Beyond</b> (SOB), where Realms collide and strategy is key.
                         <br/>
                         Dive into a world where mystical Units from five distinct Realms —
                         <blockquote>
@@ -46,7 +46,9 @@
                     <h2>The Objective</h2>
                     <p>
                         The goal is simple: At the end of any Turn, be the first Player to control
-                        four <span class="entity">Lanes</span> on the 4 x 5 <span class="entity">Game Board</span>.
+                        four <span class="entity">Lanes</span> on the 4 <i>(vertical)</i> x 5 <i>(horizontal)</i> <span class="entity">Game Board</span>.
+                        <br/>
+                        There are a total of <b>9</b> Lanes; <b>4</b> vertical and <b>5</b> horizontal ones.
                     </p>
                     <p>
                         You control a <span class="entity">Lane</span>, whether horizontal or vertical,
@@ -64,21 +66,12 @@
                 <section>
                     <h2>Setup</h2>
                     <p>
-                        Starting out, take all cards and sort out all <span class="entity">Terrain</span> into a separate pile.
+                        Starting out, take all cards and place all <span class="entity">Terrain</span> Cards in a pile. Shuffle it.
                         <br/>
-                        Sort all other cards by their Rarity and create a pile for each
-                        <span class="rarity">Common</span>,
-                        <span class="rarity">Uncommon</span> and
-                        <span class="rarity">Rare</span> card.
-                        Shuffle each of the piles and put them face-down.
+                        Next to each <span class="entity">Horizontal Lane</span> on the Game Board, place a random Terrain Card.
                     </p>
                     <p>
-                        Each Player creates their initial Deck by drawing the following random cards:
-                        <ul>
-                            <li>3 <span class="rarity">Rare</span> cards.</li>
-                            <li>9 <span class="rarity">Uncommon</span> cards.</li>
-                            <li>18 <span class="rarity">Common</span> cards.</li>
-                        </ul>
+                        Grab your Deck - 
                         <blockquote class="epic">
                             The Battle may start.
                         </blockquote>
@@ -105,14 +98,14 @@
                                 <span class="action">Crystallize</span>: Transform a card from your Hand into a Crystal by placing it into your Crystal Zone in front of you.
                             </li>
                             <li>
-                                <span class="action">Play</span>: You may play a Unit by <span class="action">deploying</span> it into a Slot on the Game Board.
+                                <span class="action">Play</span>: You may play a Unit by <span class="action">deploying</span> it into a Slot on the Game Board. When you <b>deploy</b> a Card, you move it into that Slot.
                                 <br/>
                                 <ul class="rule-explanations">
                                     <li>
-                                        You can deploy Units either normally (face-up), or <span class="entity">buried</span> (face-down). <span class="explanation">Buried Units have no Power, but can either <span class="action">ambush</span> or be a bluff!</span>
+                                        You can play Units either <b>normally</b> (face-up), if you meet their Requirements. <span class="explanation">c.f. "Card Structure"</span>
                                     </li>
                                     <li>
-                                        You can only play a Unit if you meet its <span class="entity">Requirements</span> by controlling fitting Crystals!
+                                        You can also play Units <b>buried</b> (face-down), even if you don't meet their requirements! <span class="explanation">Buried Units have no Power, but some Units can <span class="action">ambush</span>, or it could simply be played as a bluff!</span>
                                     </li>
                                     <li>
                                         You can deploy Units in Slots which are not yet occupied by another Unit.
@@ -126,30 +119,102 @@
                 <section>
                     <h2>Card Structure</h2>
                     <p>
-                        <img src=""
+                        <div style="display: flex;flex-direction: row;flex-basis: flex-start;height:400px">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <!-- Name -->
+                                <rect
+                                    x="10%"
+                                    y="4%"
+                                    width="80%"
+                                    height="8%"
+                                    fill="none"
+                                    stroke-width="2px"
+                                    class="explanation-name"
+                                />
+
+                                <!-- Power -->
+                                <rect
+                                    x="44%"
+                                    y="52.5%"
+                                    width="15%"
+                                    height="13%"
+                                    fill="none"
+                                    stroke-width="2px"
+                                    class="explanation-power"
+                                />
+
+                                 <!-- Types -->
+                                 <rect
+                                    x="25%"
+                                    y="57%"
+                                    width="17%"
+                                    height="6%"
+                                    fill="none"
+                                    stroke-width="2px"
+                                    class="explanation-type"
+                                />
+
+                                 <!-- Realms -->
+                                 <rect
+                                    x="61%"
+                                    y="57%"
+                                    width="18%"
+                                    height="6%"
+                                    fill="none"
+                                    stroke-width="2px"
+                                    class="explanation-realms"
+                                />
+
+                                 <!-- Text -->
+                                 <rect
+                                    x="6%"
+                                    y="66.3%"
+                                    width="88%"
+                                    height="22%"
+                                    fill="none"
+                                    stroke-width="2px"
+                                    class="explanation-text"
+                                />
+
+                                 <!-- Crystals -->
+                                 <rect
+                                    x="55%"
+                                    y="92%"
+                                    width="41%"
+                                    height="6%"
+                                    fill="none"
+                                    stroke-width="2px"
+                                    class="explanation-crystals"
+                                />
+                            </svg>
+                            <dl>
+                                <dt class="explanation-name epic">Name</dt>
+                                <dd>The name of this card.</dd>
+
+                                <dt class="explanation-power epic">Power</dt>
+                                <dd>Higher Power makes it easier to conquer and control Lanes.</dd>
+                                
+                                <dt class="explanation-type epic">Types</dt>
+                                <dd>Cards can interact with certain types.</dd>
+                                <dd>A card can have up to two different Types!</dd>
+                                
+                                <dt class="explanation-realms epic">Realms</dt>
+                                <dd>The Realm(s) this card belongs to.</dd>
+                                <dd>When this is played as a Crystal, the Realm of this Card can help you play more cards of the same Realms.</dd>
+                                <dd>A card can have up to two different Realms!</dd>
+
+                                <dt class="explanation-text epic">Text</dt>
+                                <dd>The special, individual text of this card.</dd>
+
+                                <span class="explanation">Each Card requires you to control a certain number of Crystals with certain Realms. If you control Crystals that match each of the Requirements, you can play that card!</span>
+                                <dt class="explanation-crystals epic">Crystals</dt>
+                                <dd>
+                                    Indicates, which Crystals of which Realm you need to control in order to play this card.
+                                </dd>
+                            </dl>
+                        </div>
                     </p>
                 </section>
-                <!--
-                    Card Anatomy
-                    Let's break down what a card represents:
-                    Name: The identity of your Unit.
-                    Type(s): Each Unit may have one or more types, which can interact with card effects.
-                    Realm(s): Determines which of the five Realms the card belongs to.
-                    Power: The strength of your Unit, vital for controlling Lanes.
-                    Rarity: Indicated by an icon—bronze circle (Common), silver hexagon (Uncommon), gold star (Rare) under the Power stat.
-                    Effect: Special abilities that can turn the tide of the game.
-                    Flavor Text: Immersive lore for each Unit.
-                    Set Number: Identifies the card’s set for easy collection reference.
-                    Crystal Requirements: The currency to deploy Units, shown by diamond-shaped symbols. For each colored Crystal, you need to have a Crystal of that Realm (color) in order to play the Card; Gray Crystals indicate that the Crystal can be of any Realm.
-                    Game Flow
-                    Play cards, adjust strategies on the fly, and watch as the board transforms with each move. There's no direct combat—control of the grid is managed solely through card effects and Power values.
-                    Quick Tips
-                    If you’re new to SOB:
-                    Don’t stress over the open board space. Start at the center and expand your control from there.
-                    Utilize Crystals to build resources, then deploy powerful Units to dominate Lanes.
-                    Read your cards’ effects carefully; they're the key to your strategy!
-                    Remember, every game is a new journey through the Shards of Beyond. Embrace the challenge and craft your path to victory!
-                -->
             </div>
             <hr class="divider" width="1"/>
             <div class="paragraph right"></div>

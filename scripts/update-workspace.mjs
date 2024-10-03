@@ -194,9 +194,18 @@ Object.entries(allRatings)
             }, {votes: 0, art: ""})
             .art;
 
-        let artwork;
-        Object.values(artworks).find((card) => artwork = card.artworks.find((artwork) => artwork.hash === finalizedRatings[currentCard]));
+        if(artworks[currentCard] === undefined) {
+            console.error(`Hash ${cardhash} could not be found...!`);
+            return;
+        }
+
+        let artwork = artworks[currentCard].artworks
+            .find((artwork) => artwork.hash === finalizedRatings[currentCard]);
+
         
+        // In case someone deleted the old artwork from the table...
+        if(artwork === undefined) return;
+
         // Map object to fake URL.
         finalizedRatings[currentCard] = `${artwork.id}_${artwork.index}.png`;
     });
@@ -207,7 +216,14 @@ fs.writeFileSync(process.env.VOTED_ARTWORKS_FILE, JSON.stringify(finalizedRating
 const nonExistingArtworks = [];
 Object.values(finalizedRatings).forEach((artwork) => {    
     if(!fs.existsSync(`${process.env.ARTWORKS_FOLDER}/all/${artwork}`)) {
-        const groups = /(?<id>.+)_(?<index>[^.]+).png/.exec(artwork).groups;
+        const result = /(?<id>.+)_(?<index>[^.]+).png/.exec(artwork);
+
+        if(result === null) {
+            console.warn(`A value was not mapped correctly to an URL. Probably the URL does not exist anymore for this hash: ${artwork}`);
+            return;
+        }
+        
+        const groups = result.groups;
 
         nonExistingArtworks.push({url: `https://cdn.midjourney.com/${groups.id}/0_${groups.index}.png`, path: artwork});
     }

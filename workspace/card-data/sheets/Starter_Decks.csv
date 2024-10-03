@@ -1,13 +1,13 @@
 Starter Decks,,,Card List,Starter Deck,Copies,Alt Arts,Set,Realm,Type,Ability,Power,Crystal Cost,Rarity,Combined Power
-3,,,Supply Camel,SD1: Cinderguard,2,Alternative,1,Mortal,Animal Warrior,Deploy: A friendly Animal or Warrior in this Lane gains +3 Power.,0,"M, ?, ?, ?",Common,0
+1,,,Supply Camel,SD1: Cinderguard,2,Alternative,1,Mortal,Animal Warrior,Deploy: A friendly Animal or Warrior in this Lane gains +3 Power.,0,"M, ?, ?, ?",Common,0
 ,,,Cinderguard Scribe,SD1: Cinderguard,1,Default,1,Elemental,Human,Deploy: Choose one: - Glimpse 1. - Gain +1 Power.,1,E,Common,1
 Quantity,30,,Ambrosia Bee,SD1: Cinderguard,1,Alternative,1,Mortal,Insect,"Whenever a friendly Mortal Unit is deployed adjacently, gain +2 Power.",1,"M, ?",Common,1
 Alternative Art Cards,7,,Filthy Peasant,SD1: Cinderguard,1,Default,1,Mortal,Human,Deploy: Gain Taunt.,1,M,Common,1
-Average Power,2.9,,Caring Mother,SD1: Cinderguard,1,Alternative,1,Mortal,Human,Crystallize and Deploy: Another friendly Human Unit gains +2 Power.,1,"M, ?",Uncommon,1
+Average Power,3.2,,Caring Mother,SD1: Cinderguard,1,Alternative,1,Mortal,Human,Crystallize and Deploy: Another friendly Human Unit gains +2 Power.,1,"M, ?",Uncommon,1
 Realms,,,Cinderguard Flamebearer,SD1: Cinderguard,2,Alternative,1,Elemental Mortal,Bannerbearer Warrior,,2,"E, M",Common,4
-Divine Void,2,,Pocket Dragon,SD1: Cinderguard,2,Default,1,Mortal,Dragon,Deploy: Choose one: - You may move an adjacent friendly Unit. - Draw a Card.,2,"M, M, ?, ?",Common,4
-Divine,12,,Dragon Rider,SD1: Cinderguard,1,Alternative,1,Elemental Mortal,Human Dragon,Deploy: Copy the Ability of an adjacent Dragon Unit or Human Unit.,2,"E, M, ?, ?",Uncommon,2
-Void,7,,Cinderguard Irregulars,SD1: Cinderguard,2,Default,1,Elemental,Human Warrior,,3,"E, ?",Common,6
+Mortal,12,,Pocket Dragon,SD1: Cinderguard,2,Default,1,Mortal,Dragon,Deploy: Choose one: - You may move an adjacent friendly Unit. - Draw a Card.,2,"M, M, ?, ?",Common,4
+Elemental,7,,Dragon Rider,SD1: Cinderguard,1,Alternative,1,Elemental Mortal,Human Dragon,Deploy: Copy the Ability of an adjacent Dragon Unit or Human Unit.,2,"E, M, ?, ?",Uncommon,2
+Elemental Mortal,2,,Cinderguard Irregulars,SD1: Cinderguard,2,Default,1,Elemental,Human Warrior,,3,"E, ?",Common,6
 ,,,Featherfrost Harpy,SD1: Cinderguard,2,Default,1,Elemental,Human Spirit,,4,"E, ?, ?, ?",Common,8
 ,,,Ironstride Courser,SD1: Cinderguard,1,Default,1,Mortal,Animal Construct,Deploy: Choose one: - Each other friendly Unit in this Lane gets +1 Power. - Gain +3 Power.,3,"M, M, ?, ?, ?, ?",Common,3
 ,,,Oasisdweller,SD1: Cinderguard,1,Default,1,Elemental,Dragon Spirit,"Deploy: You may return a friendly Spirit or Warrior to your hand. If you do, draw a Card.",3,"E, ?, ?, ?",Uncommon,3

@@ -65,7 +65,7 @@
           in2="light"
           operator="arithmetic"
           k1="1"
-          k2="0.4"
+          k2="0.6"
           k3="0"
           k4="0" />
       </filter>
@@ -151,8 +151,8 @@
     
     <!-- Artwork -->
     <image
-        x="150"
-        y="0"
+        x="0"
+        y="115"
         width="750"
         height="1050"
         preserveAspectRatio="xMidYMin slice"
@@ -297,9 +297,9 @@
         <!-- Type -->
         <text
             visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
-            x="245" 
-            y="{{(card) => card.Types.length > 1 ? '589' : '545'}}"
-            width="655" 
+            x="303" 
+            y="{{(card) => card.Types.length > 1 ? '589' : '603'}}"
+            width="300" 
             height="255"
             fill="white"
             text-anchor="end"
@@ -309,21 +309,14 @@
                 font-size:38px;
                 line-height:40px;
                 text-shadow: 2px 2px 4px black;
+                border: dashed red;
             "
         >
             {{(card) => {
                 // Split all Types into the best combination of Line 1 and 2 (space-wise)
                 const types = card.Types.map((typ) => typ.trim());
                 
-                const sortedTypes = types.sort((typ1, typ2) => typ1.length - typ2.length);
-                
-                let line1 = [];
-                let line2 = [];
-                
-                sortedTypes.forEach((typ) => ((line1.length > line2.length) ? line2 : line1).push(typ));
-                
-                return `<tspan x="75" dy="37">${line1.join(' - ')}</tspan>` +
-                    `<tspan x="75" dy="37">${line2.join(' - ')}</tspan>`;
+                return types.map((t) => `<tspan dy="37">${t}</tspan>`);
             }}}
         </text>
         
@@ -331,7 +324,7 @@
         <text 
             visiblity="{{(card) => card.Type == 'Unit' ? 'visible' : 'hidden'}}"
             x="465" 
-            y="{{(card) => card.Types.length > 1 ? '589' : '545'}}"
+            y="{{(card) => card.Realms.length > 1 ? '589' : '603'}}"
             fill="white"
             style="font-family:'Palatino Linotype', serif;
                 font-weight: bold;

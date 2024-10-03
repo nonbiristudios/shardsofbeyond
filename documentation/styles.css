@@ -1,9 +1,10 @@
 html {
   background-image: url('/assets/background.png');
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
+  background-size: cover;
   background-position-x: 50%;
   background-blend-mode: color;
-  background-color: rgba(255, 255, 255, 0.7)
+  background-color: rgba(255, 255, 255, 0.8)
 }
 
 .action, .entity {
@@ -77,4 +78,86 @@ header {
 
 section > h2 {
   font-family: 'GRECOromanLubedJudo'
+}
+
+.description {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: smaller;
+}
+
+.card {
+  max-width: 30vw;
+}
+
+.description-pointer {
+  stroke: red;
+  stroke-width: 2px;
+}
+
+.terrain {
+  color: black;
+  fill: black;
+}
+
+.common {
+  fill: #75491c;
+}
+
+.uncommon {
+  fill: silver;
+}
+
+.rare {
+  fill: #dbb535;
+}
+
+.explanation-name {
+  stroke: red;
+  color: red;
+}
+
+.explanation-power {
+  stroke: orange;
+  color: orange;
+}
+
+.explanation-type {
+  stroke: green;
+  color: green;
+}
+
+.explanation-realms {
+  stroke: lightblue;
+  color: lightblue;
+}
+
+.explanation-text {
+  stroke: darkblue;
+  color: darkblue;
+}
+
+.explanation-crystals {
+  stroke: limegreen;
+  color: limegreen;
+}
+
+
+dd {
+  font-style: italic;
+}
+
+dl {
+  margin-top: 0px;
+}
+
+svg {
+  min-width:300px;
+  max-width:300px;
+  min-height:420px;
+  max-height:420px;
+  background-image:url('assets/alabasterexarch.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
